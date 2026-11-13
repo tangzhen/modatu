@@ -1,0 +1,8 @@
+# 让 Git 将所有文本文件在仓库和检出时都视为 CRLF
+* text=auto eol=crlf
+
+# 显式标记二进制文件，避免 Git 误处理
+*.png binary
+*.jpg binary
+*.pdf binary
+# ... 可以继续添加你的二进制文件类型
