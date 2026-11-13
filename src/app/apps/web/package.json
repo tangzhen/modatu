@@ -1,0 +1,35 @@
+{
+  "name": "@modatu/web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "木搭图 Web 前端（React + Three.js 受约束编辑器）",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modatu/bom": "0.1.0",
+    "@modatu/catalog": "0.1.0",
+    "@modatu/design-model": "0.1.0",
+    "@modatu/editor-state": "0.1.0",
+    "@modatu/safety-rules": "0.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1",
+    "three": "^0.171.0",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^16.1.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/three": "^0.171.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.9"
+  }
+}

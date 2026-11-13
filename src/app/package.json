@@ -1,0 +1,23 @@
+{
+  "name": "modatu-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "木搭图（Modatu）— Web 端铝型材家具设计工具",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "build:packages": "npm run build --workspace @modatu/catalog --workspace @modatu/design-model --workspace @modatu/bom --workspace @modatu/safety-rules --workspace @modatu/editor-state --workspace @modatu/llm-adapter",
+    "test": "npm run test --workspaces --if-present",
+    "test:packages": "npm run test --workspace @modatu/catalog --workspace @modatu/design-model --workspace @modatu/bom --workspace @modatu/safety-rules --workspace @modatu/editor-state --workspace @modatu/llm-adapter",
+    "dev:server": "npm run dev --workspace @modatu/server",
+    "dev:web": "npm run dev --workspace @modatu/web",
+    "seed": "npm run seed --workspace @modatu/server",
+    "start": "npm run build:packages && npm run build --workspace @modatu/server && npm run dev:server & npm run dev:web"
+  }
+}

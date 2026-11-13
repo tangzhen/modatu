@@ -1,0 +1,19 @@
+{
+  "name": "@modatu/safety-rules",
+  "version": "0.1.0",
+  "description": "规则化安全提示求值纯函数（spec-01 数据 / spec-04 编辑器提示）",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modatu/catalog": "0.1.0",
+    "@modatu/design-model": "0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}

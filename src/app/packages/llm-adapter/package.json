@@ -1,0 +1,15 @@
+{
+  "name": "@modatu/llm-adapter",
+  "version": "0.1.0",
+  "description": "LLM 统一适配器接口（spec-06 接缝 4）：OpenAI 兼容实现 + 可注入假实现",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}

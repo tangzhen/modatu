@@ -1,0 +1,19 @@
+{
+  "name": "@modatu/design-model",
+  "version": "0.1.0",
+  "description": "结构化设计模型 Schema、校验与 diff（spec-02 核心接缝）",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modatu/catalog": "0.1.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}

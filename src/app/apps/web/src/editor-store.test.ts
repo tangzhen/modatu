@@ -1,0 +1,85 @@
+import { describe, expect, it, beforeEach } from 'vitest';
+import { useEditor } from './stores/editor';
+import { emptyDesign } from '@modatu/design-model';
+import { buildSeedCatalog } from '@modatu/catalog';
+import { EditorState } from '@modatu/editor-state';
+
+/**
+ * spec-04 组件测试面：交互层调用正确的状态层操作。
+ * 不渲染 Three.js（渲染正确性走人工可视化验收），验证 store 与状态层的绑定。
+ */
+
+describe('编辑器 store ↔ 状态层绑定', () => {
+  beforeEach(() => {
+    const editor = new EditorState(emptyDesign('测试项目'), buildSeedCatalog());
+    useEditor.setState({
+      designId: null,
+      catalog: buildSeedCatalog(),
+      editor,
+      model: editor.getModel(),
+      selectedId: null,
+      lastOpMessage: null,
+      dirty: false,
+      saveStatus: { state: 'guest' },
+    });
+  });
+
+  it('addProfile 通过状态层校验并更新 model', () => {
+    const r = useEditor.getState().addProfile({
+      specCode: '3030',
+      cutLength: 1800,
+      position: { x: 0, y: 0, z: 0 },
+      orientation: 'y',
+    });
+    expect(r.ok).toBe(true);
+    expect(useEditor.getState().model.profiles).toHaveLength(1);
+    expect(useEditor.getState().lastOpMessage).toBeNull();
+  });
+
+  it('非法操作被拒且 lastOpMessage 呈现原因（模型不变）', () => {
+    const r = useEditor.getState().addProfile({
+      specCode: '4040', // 停用规格
+      cutLength: 100,
+      position: { x: 0, y: 0, z: 0 },
+      orientation: 'y',
+    });
+    expect(r.ok).toBe(false);
+    expect(useEditor.getState().model.profiles).toHaveLength(0);
+    expect(useEditor.getState().lastOpMessage).toContain('停用');
+  });
+
+  it('undo/redo 同步到 store model', () => {
+    useEditor
+      .getState()
+      .addProfile({ specCode: '2040', cutLength: 400, position: { x: 0, y: 0, z: 0 }, orientation: 'x' });
+    expect(useEditor.getState().model.profiles).toHaveLength(1);
+    useEditor.getState().undo();
+    expect(useEditor.getState().model.profiles).toHaveLength(0);
+    useEditor.getState().redo();
+    expect(useEditor.getState().model.profiles).toHaveLength(1);
+  });
+
+  it('replaceModel（AI 应用入口）拒绝非法模型', () => {
+    const bad = emptyDesign('坏模型');
+    bad.profiles = [{ broken: true } as never];
+    const r = useEditor.getState().replaceModel(bad, 'AI 修改');
+    expect(r.ok).toBe(false);
+    expect(useEditor.getState().model.profiles).toHaveLength(0);
+  });
+
+  it('安全提示数据链路（safety-rules 消费 store 的 catalog 与 model）', async () => {
+    const { evaluateSafetyRules } = await import('@modatu/safety-rules');
+    const catalog = buildSeedCatalog();
+    const editor = new EditorState(
+      {
+        ...emptyDesign('长梁'),
+        profiles: [
+          { id: 'b', specCode: '2020', cutLength: 2200, position: { x: 0, y: 0, z: 0 }, orientation: 'x', connections: [] },
+        ],
+      },
+      catalog,
+    );
+    useEditor.setState({ editor, model: editor.getModel(), catalog });
+    expect(evaluateSafetyRules(useEditor.getState().model, catalog).length).toBeGreaterThan(0);
+  });
+});
