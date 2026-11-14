@@ -1,0 +1,5078 @@
+{
+ "success": true,
+ "code": 200,
+ "message": null,
+ "errorCode": null,
+ "data": {
+  "pageNum": 1,
+  "pageSize": 200,
+  "total": 151,
+  "totalPages": 1,
+  "list": [
+   {
+    "bizKey": "1364157851583184",
+    "snapshotBizKey": "1307587324572574",
+    "productName": "1515铝型材 欧标",
+    "profileProductModel": "TXCE-1515",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786737060341026816-TXCE-H1-1515.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736396908343296-TXCE-1515_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736398409498624-TXCE-1515_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1234869846666448",
+    "thickness": "1",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.21kg/米",
+      "meterPrice": "6.95元/米",
+      "textureProfileProductBizKey": "1644056622518102",
+      "profileCode": "XC-TXCE-H1-1515",
+      "thickness": "1",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149507160862720-CZ-LHJ-YB.png"
+      ],
+      "displayStock": 3901.54,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.21kg/米",
+      "meterPrice": "7.27元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCE-H7-1515",
+      "thickness": "1",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 675.58,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1488216301085844",
+    "snapshotBizKey": "1560811321001333",
+    "productName": "2020铝型材",
+    "profileProductModel": "TXCJ-2020",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736274010095616-TXCJ-2020_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736276922839040-TXCJ-2020_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736275143364608-TXCJ-2020_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736272648437760-TXCJ-2020_4.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786960718930325504-TXCJ-B2-2020.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1359723592903077",
+    "thickness": "1.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.48kg/米",
+      "meterPrice": "13.69元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2020",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 22812.86,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.48kg/米",
+      "meterPrice": "14.80元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCJ-H7-2020",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 5350.1,
+      "stockUnit": "m"
+     },
+     {
+      "color": "白色",
+      "meterWeight": "0.48kg/米",
+      "meterPrice": "14.32元/米",
+      "textureProfileProductBizKey": "1227277954592747",
+      "profileCode": "XC-TXCJ-B2-2020",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149505611808768-CZ-LHJ-BAS.png"
+      ],
+      "displayStock": 2080.0,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.48kg/米",
+      "meterPrice": "14.98元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCJ-W1-2020",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 3717.95,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1302053682296684",
+    "snapshotBizKey": "1641692526799635",
+    "productName": "2020A铝型材",
+    "profileProductModel": "TXCJ-2020A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736548486701056-TXCJ-2020A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736547767853056-TXCJ-2020A_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786737336051572736-TXCJ-2020A_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736546556915712-TXCJ-2020A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1359723592903077",
+    "thickness": "1.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.51kg/米",
+      "meterPrice": "14.51元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2020A",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 2382.16,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.51kg/米",
+      "meterPrice": "16.25元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCJ-H7-2020A",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 398.95,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.51kg/米",
+      "meterPrice": "15.91元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCJ-W1-2020A",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 494.04,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1133167278502366",
+    "snapshotBizKey": "1324324369483217",
+    "productName": "2020B铝型材",
+    "profileProductModel": "TXCJ-2020B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736526019575808-TXCJ-2020B_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736524825960448-TXCJ-2020B_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786737205698150400-TXCJ-2020B_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736527623561216-TXCJ-2020B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1359723592903077",
+    "thickness": "1.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.51kg/米",
+      "meterPrice": "15.65元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2020B",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 1708.26,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.51kg/米",
+      "meterPrice": "16.82元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCJ-H7-2020B",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 211.91,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.51kg/米",
+      "meterPrice": "16.90元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCJ-W1-2020B",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 299.52,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1562846596653749",
+    "snapshotBizKey": "1586272315263411",
+    "productName": "2020C铝型材",
+    "profileProductModel": "TXCJ-2020C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786737669414039552-TXCJ-2020C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736533539962880-TXCJ-2020C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1359723592903077",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.55kg/米",
+      "meterPrice": "15.65元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2020C",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 198.87,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1556899463576885",
+    "snapshotBizKey": "1239343379699297",
+    "productName": "2020E铝型材",
+    "profileProductModel": "TXCJ-2020E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736537936945152-TXCJ-2020E_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786737463135195136-TXCJ-2020E_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736539401166848-TXCJ-2020E_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1359723592903077",
+    "thickness": "0.9",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.35kg/米",
+      "meterPrice": "11.12元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2020E",
+      "thickness": "0.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 1048.88,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.35kg/米",
+      "meterPrice": "11.85元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCJ-H7-2020E",
+      "thickness": "0.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 131.26,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1226281018663667",
+    "snapshotBizKey": "1448929855997089",
+    "productName": "2020R铝型材",
+    "profileProductModel": "TXCJ-2020R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736478899818496-TXCJ-2020R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736477082599424-TXCJ-2020R_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736480374452224-TXCJ-2020R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1359723592903077",
+    "thickness": "1.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.39kg/米",
+      "meterPrice": "11.17元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2020R",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 199.82,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.39kg/米",
+      "meterPrice": "11.73元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCJ-W1-2020R",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 174.7,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1237670371983594",
+    "snapshotBizKey": "1141447018009611",
+    "productName": "2040铝型材",
+    "profileProductModel": "TXCJ-2040",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736178660712448-TXCJ-2040_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736176783015936-TXCJ-2040_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736181709295616-TXCJ-2040_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736179781943296-TXCJ-2040_4.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736175456129024-TXCJ-2040_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1645105835478574",
+    "thickness": "1.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.82kg/米",
+      "meterPrice": "23.15元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2040",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 7965.85,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.82kg/米",
+      "meterPrice": "25.22元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCJ-H7-2040",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 1189.82,
+      "stockUnit": "m"
+     },
+     {
+      "color": "白色",
+      "meterWeight": "0.82kg/米",
+      "meterPrice": "24.92元/米",
+      "textureProfileProductBizKey": "1227277954592747",
+      "profileCode": "XC-TXCJ-B2-2040",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149505611808768-CZ-LHJ-BAS.png"
+      ],
+      "displayStock": 480.06,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.82kg/米",
+      "meterPrice": "26.43元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCJ-W1-2040",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 479.18,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1201579339167968",
+    "snapshotBizKey": "1259220176821553",
+    "productName": "2060铝型材",
+    "profileProductModel": "TXCJ-2060",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736576362045440-TXCJ-2060_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736574771593216-TXCJ-2060_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736577451892736-TXCJ-2060_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1341653914238664",
+    "thickness": "1.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.14kg/米",
+      "meterPrice": "32.39元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2060",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 918.68,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.14kg/米",
+      "meterPrice": "35.29元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCJ-H7-2060",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 195.13,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1555464696032525",
+    "snapshotBizKey": "1674840054791418",
+    "productName": "2040A铝型材",
+    "profileProductModel": "TXCJ-2040A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736245897302016-TXCJ-2040A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736249221083136-TXCJ-2040A_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736247284531200-TXCJ-2040A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1645105835478574",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.88kg/米",
+      "meterPrice": "25.49元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2040A",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 448.35,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.88kg/米",
+      "meterPrice": "27.39元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCJ-W1-2040A",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 257.17,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1399458889011434",
+    "snapshotBizKey": "1326226304807393",
+    "productName": "2040H铝型材",
+    "profileProductModel": "TXCJ-2040H",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736227080163328-TXCJ-2040H_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736225352110080-TXCJ-2040H_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1645105835478574",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.91kg/米",
+      "meterPrice": "25.89元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2040H",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 187.2,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1570226933113367",
+    "snapshotBizKey": "1164168247954627",
+    "productName": "2040C铝型材",
+    "profileProductModel": "TXCJ-2040C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736257435287552-TXCJ-2040C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736255849705472-TXCJ-2040C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1645105835478574",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.95kg/米",
+      "meterPrice": "28.55元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2040C",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 56.96,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1576157971877374",
+    "snapshotBizKey": "1142507894977022",
+    "productName": "2525铝型材",
+    "profileProductModel": "TXCJ-2525",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736371570958336-TXCJ-2525_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736373011501056-TXCJ-2525_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1502072623211648",
+    "thickness": "1.7",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.82kg/米",
+      "meterPrice": "32.48元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2525",
+      "thickness": "1.7",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 168.8,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1159108315023529",
+    "snapshotBizKey": "1524293772125749",
+    "productName": "2550铝型材",
+    "profileProductModel": "TXCJ-2550",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736210286170112-TXCJ-2550_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736211971198976-TXCJ-2550_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1679190104154126",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.38kg/米",
+      "meterPrice": "39.26元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2550",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 104.0,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1433522480142256",
+    "snapshotBizKey": "1254741621642432",
+    "productName": "4420V铝型材",
+    "profileProductModel": "TXCJ-4420V",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736186320728064-TXCJ-4420V_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736187859361792-TXCJ-4420V_2.jpg"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1322898230509420",
+    "thickness": "1.3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.19kg/米",
+      "meterPrice": "33.86元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-4420V",
+      "thickness": "1.3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 191.22,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.19kg/米",
+      "meterPrice": "36.69元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCJ-H7-4420V",
+      "thickness": "1.3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 114.13,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1230434992540838",
+    "snapshotBizKey": "1272498134803939",
+    "productName": "4420铝型材",
+    "profileProductModel": "TXCJ-4420",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736332902858752-TXCJ-4420_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736334828720128-TXCJ-4420_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736336284688384-TXCJ-4420_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1322898230509420",
+    "thickness": "1.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.17kg/米",
+      "meterPrice": "33.09元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-4420",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 83.67,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.17kg/米",
+      "meterPrice": "36.69元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCJ-H7-4420",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 172.08,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1162578875737414",
+    "snapshotBizKey": "1564259414652715",
+    "productName": "2080铝型材",
+    "profileProductModel": "TXCJ-2080",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736427154284544-TXCJ-2080_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736425416486912-TXCJ-2080_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1205074652882703",
+    "thickness": "1.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.49kg/米",
+      "meterPrice": "43.28元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-2080",
+      "thickness": "1.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 183.66,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1292982658194352",
+    "snapshotBizKey": "1645236445397095",
+    "productName": "4060S铝型材",
+    "profileProductModel": "TXCJ-4060S",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736394647474176-TXCJ-4060S_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736392857595904-TXCJ-4060S_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1489296996321265",
+    "thickness": "1.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.65kg/米",
+      "meterPrice": "47.85元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-4060S",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 192.96,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1681324029863407",
+    "snapshotBizKey": "1273722022670037",
+    "productName": "4080S铝型材",
+    "profileProductModel": "TXCJ-4080S",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736167329734656-TXCJ-4080S_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736169236922368-TXCJ-4080S_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1467562460528195",
+    "thickness": "1.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.20kg/米",
+      "meterPrice": "63.81元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCJ-H6-4080S",
+      "thickness": "1.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 191.72,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1476655426582219",
+    "snapshotBizKey": "1263807037582725",
+    "productName": "3030铝型材 欧标",
+    "profileProductModel": "TXCK-3030",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736142287708160-TXCK-3030_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736140740960256-TXCK-3030_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736139510673408-TXCK-3030_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736138071756800-TXCK-3030_4.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788037880852316160-TXCK-H6-3030.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.85kg/米",
+      "meterPrice": "23.86元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3030",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 13528.28,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.85kg/米",
+      "meterPrice": "25.42元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCK-H7-3030",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 3502.09,
+      "stockUnit": "m"
+     },
+     {
+      "color": "白色",
+      "meterWeight": "0.85kg/米",
+      "meterPrice": "25.40元/米",
+      "textureProfileProductBizKey": "1227277954592747",
+      "profileCode": "XC-TXCK-B2-3030",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149505611808768-CZ-LHJ-BAS.png"
+      ],
+      "displayStock": 1067.23,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.85kg/米",
+      "meterPrice": "25.88元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCK-W1-3030",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 3240.7,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1356301236053252",
+    "snapshotBizKey": "1250601985052826",
+    "productName": "3030A铝型材 欧标",
+    "profileProductModel": "TXCK-3030A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736236367708160-TXCK-3030A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736237516136448-TXCK-3030A_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786738920854048768-TXCK-3030A_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788398812495618048-TXCK-3030A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.87kg/米",
+      "meterPrice": "24.80元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3030A",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 1060.78,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.87kg/米",
+      "meterPrice": "26.25元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCK-H7-3030A",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 9.19,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.87kg/米",
+      "meterPrice": "26.61元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCK-W1-3030A",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 519.2,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1378786746148696",
+    "snapshotBizKey": "1483480292531826",
+    "productName": "3030B铝型材 欧标",
+    "profileProductModel": "TXCK-3030B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736239604899840-TXCK-3030B_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736241266515968-TXCK-3030B_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788398923251761152-TXCK-3030B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.92kg/米",
+      "meterPrice": "26.50元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3030B",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 712.32,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.92kg/米",
+      "meterPrice": "28.29元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCK-H7-3030B",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 243.49,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1683965826236717",
+    "snapshotBizKey": "1139424202493778",
+    "productName": "3030R铝型材 欧标",
+    "profileProductModel": "TXCK-3030R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736223723368448-TXCK-3030R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736221959864320-TXCK-3030R_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786738689245933568-TXCK-3030R_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788037983292239872-TXCK-H6-3030R.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.80kg/米",
+      "meterPrice": "23.52元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3030R",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 209.4,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.80kg/米",
+      "meterPrice": "24.34元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCK-H7-3030R",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 101.21,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.80kg/米",
+      "meterPrice": "24.78元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCK-W1-3030R",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 161.8,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1417457813357741",
+    "snapshotBizKey": "1180932928122473",
+    "productName": "3060铝型材 欧标",
+    "profileProductModel": "TXCK-3060",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736438550343680-TXCK-3060_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736441079373824-TXCK-3060_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736442708926464-TXCK-3060_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736444043931648-TXCK-3060_4.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736440120094720-TXCK-3060_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1357142947644496",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.53kg/米",
+      "meterPrice": "42.23元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3060",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 4658.01,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.53kg/米",
+      "meterPrice": "45.93元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCK-H7-3060",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 113.9,
+      "stockUnit": "m"
+     },
+     {
+      "color": "白色",
+      "meterWeight": "1.53kg/米",
+      "meterPrice": "45.44元/米",
+      "textureProfileProductBizKey": "1227277954592747",
+      "profileCode": "XC-TXCK-B2-3060",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149505611808768-CZ-LHJ-BAS.png"
+      ],
+      "displayStock": 153.32,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "1.53kg/米",
+      "meterPrice": "46.28元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCK-W1-3060",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 493.81,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1390782824419341",
+    "snapshotBizKey": "1260617842495257",
+    "productName": "3060A铝型材 欧标",
+    "profileProductModel": "TXCK-3060A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736356902260736-TXCK-3060A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786739439907692544-TXCK-3060A_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736354860306432-TXCK-3060A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1357142947644496",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.61kg/米",
+      "meterPrice": "46.49元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3060A",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 144.44,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "1.61kg/米",
+      "meterPrice": "48.76元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCK-W1-3060A",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 248.34,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1183035347046808",
+    "snapshotBizKey": "1382896309117669",
+    "productName": "3060B铝型材 欧标",
+    "profileProductModel": "TXCK-3060B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736360884686848-TXCK-3060B_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786738304736362496-TXCK-3060B_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8809418433291952128-TXCK-3060B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1357142947644496",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.62kg/米",
+      "meterPrice": "45.53元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3060B",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 192.0,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "1.62kg/米",
+      "meterPrice": "48.12元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCK-W1-3060B",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 179.27,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1667225565767689",
+    "snapshotBizKey": "1396034373006431",
+    "productName": "6060铝型材 欧标",
+    "profileProductModel": "TXCK-6060",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736349901426688-TXCK-6060_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736352850968576-TXCK-6060_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736351080972288-TXCK-6060_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1404478741137038",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.44kg/米",
+      "meterPrice": "68.28元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-6060",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 565.09,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "2.44kg/米",
+      "meterPrice": "73.99元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCK-H7-6060",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 159.71,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1433735264506309",
+    "snapshotBizKey": "1427167905034754",
+    "productName": "J3030铝型材 欧标",
+    "profileProductModel": "TXCK-J3030",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736233685786624-TXCK-J3030_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736234872774656-TXCK-J3030_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786738392608378880-TXCK-J3030_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786738392696459264-TXCK-J3030_4.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736231983304704-TXCK-J3030_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.75kg/米",
+      "meterPrice": "21.20元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3030",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 4430.9,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.75kg/米",
+      "meterPrice": "23.94元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCK-H7-J3030",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 996.57,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.75kg/米",
+      "meterPrice": "24.29元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCK-W1-J3030",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 904.61,
+      "stockUnit": "m"
+     },
+     {
+      "color": "白色",
+      "meterWeight": "0.75kg/米",
+      "meterPrice": "23.22元/米",
+      "textureProfileProductBizKey": "1227277954592747",
+      "profileCode": "XC-TXCK-B2-J3030",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149505611808768-CZ-LHJ-BAS.png"
+      ],
+      "displayStock": 251.23,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1634155028549686",
+    "snapshotBizKey": "1518474778158155",
+    "productName": "J3060铝型材 欧标",
+    "profileProductModel": "TXCK-J3060",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736591444217856-TXCK-J3060_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736590587637760-TXCK-J3060_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1357142947644496",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.35kg/米",
+      "meterPrice": "39.79元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3060",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 714.93,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1286753169009963",
+    "snapshotBizKey": "1570365305094680",
+    "productName": "J3030G铝型材 欧标",
+    "profileProductModel": "TXCK-J3030G",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736490646843392-TXCK-J3030G_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736492466765824-TXCK-J3030G_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736493917589504-TXCK-J3030G_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "1.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.66kg/米",
+      "meterPrice": "19.63元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3030G",
+      "thickness": "1.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 7262.79,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.66kg/米",
+      "meterPrice": "21.07元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCK-H7-J3030G",
+      "thickness": "1.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 215.66,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "0.66kg/米",
+      "meterPrice": "21.22元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCK-W1-J3030G",
+      "thickness": "1.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 80.01,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1431075680452090",
+    "snapshotBizKey": "1244157910321184",
+    "productName": "J3030A铝型材 欧标",
+    "profileProductModel": "TXCK-J3030A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736198155702272-TXCK-J3030A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736197098737664-TXCK-J3030A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.80kg/米",
+      "meterPrice": "23.12元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3030A",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 314.27,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1495835105012937",
+    "snapshotBizKey": "1517007796701680",
+    "productName": "J3030B铝型材 欧标",
+    "profileProductModel": "TXCK-J3030B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736193475944448-TXCK-J3030B_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736195241201664-TXCK-J3030B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.90kg/米",
+      "meterPrice": "25.61元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3030B",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 237.13,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1421231632883930",
+    "snapshotBizKey": "1165253174075619",
+    "productName": "J3030H铝型材 欧标",
+    "profileProductModel": "TXCK-J3030H",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736482061238272-TXCK-J3030H_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736483730169856-TXCK-J3030H_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.78kg/米",
+      "meterPrice": "23.04元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3030H",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 851.8,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1298195241433937",
+    "snapshotBizKey": "1379952515353705",
+    "productName": "J3030T铝型材 欧标",
+    "profileProductModel": "TXCK-J3030T",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736543808024576-TXCK-J3030T_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736545066856448-TXCK-J3030T_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.82kg/米",
+      "meterPrice": "23.33元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3030T",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 119.55,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1139563199692631",
+    "snapshotBizKey": "1542728724899335",
+    "productName": "J3030R铝型材 欧标",
+    "profileProductModel": "TXCK-J3030R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736460636868608-TXCK-J3030R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736459653238784-TXCK-J3030R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.71kg/米",
+      "meterPrice": "20.20元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3030R",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 108.87,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1354020887439253",
+    "snapshotBizKey": "1198890009050217",
+    "productName": "J3030RS铝型材 欧标",
+    "profileProductModel": "TXCK-J3030RS",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736213404164097-TXCK-J3030RS_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736215400787968-TXCK-J3030RS_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.69kg/米",
+      "meterPrice": "19.90元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3030RS",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 202.73,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1183678437213480",
+    "snapshotBizKey": "1136748493094552",
+    "productName": "3030C铝型材 欧标",
+    "profileProductModel": "TXCK-3030C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736244144218112-TXCK-3030C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736242810699776-TXCK-3030C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1290656980590748",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.65kg/米",
+      "meterPrice": "19.22元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3030C",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 249.59,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1682192102672664",
+    "snapshotBizKey": "1583304778781263",
+    "productName": "J3060G铝型材 欧标",
+    "profileProductModel": "TXCK-J3060G",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736297066319872-TXCK-J3060G_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736295899492352-TXCK-J3060G_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1357142947644496",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.24kg/米",
+      "meterPrice": "36.57元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3060G",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 204.36,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1330642221196329",
+    "snapshotBizKey": "1459591338725403",
+    "productName": "J3060A铝型材 欧标",
+    "profileProductModel": "TXCK-J3060A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736310688608256-TXCK-J3060A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736311797121024-TXCK-J3060A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1357142947644496",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.41kg/米",
+      "meterPrice": "42.41元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3060A",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 252.49,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1337106466755280",
+    "snapshotBizKey": "1394384040304003",
+    "productName": "J3060B铝型材 欧标",
+    "profileProductModel": "TXCK-J3060B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736307204222976-TXCK-J3060B_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736308861108224-TXCK-J3060B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1357142947644496",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.41kg/米",
+      "meterPrice": "40.12元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3060B",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 147.85,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1472810243861744",
+    "snapshotBizKey": "1183813932273179",
+    "productName": "3090铝型材 欧标",
+    "profileProductModel": "TXCK-3090",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736554344927232-TXCK-3090_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736555963252736-TXCK-3090_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1575224645835445",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.17kg/米",
+      "meterPrice": "65.33元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3090",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 492.05,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1628727971678564",
+    "snapshotBizKey": "1559500908655079",
+    "productName": "J3090铝型材 欧标",
+    "profileProductModel": "TXCK-J3090",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736423353024512-TXCK-J3090_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736421785575424-TXCK-J3090_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1575224645835445",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.93kg/米",
+      "meterPrice": "55.44元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J3090",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 80.95,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1452631812461890",
+    "snapshotBizKey": "1290385553719889",
+    "productName": "30120铝型材 欧标",
+    "profileProductModel": "TXCK-30120",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736164223647744-TXCK-30120_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788039534261157888-TXCK-30120_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1322814446403157",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.84kg/米",
+      "meterPrice": "80.63元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-30120",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 400.27,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1399351110681183",
+    "snapshotBizKey": "1630899860082656",
+    "productName": "30150铝型材 欧标",
+    "profileProductModel": "TXCK-30150",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736263230058496-TXCK-30150_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788039570900570112-TXCK-30150_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1573642181190413",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.61kg/米",
+      "meterPrice": "104.70元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-30150",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 130.31,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1424120538094450",
+    "snapshotBizKey": "1612794211198843",
+    "productName": "3045M铝型材 欧标",
+    "profileProductModel": "TXCK-3045M",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736604368093184-TXCK-3045M_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736602885742592-TXCK-3045M_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1142042739042294",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.03kg/米",
+      "meterPrice": "29.61元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-3045M",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 346.57,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1324667177413676",
+    "snapshotBizKey": "1625631235886836",
+    "productName": "5050S铝型材 欧标",
+    "profileProductModel": "TXCK-5050S",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736432085159936-TXCK-5050S_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736433494851584-TXCK-5050S_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1624224237882638",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.11kg/米",
+      "meterPrice": "61.29元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-5050S",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 687.74,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1329534751335105",
+    "snapshotBizKey": "1372260666259968",
+    "productName": "6630铝型材 欧标",
+    "profileProductModel": "TXCK-6630",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736584920457216-TXCK-6630_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736585785159680-TXCK-6630_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1404478741137038",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.23kg/米",
+      "meterPrice": "64.54元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-6630",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 61.6,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1316509433959503",
+    "snapshotBizKey": "1320996455300513",
+    "productName": "6630R铝型材 欧标",
+    "profileProductModel": "TXCK-6630R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736270601887744-TXCK-6630R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736269177851904-TXCK-6630R_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736267580633088-TXCK-6630R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1404478741137038",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.08kg/米",
+      "meterPrice": "60.32元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-6630R",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 145.7,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1424478438979537",
+    "snapshotBizKey": "1532662821657196",
+    "productName": "J6630RA铝型材 欧标",
+    "profileProductModel": "TXCK-J6630RA",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736281744662528-TXCK-J6630RA_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736283489628160-TXCK-J6630RA_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1404478741137038",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.95kg/米",
+      "meterPrice": "56.51元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J6630RA",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 33.8,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1327856963003008",
+    "snapshotBizKey": "1393795661397949",
+    "productName": "J6060铝型材 欧标",
+    "profileProductModel": "TXCK-J6060",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736569507201024-TXCK-J6060_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736570543874048-TXCK-J6060_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1404478741137038",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.13kg/米",
+      "meterPrice": "60.60元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCK-H6-J6060",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 159.74,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1457815743144099",
+    "snapshotBizKey": "1429629517512452",
+    "productName": "4040铝型材 欧标",
+    "profileProductModel": "TXCL-4040",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736449880780800-TXCL-4040_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736447473655808-TXCL-4040_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736446030815232-TXCL-4040_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736448655638528-TXCL-4040_4.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786958461636546560-TXCL-B2-4040.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.61kg/米",
+      "meterPrice": "46.95元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4040",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 11269.5,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.61kg/米",
+      "meterPrice": "50.79元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-4040",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 418.29,
+      "stockUnit": "m"
+     },
+     {
+      "color": "白色",
+      "meterWeight": "1.61kg/米",
+      "meterPrice": "49.08元/米",
+      "textureProfileProductBizKey": "1227277954592747",
+      "profileCode": "XC-TXCL-B2-4040",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149505611808768-CZ-LHJ-BAS.png"
+      ],
+      "displayStock": 371.82,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "1.61kg/米",
+      "meterPrice": "50.35元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCL-W1-4040",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 585.05,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1355650759484296",
+    "snapshotBizKey": "1294764231321478",
+    "productName": "4040A铝型材 欧标",
+    "profileProductModel": "TXCL-4040A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736495541456896-TXCL-4040A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736497009463296-TXCL-4040A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.59kg/米",
+      "meterPrice": "47.17元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4040A",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 219.73,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1279708073863653",
+    "snapshotBizKey": "1687741079696704",
+    "productName": "4040B铝型材 欧标",
+    "profileProductModel": "TXCL-4040B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736508999630848-TXCL-4040B_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736507545554944-TXCL-4040B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.61kg/米",
+      "meterPrice": "45.81元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4040B",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 207.54,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1649746913873256",
+    "snapshotBizKey": "1247536529231199",
+    "productName": "4040R铝型材 欧标",
+    "profileProductModel": "TXCL-4040R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736550498209792-TXCL-4040R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736549696421888-TXCL-4040R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.46kg/米",
+      "meterPrice": "42.91元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4040R",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 122.46,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1377171320443656",
+    "snapshotBizKey": "1536974335258530",
+    "productName": "4040E铝型材 欧标",
+    "profileProductModel": "TXCL-4040E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736470114914304-TXCL-4040E_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736468278214656-TXCL-4040E_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736471645700096-TXCL-4040E_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.64kg/米",
+      "meterPrice": "47.47元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4040E",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 695.43,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.64kg/米",
+      "meterPrice": "51.41元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-4040E",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 304.8,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1674246036711911",
+    "snapshotBizKey": "1261582064487906",
+    "productName": "4040RE铝型材 欧标",
+    "profileProductModel": "TXCL-4040RE",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736599197732864-TXCL-4040RE_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736597105721344-TXCL-4040RE_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736598044299264-TXCL-4040RE_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.46kg/米",
+      "meterPrice": "41.54元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4040RE",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 493.13,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.46kg/米",
+      "meterPrice": "45.59元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-4040RE",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 429.1,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1601708709731107",
+    "snapshotBizKey": "1644034712238389",
+    "productName": "4080铝型材 欧标",
+    "profileProductModel": "TXCL-4080",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736204991741952-TXCL-4080_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736207758495744-TXCL-4080_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736208850366464-TXCL-4080_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736206339059712-TXCL-4080_4.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8792794386743230464-TXCL-4080_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.93kg/米",
+      "meterPrice": "85.72元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4080",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 824.8,
+      "stockUnit": "m"
+     },
+     {
+      "color": "白色",
+      "meterWeight": "2.93kg/米",
+      "meterPrice": "88.17元/米",
+      "textureProfileProductBizKey": "1227277954592747",
+      "profileCode": "XC-TXCL-B2-4080",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149505611808768-CZ-LHJ-BAS.png"
+      ],
+      "displayStock": 57.26,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "2.93kg/米",
+      "meterPrice": "93.70元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCL-W1-4080",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 310.21,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "2.93kg/米",
+      "meterPrice": "91.91元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-4080",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 137.26,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1291085442235715",
+    "snapshotBizKey": "1454308775892135",
+    "productName": "4080A铝型材 欧标",
+    "profileProductModel": "TXCL-4080A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736473210580992-TXCL-4080A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736474956087296-TXCL-4080A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.65kg/米",
+      "meterPrice": "76.74元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4080A",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 63.46,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1238712784008326",
+    "snapshotBizKey": "1360389471640455",
+    "productName": "4080B铝型材 欧标",
+    "profileProductModel": "TXCL-4080B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736487454302208-TXCL-4080B_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736489104560128-TXCL-4080B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.65kg/米",
+      "meterPrice": "76.87元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4080B",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 126.63,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1356031884964948",
+    "snapshotBizKey": "1500949191547230",
+    "productName": "4080E铝型材 欧标",
+    "profileProductModel": "TXCL-4080E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736514163900416-TXCL-4080E_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736516354818048-TXCL-4080E_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736515521773568-TXCL-4080E_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.96kg/米",
+      "meterPrice": "87.35元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4080E",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 222.76,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "2.96kg/米",
+      "meterPrice": "91.25元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-4080E",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 175.0,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1537779559443913",
+    "snapshotBizKey": "1527378273867887",
+    "productName": "8080铝型材 欧标",
+    "profileProductModel": "TXCL-8080",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736436408946688-TXCL-8080_1.png",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736435314638848-TXCL-8080_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "4.64kg/米",
+      "meterPrice": "134.37元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-8080",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 62.55,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1417587569854271",
+    "snapshotBizKey": "1399316786448103",
+    "productName": "8080E铝型材 欧标",
+    "profileProductModel": "TXCL-8080E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736411550253056-TXCL-8080E_1.png",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736414813687808-TXCL-8080E_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736416579764224-TXCL-8080E_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "4.44kg/米",
+      "meterPrice": "127.67元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-8080E",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 206.75,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "4.44kg/米",
+      "meterPrice": "140.59元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-8080E",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 173.56,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1183922357336438",
+    "snapshotBizKey": "1464539984411101",
+    "productName": "J4040C铝型材 欧标",
+    "profileProductModel": "TXCL-J4040C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736383976357888-TXCL-J4040C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786741332005855232-TXCL-J4040C_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786741331962556416-TXCL-J4040C%E6%9C%A8%E8%89%B2_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736385350873088-TXCL-J4040C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.09kg/米",
+      "meterPrice": "33.86元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040C",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 0.0,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "1.09kg/米",
+      "meterPrice": "34.86元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCL-W1-J4040C",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 146.43,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.09kg/米",
+      "meterPrice": "36.72元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-J4040C",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 115.1,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1335619215398374",
+    "snapshotBizKey": "1222608762558528",
+    "productName": "J4040E铝型材 欧标",
+    "profileProductModel": "TXCL-J4040E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736379556102144-TXCL-J4040E_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736376807886848-TXCL-J4040E_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786741443130826752-TXCL-J4040E_3.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736378233139200-TXCL-J4040E_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.47kg/米",
+      "meterPrice": "41.82元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040E",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 1332.35,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.47kg/米",
+      "meterPrice": "45.32元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-J4040E",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 220.4,
+      "stockUnit": "m"
+     },
+     {
+      "color": "原木色",
+      "meterWeight": "1.47kg/米",
+      "meterPrice": "45.98元/米",
+      "textureProfileProductBizKey": "1428676321059605",
+      "profileCode": "XC-TXCL-W1-J4040E",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png"
+      ],
+      "displayStock": 100.02,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1261491745742416",
+    "snapshotBizKey": "1361333581275152",
+    "productName": "J4040A铝型材 欧标",
+    "profileProductModel": "TXCL-J4040A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736386708475904-TXCL-J4040A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736388054302720-TXCL-J4040A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.41kg/米",
+      "meterPrice": "41.60元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040A",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 232.67,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1509559235326330",
+    "snapshotBizKey": "1274233660025590",
+    "productName": "J4040B铝型材 欧标",
+    "profileProductModel": "TXCL-J4040B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736382486704128-TXCL-J4040B_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736381480206336-TXCL-J4040B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.39kg/米",
+      "meterPrice": "40.37元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040B",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 60.63,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1431242309959465",
+    "snapshotBizKey": "1543379471914099",
+    "productName": "J4040H铝型材 欧标",
+    "profileProductModel": "TXCL-J4040H",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736344113557504-TXCL-J4040H_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736345505660928-TXCL-J4040H_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.37kg/米",
+      "meterPrice": "39.55元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040H",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 102.04,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1611504365530427",
+    "snapshotBizKey": "1195862646692923",
+    "productName": "J4040T铝型材 欧标",
+    "profileProductModel": "TXCL-J4040T",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736305740005376-TXCL-J4040T_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736304624185344-TXCL-J4040T_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.38kg/米",
+      "meterPrice": "40.08元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040T",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 155.69,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1318188748265961",
+    "snapshotBizKey": "1505597784772262",
+    "productName": "J4040R铝型材 欧标",
+    "profileProductModel": "TXCL-J4040R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736315512463360-TXCL-J4040R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736313753022464-TXCL-J4040R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.21kg/米",
+      "meterPrice": "35.16元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040R",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 140.72,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1591601398232209",
+    "snapshotBizKey": "1540364702356391",
+    "productName": "J4040GE铝型材 欧标",
+    "profileProductModel": "TXCL-J4040GE",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736501490204672-TXCL-J4040GE_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736500087410688-TXCL-J4040GE_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736498607091712-TXCL-J4040GE_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.34kg/米",
+      "meterPrice": "37.81元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040GE",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 420.58,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.34kg/米",
+      "meterPrice": "41.31元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-J4040GE",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 168.24,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1543163463577153",
+    "snapshotBizKey": "1315915557656416",
+    "productName": "4040C铝型材 欧标",
+    "profileProductModel": "TXCL-4040C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736503154393088-TXCL-4040C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786741054802948096-TXCL-4040C_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8800733855735676928-TXCL-H6-4040C.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.15kg/米",
+      "meterPrice": "33.03元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4040C",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 607.37,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.15kg/米",
+      "meterPrice": "35.84元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-4040C",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 135.12,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1461002051226021",
+    "snapshotBizKey": "1353447982991034",
+    "productName": "J4080C铝型材 欧标",
+    "profileProductModel": "TXCL-J4080C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736367799332864-TXCL-J4080C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786740963853930496-TXCL-J4080C_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736369867800576-TXCL-J4080C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.88kg/米",
+      "meterPrice": "59.07元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4080C",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 577.65,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.88kg/米",
+      "meterPrice": "58.81元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-J4080C",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 102.17,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1607558353723080",
+    "snapshotBizKey": "1632227223979580",
+    "productName": "J4080E铝型材 欧标",
+    "profileProductModel": "TXCL-J4080E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736347964469248-TXCL-J4080E_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736346823213056-TXCL-J4080E_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.65kg/米",
+      "meterPrice": "76.50元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4080E",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 357.42,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1544448442898012",
+    "snapshotBizKey": "1587677509378722",
+    "productName": "J4080A铝型材 欧标",
+    "profileProductModel": "TXCL-J4080A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736374244626432-TXCL-J4080A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736375381417984-TXCL-J4080A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.87kg/米",
+      "meterPrice": "54.23元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4080A",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 51.41,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1669005279583567",
+    "snapshotBizKey": "1502434191833017",
+    "productName": "J4080GE铝型材 欧标",
+    "profileProductModel": "TXCL-J4080GE",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786747746546814976-TXCL-H6-J4080GE_1.png",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786748522903691264-TXCL-J4080GE_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.30kg/米",
+      "meterPrice": "67.33元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4080GE",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 236.34,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1226164405577954",
+    "snapshotBizKey": "1384237807472895",
+    "productName": "J4080B铝型材 欧标",
+    "profileProductModel": "TXCL-J4080B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736358510170112-TXCL-J4080B_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736359638302720-TXCL-J4080B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.87kg/米",
+      "meterPrice": "54.06元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4080B",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 97.73,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1286167064984156",
+    "snapshotBizKey": "1247369711515066",
+    "productName": "4080C铝型材 欧标",
+    "profileProductModel": "TXCL-4080C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736485717319680-TXCL-4080C_1.jpg"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "1.8",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.05kg/米",
+      "meterPrice": "60.15元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4080C",
+      "thickness": "1.8",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 568.59,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1129483343559198",
+    "snapshotBizKey": "1235753700322176",
+    "productName": "J4040铝型材 欧标",
+    "profileProductModel": "TXCL-J4040",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736456404815872-TXCL-J4040_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736457844006912-TXCL-J4040_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.16kg/米",
+      "meterPrice": "34.32元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 627.84,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1240675806553158",
+    "snapshotBizKey": "1137932602539342",
+    "productName": "J8080铝型材 欧标",
+    "profileProductModel": "TXCL-J8080",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736291838054400-TXCL-J8080_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736290112708608-TXCL-J8080_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.49kg/米",
+      "meterPrice": "101.07元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J8080",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 72.87,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1296874155392909",
+    "snapshotBizKey": "1482305176451079",
+    "productName": "8080C铝型材 欧标",
+    "profileProductModel": "TXCL-8080C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736430436798464-TXCL-8080C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736429033738240-TXCL-8080C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "4.00kg/米",
+      "meterPrice": "115.85元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-8080C",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 817.12,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1558557003477018",
+    "snapshotBizKey": "1383252117064330",
+    "productName": "J4040J铝型材 欧标",
+    "profileProductModel": "TXCL-J4040J",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736339556380672-TXCL-J4040J_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736338301603841-TXCL-J4040J_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.91kg/米",
+      "meterPrice": "55.99元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4040J",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 221.95,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1303377504592616",
+    "snapshotBizKey": "1641347854812280",
+    "productName": "J4080J铝型材 欧标",
+    "profileProductModel": "TXCL-J4080J",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736326289661952-TXCL-J4080J_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736328075481088-TXCL-J4080J_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.60kg/米",
+      "meterPrice": "103.48元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J4080J",
+      "thickness": "3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 240.9,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1591947087399954",
+    "snapshotBizKey": "1516938788756569",
+    "productName": "J8080J铝型材 欧标",
+    "profileProductModel": "TXCL-J8080J",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736466750271488-TXCL-J8080J_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736465752702976-TXCL-J8080J_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "5.18kg/米",
+      "meterPrice": "150.13元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J8080J",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 203.58,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1459757906862771",
+    "snapshotBizKey": "1645318559258252",
+    "productName": "4040J铝型材 欧标",
+    "profileProductModel": "TXCL-4040J",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736522020372480-TXCL-4040J_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736523375542272-TXCL-4040J_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736520666292224-TXCL-4040J_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1254599991111093",
+    "thickness": "3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.02kg/米",
+      "meterPrice": "59.05元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4040J",
+      "thickness": "3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 604.23,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "2.02kg/米",
+      "meterPrice": "62.58元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCL-H7-4040J",
+      "thickness": "3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 264.7,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1605624979655872",
+    "snapshotBizKey": "1460736382496525",
+    "productName": "4080J铝型材 欧标",
+    "profileProductModel": "TXCL-4080J",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736512615796736-TXCL-4080J_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736511390113792-TXCL-4080J_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1268621827469335",
+    "thickness": "3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.94kg/米",
+      "meterPrice": "113.12元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-4080J",
+      "thickness": "3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 358.38,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1601511041539643",
+    "snapshotBizKey": "1441326285665337",
+    "productName": "8080J铝型材 欧标",
+    "profileProductModel": "TXCL-8080J",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736408278290432-TXCL-8080J_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736409791488000-TXCL-8080J_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "6.20kg/米",
+      "meterPrice": "181.57元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-8080J",
+      "thickness": "3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 175.12,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1375815912333242",
+    "snapshotBizKey": "1496488035575793",
+    "productName": "8840铝型材 欧标",
+    "profileProductModel": "TXCL-8840",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736219782746112-TXCL-8840_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736218359934976-TXCL-8840_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.93kg/米",
+      "meterPrice": "113.75元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-8840",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 63.18,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1454166855010948",
+    "snapshotBizKey": "1226813823793822",
+    "productName": "8840R铝型材 欧标",
+    "profileProductModel": "TXCL-8840R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736342590349312-TXCL-8840R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736341599277056-TXCL-8840R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.19kg/米",
+      "meterPrice": "90.76元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-8840R",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 173.66,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1312043836353001",
+    "snapshotBizKey": "1601530340967840",
+    "productName": "8840RE铝型材 欧标",
+    "profileProductModel": "TXCL-8840RE",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736505109348352-TXCL-8840RE_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736506314735616-TXCL-8840RE_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.47kg/米",
+      "meterPrice": "100.60元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-8840RE",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 178.09,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1228413342915214",
+    "snapshotBizKey": "1562700340094921",
+    "productName": "J8840R铝型材 欧标",
+    "profileProductModel": "TXCL-J8840R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736517637869568-TXCL-J8840R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736518811594752-TXCL-J8840R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.17kg/米",
+      "meterPrice": "92.82元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J8840R",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 94.56,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1566343706087038",
+    "snapshotBizKey": "1475785743400284",
+    "productName": "J8840RA铝型材 欧标",
+    "profileProductModel": "TXCL-J8840RA",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736463685718016-TXCL-J8840RA_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736462280499200-TXCL-J8840RA_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1238799501208185",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.15kg/米",
+      "meterPrice": "91.38元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-J8840RA",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 40.54,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1297830117753524",
+    "snapshotBizKey": "1230230810268985",
+    "productName": "40120铝型材 欧标",
+    "profileProductModel": "TXCL-40120",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736595609034752-TXCL-40120_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736593884901376-TXCL-40120_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1309460154268839",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "4.03kg/米",
+      "meterPrice": "116.65元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-40120",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 105.88,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1560448341606448",
+    "snapshotBizKey": "1360427247109671",
+    "productName": "40160铝型材 欧标",
+    "profileProductModel": "TXCL-40160",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8801606084649791488-TXCL-40160_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8801606086431830016-TXCL-40160_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1421446489789053",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "4.87kg/米",
+      "meterPrice": "138.55元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-40160",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 177.51,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1194593286671608",
+    "snapshotBizKey": "1215999043382345",
+    "productName": "40160E铝型材 欧标",
+    "profileProductModel": "TXCL-40160E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8801606089372442624-TXCL-40160E_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8801606087917834240-TXCL-40160E_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1421446489789053",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "5.41kg/米",
+      "meterPrice": "154.61元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-40160E",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 111.56,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1464336369286021",
+    "snapshotBizKey": "1623873863854511",
+    "productName": "40200铝型材 欧标",
+    "profileProductModel": "TXCL-40200E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8801606083203162112-TXCL-40200E_1.jpg"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1235998316414581",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "6.36kg/米",
+      "meterPrice": "186.76元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-40200E",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 104.7,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1614450530679625",
+    "snapshotBizKey": "1445323685991264",
+    "productName": "80160X铝型材 欧标",
+    "profileProductModel": "TXCL-80160X",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736184666820608-TXCL-80160X_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736183508652032-TXCL-80160X_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1272410437269455",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "8.47kg/米",
+      "meterPrice": "245.44元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCL-H6-80160X",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 2.12,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1311894051759188",
+    "snapshotBizKey": "1194029322569467",
+    "productName": "3030Y铝型材 国标",
+    "profileProductModel": "TXCP-3030Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736278663610368-TXCP-3030Y.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736279854522368-TXCP-3030Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1347712987436882",
+    "thickness": "1.9",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.08kg/米",
+      "meterPrice": "32.53元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-3030Y",
+      "thickness": "1.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 318.65,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1477203486071528",
+    "snapshotBizKey": "1614319649230023",
+    "productName": "3060Y铝型材 国标",
+    "profileProductModel": "TXCP-3060Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736420094455808-TXCP-3060Y.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736418557448192-TXCP-3060Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1210039216277057",
+    "thickness": "1.9",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.75kg/米",
+      "meterPrice": "52.08元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-3060Y",
+      "thickness": "1.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 219.52,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1393992128948206",
+    "snapshotBizKey": "1399419396403980",
+    "productName": "6060Y铝型材 国标",
+    "profileProductModel": "TXCP-6060Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736229840015360-TXCP-6060Y.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736228782915584-TXCP-6060Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1203639235701826",
+    "thickness": "1.9",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.74kg/米",
+      "meterPrice": "82.42元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-6060Y",
+      "thickness": "1.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 42.45,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1161160892491240",
+    "snapshotBizKey": "1312660275129090",
+    "productName": "3030C铝型材 国标",
+    "profileProductModel": "TXCP-3030C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736122132185088-TXCP-3030C.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736123390341120-TXCP-3030C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1347712987436882",
+    "thickness": "1.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.70kg/米",
+      "meterPrice": "21.08元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-3030C",
+      "thickness": "1.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 308.13,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1417049186990806",
+    "snapshotBizKey": "1650564124074798",
+    "productName": "3030铝型材 国标",
+    "profileProductModel": "TXCP-3030",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736564092219392-TXCP-3030.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736563355783168-TXCP-3030_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1347712987436882",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.09kg/米",
+      "meterPrice": "33.54元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-3030",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 243.25,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1652312408202962",
+    "snapshotBizKey": "1560866947531667",
+    "productName": "3030A铝型材 国标",
+    "profileProductModel": "TXCP-3030A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736128741322752-TXCP-3030A.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736130143305728-TXCP-3030A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1347712987436882",
+    "thickness": "1.9",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.06kg/米",
+      "meterPrice": "31.77元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-3030A",
+      "thickness": "1.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 58.83,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1543270026448113",
+    "snapshotBizKey": "1607220142994618",
+    "productName": "3030B铝型材 国标",
+    "profileProductModel": "TXCP-3030B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736125281837056-TXCP-3030B.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736126941700096-TXCP-3030B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1347712987436882",
+    "thickness": "1.9",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.10kg/米",
+      "meterPrice": "32.99元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-3030B",
+      "thickness": "1.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 203.63,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1361326308696433",
+    "snapshotBizKey": "1587990721086438",
+    "productName": "3030R铝型材 国标",
+    "profileProductModel": "TXCP-3030R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736146731507712-TXCP-3030R.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736148408147968-TXCP-3030R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1347712987436882",
+    "thickness": "1.9",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.86kg/米",
+      "meterPrice": "28.20元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-3030R",
+      "thickness": "1.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 157.12,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1542081863909346",
+    "snapshotBizKey": "1164117064622255",
+    "productName": "6630Y铝型材 国标",
+    "profileProductModel": "TXCP-6630Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736261519998976-TXCP-6630Y.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736259561259008-TXCP-6630Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1203639235701826",
+    "thickness": "1.9",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.45kg/米",
+      "meterPrice": "73.50元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-6630Y",
+      "thickness": "1.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 156.02,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1568922812731578",
+    "snapshotBizKey": "1486789606496469",
+    "productName": "6630R铝型材 国标",
+    "profileProductModel": "TXCP-6630R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736406620864512-TXCP-6630R.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736405358379008-TXCP-6630R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1203639235701826",
+    "thickness": "1.9",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.09kg/米",
+      "meterPrice": "61.65元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCP-6630R",
+      "thickness": "1.9",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 251.45,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1336202214708057",
+    "snapshotBizKey": "1589006459675202",
+    "productName": "4040Y铝型材 国标",
+    "profileProductModel": "TXCQ-4040Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736556942557184-TXCQ-4040Y.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736557983150080-TXCQ-4040Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1503417500153408",
+    "thickness": "2.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.92kg/米",
+      "meterPrice": "59.12元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4040Y",
+      "thickness": "2.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 841.88,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1656947355484987",
+    "snapshotBizKey": "1314631293125146",
+    "productName": "4080Y铝型材 国标",
+    "profileProductModel": "TXCQ-4080Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736573249200128-TXCQ-4080Y.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736572046245888-TXCQ-4080Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1635619891569796",
+    "thickness": "2.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.03kg/米",
+      "meterPrice": "91.02元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4080Y",
+      "thickness": "2.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 287.58,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1390450810818028",
+    "snapshotBizKey": "1260130015996200",
+    "productName": "8080Y铝型材 国标",
+    "profileProductModel": "TXCQ-8080Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736322702987264-TXCQ-8080Y.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736324367314944-TXCQ-8080Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1365033947478740",
+    "thickness": "2.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "4.34kg/米",
+      "meterPrice": "130.45元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-8080Y",
+      "thickness": "2.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 0.0,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1159567887906547",
+    "snapshotBizKey": "1406000173856212",
+    "productName": "4040A铝型材 国标",
+    "profileProductModel": "TXCQ-4040A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736300065652736-TXCQ-4040A.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736299087163392-TXCQ-4040A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1503417500153408",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.24kg/米",
+      "meterPrice": "37.39元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4040A",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 175.83,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1400221327634020",
+    "snapshotBizKey": "1316180538009789",
+    "productName": "4040B铝型材 国标",
+    "profileProductModel": "TXCQ-4040B",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736303317188608-TXCQ-4040B.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736302174711808-TXCQ-4040B_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1503417500153408",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.23kg/米",
+      "meterPrice": "36.99元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4040B",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 149.45,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1205074520569613",
+    "snapshotBizKey": "1494632550691490",
+    "productName": "4040C铝型材 国标",
+    "profileProductModel": "TXCQ-4040C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736329910833152-TXCQ-4040C.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736331362738176-TXCQ-4040C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1503417500153408",
+    "thickness": "1.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.22kg/米",
+      "meterPrice": "36.14元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4040C",
+      "thickness": "1.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 168.2,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1460989480400521",
+    "snapshotBizKey": "1287047007598609",
+    "productName": "4080C铝型材 国标",
+    "profileProductModel": "TXCQ-4080C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736319970197504-TXCQ-4080C.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736321099681792-TXCQ-4080C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1635619891569796",
+    "thickness": "1.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.03kg/米",
+      "meterPrice": "61.06元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4080C",
+      "thickness": "1.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 510.27,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1277615032149965",
+    "snapshotBizKey": "1412098740652556",
+    "productName": "4040铝型材 国标",
+    "profileProductModel": "TXCQ-4040",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736160836952064-TXCQ-4040.jpg"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1503417500153408",
+    "thickness": "3.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.80kg/米",
+      "meterPrice": "54.14元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4040",
+      "thickness": "3.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 31.81,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1132067914643579",
+    "snapshotBizKey": "1579458891141543",
+    "productName": "4040YA铝型材 国标",
+    "profileProductModel": "TXCQ-4040YA",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736252778258432-TXCQ-4040YA.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736251184828416-TXCQ-4040YA_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1503417500153408",
+    "thickness": "2.2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.64kg/米",
+      "meterPrice": "49.21元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4040YA",
+      "thickness": "2.2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 324.66,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1656370108662040",
+    "snapshotBizKey": "1381391765770756",
+    "productName": "4040R铝型材 国标",
+    "profileProductModel": "TXCQ-4040R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736364130672640-TXCQ-4040R.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736365949644800-TXCQ-4040R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1503417500153408",
+    "thickness": "2.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.46kg/米",
+      "meterPrice": "43.79元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4040R",
+      "thickness": "2.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 239.57,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1390871689463609",
+    "snapshotBizKey": "1427030181398446",
+    "productName": "8840Y铝型材 国标",
+    "profileProductModel": "TXCQ-8840Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736390099906560-TXCQ-8840Y.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736391588884480-TXCQ-8840Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1365033947478740",
+    "thickness": "2.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "4.15kg/米",
+      "meterPrice": "124.76元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-8840Y",
+      "thickness": "2.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 313.39,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1222464694398028",
+    "snapshotBizKey": "1428235133181150",
+    "productName": "8840R铝型材 国标",
+    "profileProductModel": "TXCQ-8840R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736541150052352-TXCQ-8840R.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736542675021824-TXCQ-8840R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1365033947478740",
+    "thickness": "2.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.38kg/米",
+      "meterPrice": "101.69元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-8840R",
+      "thickness": "2.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 226.93,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1651685386616614",
+    "snapshotBizKey": "1666087564320899",
+    "productName": "4080铝型材 国标",
+    "profileProductModel": "TXCQ-4080",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736293244227584-TXCQ-4080.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736294488178688-TXCQ-4080_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1635619891569796",
+    "thickness": "2.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.18kg/米",
+      "meterPrice": "94.91元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4080",
+      "thickness": "2.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 88.62,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1474078017110597",
+    "snapshotBizKey": "1176173243652562",
+    "productName": "4080YJ铝型材 国标",
+    "profileProductModel": "TXCQ-4080YJ",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736402757234688-TXCQ-4080YJ.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736404125659136-TXCQ-4080YJ_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1635619891569796",
+    "thickness": "2.3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.35kg/米",
+      "meterPrice": "100.57元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-4080YJ",
+      "thickness": "2.3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 445.51,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1680328760298520",
+    "snapshotBizKey": "1606410974301118",
+    "productName": "8080铝型材 国标",
+    "profileProductModel": "TXCQ-8080",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736120322813952-TXCQ-8080.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736119209701376-TXCQ-8080_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1365033947478740",
+    "thickness": "2.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "5.28kg/米",
+      "meterPrice": "158.60元/米",
+      "textureProfileProductBizKey": "1189965764404821",
+      "profileCode": "XC-TXCQ-8080",
+      "thickness": "2.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149508182376448-CZ-LHJ-DY.png"
+      ],
+      "displayStock": 157.26,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1675173917834865",
+    "snapshotBizKey": "1209178732867020",
+    "productName": "H4040C铝型材",
+    "profileProductModel": "TXCM-H4040C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736600323022848-TXCM-H4040C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736601773170688-TXCM-H4040C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1195380589313830",
+    "thickness": "2.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.75kg/米",
+      "meterPrice": "51.97元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H4040C",
+      "thickness": "2.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 654.07,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1131045241373489",
+    "snapshotBizKey": "1286213469595411",
+    "productName": "H4040E铝型材",
+    "profileProductModel": "TXCM-H4040E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736583802740736-TXCM-H4040E_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736582891225088-TXCM-H4040E_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1195380589313830",
+    "thickness": "2.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.53kg/米",
+      "meterPrice": "43.87元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H4040E",
+      "thickness": "2.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 34.67,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1545360329118096",
+    "snapshotBizKey": "1500114360639328",
+    "productName": "H4040F铝型材",
+    "profileProductModel": "TXCM-H4040F",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736579854143488-TXCM-H4040F_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736581217832960-TXCM-H4040F_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736579031924736-TXCM-H4040F_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1195380589313830",
+    "thickness": "2.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.53kg/米",
+      "meterPrice": "44.25元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H4040F",
+      "thickness": "2.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 88.4,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.53kg/米",
+      "meterPrice": "47.06元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCM-H7-H4040F",
+      "thickness": "2.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 122.62,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1366531605577145",
+    "snapshotBizKey": "1291118234942329",
+    "productName": "H4040铝型材",
+    "profileProductModel": "TXCM-H4040",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736131583033344-TXCM-H4040_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736132605362176-TXCM-H4040_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788039780030193664-TXCM-H4040_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1195380589313830",
+    "thickness": "3.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.95kg/米",
+      "meterPrice": "56.80元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H4040",
+      "thickness": "3.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 409.3,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.95kg/米",
+      "meterPrice": "60.07元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCM-H7-H4040",
+      "thickness": "3.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 95.5,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1186758053045151",
+    "snapshotBizKey": "1529649711010079",
+    "productName": "H4040R铝型材",
+    "profileProductModel": "TXCM-H4040R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736559671152640-TXCM-H4040R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736561907662848-TXCM-H4040R_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736560570630144-TXCM-H4040R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1195380589313830",
+    "thickness": "2.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.42kg/米",
+      "meterPrice": "41.11元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H4040R",
+      "thickness": "2.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 88.34,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1514725744481254",
+    "snapshotBizKey": "1229351244492852",
+    "productName": "H4080C铝型材",
+    "profileProductModel": "TXCM-H4080C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736588932784128-TXCM-H4080C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736587270885376-TXCM-H4080C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1433539023806694",
+    "thickness": "2.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.98kg/米",
+      "meterPrice": "84.88元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H4080C",
+      "thickness": "2.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 140.13,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1632584319107109",
+    "snapshotBizKey": "1584615179142988",
+    "productName": "H4080铝型材",
+    "profileProductModel": "TXCM-H4080",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736452554989568-TXCM-H4080_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736451183722496-TXCM-H4080_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736454512238592-TXCM-H4080_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1433539023806694",
+    "thickness": "3.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.56kg/米",
+      "meterPrice": "103.27元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H4080",
+      "thickness": "3.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 8.39,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1430858495217377",
+    "snapshotBizKey": "1400754230289918",
+    "productName": "H8080C铝型材",
+    "profileProductModel": "TXCM-H8080C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736401420197888-TXCM-H8080C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736400073691136-TXCM-H8080C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1549048325881617",
+    "thickness": "2.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "4.61kg/米",
+      "meterPrice": "133.62元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H8080C",
+      "thickness": "2.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 820.89,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1668705563268820",
+    "snapshotBizKey": "1609837788044738",
+    "productName": "H8080铝型材",
+    "profileProductModel": "TXCM-H8080",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736203146653696-TXCM-H8080_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736199917985792-TXCM-H8080_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736201835192320-TXCM-H8080_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1549048325881617",
+    "thickness": "3.5",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "5.76kg/米",
+      "meterPrice": "166.84元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H8080",
+      "thickness": "3.5",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 77.53,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1269606256610278",
+    "snapshotBizKey": "1630985840950071",
+    "productName": "H4060铝型材",
+    "profileProductModel": "TXCM-H4060",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736288053432320-TXCM-H4060_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736286505607168-TXCM-H4060_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1255887624280553",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.29kg/米",
+      "meterPrice": "66.24元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCM-H6-H4060",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 103.49,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1355513494783909",
+    "snapshotBizKey": "1396504752071817",
+    "productName": "4545C铝型材",
+    "profileProductModel": "TXCN-4545C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736136866775040-TXCN-4545C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786744008865054720-TXCN-4545C_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788040562707881984-TXCN-4545C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1234102183919984",
+    "thickness": "2.2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.19kg/米",
+      "meterPrice": "33.86元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-4545C",
+      "thickness": "2.2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 1432.35,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.19kg/米",
+      "meterPrice": "36.66元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCN-H7-4545C",
+      "thickness": "2.2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 201.17,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1249903953388414",
+    "snapshotBizKey": "1507908448690250",
+    "productName": "4545铝型材",
+    "profileProductModel": "TXCN-4545",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736171064287232-TXCN-4545_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736172361945088-TXCN-4545_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736174101639168-TXCN-4545_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1234102183919984",
+    "thickness": "2.3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.61kg/米",
+      "meterPrice": "46.29元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-4545",
+      "thickness": "2.3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 601.37,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1256029201365689",
+    "snapshotBizKey": "1255715501414440",
+    "productName": "4545E铝型材",
+    "profileProductModel": "TXCN-4545E",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736156375564288-TXCN-4545E_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736157911085056-TXCN-4545E_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736159079268352-TXCN-4545E_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1234102183919984",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.08kg/米",
+      "meterPrice": "60.37元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-4545E",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 149.94,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "2.08kg/米",
+      "meterPrice": "64.20元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCN-H7-4545E",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 137.34,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1484586055410348",
+    "snapshotBizKey": "1313720879881257",
+    "productName": "4545Y铝型材",
+    "profileProductModel": "TXCN-4545Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736135207047168-TXCN-4545Y_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736133944696832-TXCN-4545Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1234102183919984",
+    "thickness": "7",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.57kg/米",
+      "meterPrice": "74.47元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-4545Y",
+      "thickness": "7",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 64.79,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1473403267523903",
+    "snapshotBizKey": "1219019555626618",
+    "productName": "4545A铝型材",
+    "profileProductModel": "TXCN-4545A",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736145068396544-TXCN-4545A_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736143654240256-TXCN-4545A_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1234102183919984",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.92kg/米",
+      "meterPrice": "55.56元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-4545A",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 249.3,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1655802644721549",
+    "snapshotBizKey": "1247616238460214",
+    "productName": "4545F铝型材",
+    "profileProductModel": "TXCN-4545F",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736153206292480-TXCN-4545F_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736155021885440-TXCN-4545F_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1234102183919984",
+    "thickness": "2.7",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.02kg/米",
+      "meterPrice": "58.63元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-4545F",
+      "thickness": "2.7",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 114.87,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1529322653925182",
+    "snapshotBizKey": "1556605930680354",
+    "productName": "4545R铝型材",
+    "profileProductModel": "TXCN-4545R",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736117622493184-TXCN-4545R_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736116186689536-TXCN-4545R_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1234102183919984",
+    "thickness": "3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.66kg/米",
+      "meterPrice": "48.06元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-4545R",
+      "thickness": "3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 527.06,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1205095919495514",
+    "snapshotBizKey": "1456145994019095",
+    "productName": "4590C铝型材",
+    "profileProductModel": "TXCN-4590C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736607093039104-TXCN-4590C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736605772369920-TXCN-4590C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1284752201274791",
+    "thickness": "2.4",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.55kg/米",
+      "meterPrice": "73.76元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-4590C",
+      "thickness": "2.4",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 47.12,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1135199927674502",
+    "snapshotBizKey": "1227797259535048",
+    "productName": "4590Y铝型材",
+    "profileProductModel": "TXCN-4590Y",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736510423666688-TXCN-4590Y_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788040749198274560-TXCN-4590Y_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1284752201274791",
+    "thickness": "7",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "4.26kg/米",
+      "meterPrice": "123.30元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-4590Y",
+      "thickness": "7",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 589.32,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1471683265442004",
+    "snapshotBizKey": "1176034591825055",
+    "productName": "9090C铝型材",
+    "profileProductModel": "TXCN-9090C",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736318499078144-TXCN-9090C_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736317098450944-TXCN-9090C_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1574278103621984",
+    "thickness": "3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "5.77kg/米",
+      "meterPrice": "167.09元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCN-H6-9090C",
+      "thickness": "3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 123.37,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1274247240741778",
+    "snapshotBizKey": "1416526220679602",
+    "productName": "5050铝型材",
+    "profileProductModel": "TXCY-5050",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736566632075264-TXCY-5050_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736567708925952-TXCY-5050_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736565474447360-TXCY-5050_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1677628338537387",
+    "thickness": "2.3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "2.67kg/米",
+      "meterPrice": "78.51元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCY-H6-5050",
+      "thickness": "2.3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 289.56,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1662804815956901",
+    "snapshotBizKey": "1394525761762965",
+    "productName": "5050J铝型材",
+    "profileProductModel": "TXCY-5050J",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736266271334400-TXCY-5050J_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736264740818944-TXCY-5050J_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1677628338537387",
+    "thickness": "10.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "3.30kg/米",
+      "meterPrice": "95.73元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCY-H6-5050J",
+      "thickness": "10.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 169.58,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1326693682133074",
+    "snapshotBizKey": "1530296788471088",
+    "productName": "50100J铝型材",
+    "profileProductModel": "TXCY-50100J",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736530556596224-TXCY-50100J_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736531926507520-TXCY-50100J_2.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736529259606016-TXCY-50100J_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1663474814821522",
+    "thickness": "10.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "5.46kg/米",
+      "meterPrice": "159.18元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCY-H6-50100J",
+      "thickness": "10.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 462.81,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1197992939400110",
+    "snapshotBizKey": "1584245028828882",
+    "productName": "100100J铝型材",
+    "profileProductModel": "TXCY-100100J",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736165693411328-TXCY-100100J_1.jpg",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8788039995528794112-TXCY-100100J_5.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1592476983325334",
+    "thickness": "10.6",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "8.92kg/米",
+      "meterPrice": "267.01元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCY-H6-100100J",
+      "thickness": "10.6",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 251.19,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1673799904781094",
+    "snapshotBizKey": "1519018404996488",
+    "productName": "6262铝型材 国标",
+    "profileProductModel": "TXDE-6262",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736150089519104-TXDE-6262_1.png",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736151719886848-TXDE-6262_2.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1631163381790714",
+    "thickness": "1.3",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "1.41kg/米",
+      "meterPrice": "40.25元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXDE-H6-6262",
+      "thickness": "1.3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 98.92,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "1.41kg/米",
+      "meterPrice": "42.85元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXDE-H7-6262",
+      "thickness": "1.3",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 65.08,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1270936793025190",
+    "snapshotBizKey": "1492751026959561",
+    "productName": "8516通用型材",
+    "profileProductModel": "TXCD-8516",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736285175332864-TXCD-8516_1.jpg"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1445905149827956",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.23kg/米",
+      "meterPrice": "6.78元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCD-H6-8516",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 342.31,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1603904975219710",
+    "snapshotBizKey": "1419770003539863",
+    "productName": "1020通用型材",
+    "profileProductModel": "TXCD-1020",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736217051312128-TXCD-1020_1.jpg"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1471115396633617",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.31kg/米",
+      "meterPrice": "9.02元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCD-H6-1020",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 381.15,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1542569384588906",
+    "snapshotBizKey": "1683146875546259",
+    "productName": "1020M通用型材",
+    "profileProductModel": "TXCD-1020M",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8758046359011205121-TXCD-1020M_1.png",
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8758046359505997824-TXCD-1020M_2.png"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1340572629316268",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.36kg/米",
+      "meterPrice": "10.81元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCD-H6-1020M",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 519.95,
+      "stockUnit": "m"
+     },
+     {
+      "color": "黑色",
+      "meterWeight": "0.36kg/米",
+      "meterPrice": "11.10元/米",
+      "textureProfileProductBizKey": "1236793474354756",
+      "profileCode": "XC-TXCD-H7-1020M",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png"
+      ],
+      "displayStock": 214.84,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1208805526799194",
+    "snapshotBizKey": "1285464061951554",
+    "productName": "1030通用型材",
+    "profileProductModel": "TXCD-1030",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736162791903232-TXCD-1030_1.jpg"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1684251837676146",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.46kg/米",
+      "meterPrice": "13.58元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCD-H6-1030",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 594.87,
+      "stockUnit": "m"
+     }
+    ]
+   },
+   {
+    "bizKey": "1348207399409258",
+    "snapshotBizKey": "1465491291904050",
+    "productName": "1050通用型材",
+    "profileProductModel": "TXCD-1050",
+    "previewImages": [
+     "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8786736254327717888-TXCD-1050_1.jpg"
+    ],
+    "currentUsed": null,
+    "catalogBizKey": "1586667849436067",
+    "thickness": "2",
+    "materials": [
+     {
+      "color": "本色",
+      "meterWeight": "0.82kg/米",
+      "meterPrice": "23.33元/米",
+      "textureProfileProductBizKey": "1375666316970598",
+      "profileCode": "XC-TXCD-H6-1050",
+      "thickness": "2",
+      "texturePreviewImages": [
+       "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png"
+      ],
+      "displayStock": 247.7,
+      "stockUnit": "m"
+     }
+    ]
+   }
+  ]
+ }
+}

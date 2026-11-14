@@ -4,6 +4,7 @@ import {
   CompatibilityEntity,
   ConnectorEntity,
   PanelMaterialEntity,
+  ProfileFinishEntity,
   ProfileSpecEntity,
   SafetyRuleEntity,
 } from '../../db/entities/catalog.entity';
@@ -22,6 +23,7 @@ export const CATALOG_SERVICE = 'CATALOG_SERVICE';
       CompatibilityEntity,
       PanelMaterialEntity,
       SafetyRuleEntity,
+      ProfileFinishEntity,
     ]),
     AuthModule,
   ],

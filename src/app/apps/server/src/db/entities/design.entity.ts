@@ -1,5 +1,6 @@
 import { Column, CreateDateColumn, Entity, Index, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 import type { DesignModel } from '@modatu/design-model';
+import { PORTABLE_TIMESTAMP } from './portable-types';
 
 @Entity('designs')
 @Index(['userId'])
@@ -22,7 +23,7 @@ export class DesignEntity {
   version!: number;
 
   /** 软删除（默认保留 30 天以便恢复） */
-  @Column('datetime', { nullable: true })
+  @Column(PORTABLE_TIMESTAMP, { nullable: true })
   deletedAt!: Date | null;
 
   @CreateDateColumn()

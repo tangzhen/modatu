@@ -1,0 +1,423 @@
+{
+ "success": true,
+ "code": 200,
+ "message": null,
+ "errorCode": null,
+ "data": [
+  {
+   "bizKey": "1455895219114186",
+   "categoryName": "15系列",
+   "productBizKeys": null,
+   "children": [
+    {
+     "bizKey": "1577041994371602",
+     "categoryName": "欧标15系列 槽宽6",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1234869846666448",
+       "categoryName": "1515",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bizKey": "1341525326702867",
+   "categoryName": "20系列",
+   "productBizKeys": null,
+   "children": [
+    {
+     "bizKey": "1337784065434913",
+     "categoryName": "欧标20系列 槽宽6",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1359723592903077",
+       "categoryName": "2020",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1645105835478574",
+       "categoryName": "2040",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1341653914238664",
+       "categoryName": "2060",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1205074652882703",
+       "categoryName": "2080",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1322898230509420",
+       "categoryName": "4040",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1489296996321265",
+       "categoryName": "4060",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1467562460528195",
+       "categoryName": "4080",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1502072623211648",
+       "categoryName": "2525",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1679190104154126",
+       "categoryName": "2550",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bizKey": "1531844669533714",
+   "categoryName": "30系列",
+   "productBizKeys": null,
+   "children": [
+    {
+     "bizKey": "1216828375733988",
+     "categoryName": "欧标30系列 槽宽8",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1290656980590748",
+       "categoryName": "3030",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1357142947644496",
+       "categoryName": "3060",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1404478741137038",
+       "categoryName": "6060",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1142042739042294",
+       "categoryName": "3045",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1575224645835445",
+       "categoryName": "3090",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1624224237882638",
+       "categoryName": "5050",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1322814446403157",
+       "categoryName": "30120",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1573642181190413",
+       "categoryName": "30150",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    },
+    {
+     "bizKey": "1143912079597613",
+     "categoryName": "国标30系列 槽宽6",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1347712987436882",
+       "categoryName": "3030",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1210039216277057",
+       "categoryName": "3060",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1203639235701826",
+       "categoryName": "6060",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bizKey": "1518720477812739",
+   "categoryName": "40系列",
+   "productBizKeys": null,
+   "children": [
+    {
+     "bizKey": "1459695171824100",
+     "categoryName": "欧标40系列 槽宽8",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1254599991111093",
+       "categoryName": "4040",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1268621827469335",
+       "categoryName": "4080",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1238799501208185",
+       "categoryName": "8080",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1309460154268839",
+       "categoryName": "40120",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1421446489789053",
+       "categoryName": "40160",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1235998316414581",
+       "categoryName": "40200",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1272410437269455",
+       "categoryName": "80160",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    },
+    {
+     "bizKey": "1415751890088837",
+     "categoryName": "国标40系列 槽宽8",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1503417500153408",
+       "categoryName": "4040",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1635619891569796",
+       "categoryName": "4080",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1365033947478740",
+       "categoryName": "8080",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    },
+    {
+     "bizKey": "1677361149398865",
+     "categoryName": "欧标40系列 槽宽10",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1195380589313830",
+       "categoryName": "4040",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1433539023806694",
+       "categoryName": "4080",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1549048325881617",
+       "categoryName": "8080",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1255887624280553",
+       "categoryName": "4060",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bizKey": "1444616493657710",
+   "categoryName": "45系列",
+   "productBizKeys": null,
+   "children": [
+    {
+     "bizKey": "1308401912629824",
+     "categoryName": "欧标45系列 槽宽10",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1234102183919984",
+       "categoryName": "4545",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1284752201274791",
+       "categoryName": "4590",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1574278103621984",
+       "categoryName": "9090",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bizKey": "1510003926587769",
+   "categoryName": "50系列",
+   "productBizKeys": null,
+   "children": [
+    {
+     "bizKey": "1569077470574990",
+     "categoryName": "欧标50系列 槽宽10",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1677628338537387",
+       "categoryName": "5050",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1663474814821522",
+       "categoryName": "50100",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1592476983325334",
+       "categoryName": "100100",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bizKey": "1311666995649703",
+   "categoryName": "62系列",
+   "productBizKeys": null,
+   "children": [
+    {
+     "bizKey": "1133435316524050",
+     "categoryName": "国标62系列  槽宽9",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1631163381790714",
+       "categoryName": "6262",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "bizKey": "1223816823210103",
+   "categoryName": "特殊型材",
+   "productBizKeys": null,
+   "children": [
+    {
+     "bizKey": "1387875232143300",
+     "categoryName": "通用10系列",
+     "productBizKeys": null,
+     "children": [
+      {
+       "bizKey": "1471115396633617",
+       "categoryName": "1020",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1340572629316268",
+       "categoryName": "1020M",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1684251837676146",
+       "categoryName": "1030",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1586667849436067",
+       "categoryName": "1050",
+       "productBizKeys": null,
+       "children": null
+      },
+      {
+       "bizKey": "1445905149827956",
+       "categoryName": "8516",
+       "productBizKeys": null,
+       "children": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

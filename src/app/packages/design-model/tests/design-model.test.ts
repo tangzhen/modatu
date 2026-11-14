@@ -207,6 +207,34 @@ describe('design-model 知识库引用校验', () => {
     expect(result.catalog.ok).toBe(true);
     expect(result.design?.profiles).toHaveLength(3);
   });
+
+  it('finishId：快照含颜色条目时校验存在且启用；省略 finishes 则跳过', () => {
+    const withFinish: CatalogSnapshot = {
+      ...buildSeedCatalog(),
+      finishes: [
+        { id: 'finish-black', code: 'black', name: '黑色', colorHex: '#2b2e33', enabled: true, updatedAt: '2026-01-01T00:00:00.000Z' },
+        { id: 'finish-off', code: 'off', name: '停用色', colorHex: '#000', enabled: false, updatedAt: '2026-01-01T00:00:00.000Z' },
+      ],
+    };
+    const good = frameDesign();
+    good.profiles[0]!.finishId = 'finish-black';
+    expect(validateAgainstCatalog(good, withFinish).ok).toBe(true);
+
+    const missing = frameDesign();
+    missing.profiles[0]!.finishId = 'finish-nope';
+    const r1 = validateAgainstCatalog(missing, withFinish);
+    expect(r1.ok).toBe(false);
+    expect(r1.issues[0]?.path).toContain('finishId');
+
+    const disabled = frameDesign();
+    disabled.profiles[0]!.finishId = 'finish-off';
+    expect(validateAgainstCatalog(disabled, withFinish).ok).toBe(false);
+
+    // 旧快照（无 finishes 字段）：finishId 引用不做存在性校验
+    const legacy = frameDesign();
+    legacy.profiles[0]!.finishId = 'finish-black';
+    expect(validateAgainstCatalog(legacy, catalog).ok).toBe(true);
+  });
 });
 
 describe('design-model diff', () => {

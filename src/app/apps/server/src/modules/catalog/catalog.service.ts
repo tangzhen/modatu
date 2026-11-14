@@ -6,6 +6,7 @@ import {
   CompatibilityEntity,
   ConnectorEntity,
   PanelMaterialEntity,
+  ProfileFinishEntity,
   ProfileSpecEntity,
   SafetyRuleEntity,
 } from '../../db/entities/catalog.entity';
@@ -25,17 +26,21 @@ export class CatalogService {
     @InjectRepository(PanelMaterialEntity)
     private readonly panelMaterials: Repository<PanelMaterialEntity>,
     @InjectRepository(SafetyRuleEntity) private readonly safetyRules: Repository<SafetyRuleEntity>,
+    @InjectRepository(ProfileFinishEntity)
+    private readonly finishes: Repository<ProfileFinishEntity>,
   ) {}
 
   /** 启用条目快照：只读接口、引用校验、BOM、AI prompt 共用（spec-01 开发者故事 13）。 */
   async snapshot(): Promise<CatalogSnapshot> {
-    const [profiles, connectors, compatibilities, panelMaterials, safetyRules] = await Promise.all([
-      this.profiles.find({ where: { enabled: true }, order: { code: 'ASC' } }),
-      this.connectors.find({ where: { enabled: true }, order: { name: 'ASC' } }),
-      this.compatibilities.find({ order: { profileCodeA: 'ASC', profileCodeB: 'ASC' } }),
-      this.panelMaterials.find({ where: { enabled: true }, order: { name: 'ASC' } }),
-      this.safetyRules.find({ where: { enabled: true }, order: { id: 'ASC' } }),
-    ]);
+    const [profiles, connectors, compatibilities, panelMaterials, safetyRules, finishes] =
+      await Promise.all([
+        this.profiles.find({ where: { enabled: true }, order: { code: 'ASC' } }),
+        this.connectors.find({ where: { enabled: true }, order: { name: 'ASC' } }),
+        this.compatibilities.find({ order: { profileCodeA: 'ASC', profileCodeB: 'ASC' } }),
+        this.panelMaterials.find({ where: { enabled: true }, order: { name: 'ASC' } }),
+        this.safetyRules.find({ where: { enabled: true }, order: { id: 'ASC' } }),
+        this.finishes.find({ where: { enabled: true }, order: { id: 'ASC' } }),
+      ]);
     return {
       profiles: profiles.map(toProfileSpec),
       connectors: connectors.map(toConnector),
@@ -48,6 +53,7 @@ export class CatalogService {
       ),
       panelMaterials: panelMaterials.map(toPanelMaterial),
       safetyRules: safetyRules.map(toSafetyRule),
+      finishes: finishes.map(toFinish),
     };
   }
 
@@ -56,7 +62,10 @@ export class CatalogService {
   adminListProfiles(q?: string) {
     const qb = this.profiles.createQueryBuilder('p').orderBy('p.code', 'ASC');
     if (q) qb.where('LOWER(p.code) LIKE LOWER(:q) OR LOWER(p.series) LIKE LOWER(:q)', { q: `%${q}%` });
-    return qb.getMany();
+    return qb.getMany().then((rows) =>
+      // 原文件存档体积大（≤2MB），列表不下发（编辑表单重新上传即可覆盖）
+      rows.map((r) => ({ ...r, crossSectionSource: undefined })),
+    );
   }
 
   adminListConnectors(q?: string) {
@@ -87,7 +96,11 @@ export class CatalogService {
         ? ((await this.profiles.findOne({ where: { id: dto.id } })) ??
           (await this.profiles.create({ id: dto.id })))
         : this.profiles.create({ id: newId('ps') });
-    Object.assign(entity, { ...dto, loadRatings: cleanLoadRatings(dto.loadRatings) });
+    const { crossSection, crossSectionSource, ...rest } = dto;
+    Object.assign(entity, { ...rest, loadRatings: cleanLoadRatings(dto.loadRatings) });
+    // undefined = 不改动；null = 清空
+    if (crossSection !== undefined) entity.crossSection = crossSection ?? null;
+    if (crossSectionSource !== undefined) entity.crossSectionSource = crossSectionSource ?? null;
     return this.profiles.save(entity);
   }
 
@@ -209,6 +222,8 @@ export interface ProfileUpsert {
   minCutLength: number;
   maxCutLength: number;
   loadRatings: LoadRating[];
+  crossSection?: import('@modatu/catalog').ProfileCrossSection | null;
+  crossSectionSource?: import('@modatu/catalog').CrossSectionSource | null;
   enabled?: boolean;
 }
 
@@ -247,7 +262,7 @@ function cleanLoadRatings(ratings: LoadRating[]): LoadRating[] {
   return (ratings ?? []).filter((r) => Number.isFinite(r.span) && Number.isFinite(r.load) && r.span > 0);
 }
 
-/* 实体 → 快照 DTO（updatedAt: Date → ISO 字符串） */
+/* 实体 → 快照 DTO（updatedAt: Date → ISO 字符串；crossSection 下发，source 不下发） */
 function toProfileSpec(e: ProfileSpecEntity): ProfileSpecSnapshot {
   return {
     id: e.id,
@@ -261,6 +276,20 @@ function toProfileSpec(e: ProfileSpecEntity): ProfileSpecSnapshot {
     minCutLength: e.minCutLength,
     maxCutLength: e.maxCutLength,
     loadRatings: e.loadRatings ?? [],
+    pricePerMeter: e.pricePerMeter ?? null,
+    finishPrices: e.finishPrices ?? null,
+    crossSection: e.crossSection ?? undefined,
+    enabled: e.enabled,
+    updatedAt: e.updatedAt?.toISOString() ?? '',
+  };
+}
+
+function toFinish(e: ProfileFinishEntity): import('@modatu/catalog').ProfileFinish {
+  return {
+    id: e.id,
+    code: e.code,
+    name: e.name,
+    colorHex: e.colorHex,
     enabled: e.enabled,
     updatedAt: e.updatedAt?.toISOString() ?? '',
   };

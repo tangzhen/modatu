@@ -1,0 +1,14 @@
+{
+  "name": "木搭图 Modatu · 铝型材家具设计",
+  "short_name": "木搭图",
+  "description": "Web 端铝型材家具设计工具：3D 受约束编辑 → 导出 BOM 清单",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#1a66c2",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

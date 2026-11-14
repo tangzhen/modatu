@@ -178,3 +178,88 @@ describe('受约束编辑器状态层', () => {
     expect(count).toBe(1);
   });
 });
+
+describe('setProfileExtent（3D 调长手柄）', () => {
+  const catalog = buildSeedCatalog();
+
+  it('同时更新长度与位置（一次手势一条撤销记录）', () => {
+    const s = new EditorState(base(), catalog);
+    const ok = s.setProfileExtent('rail-1', 1000.4, { x: 50, y: 0, z: 30.2 });
+    expect(ok.ok).toBe(true);
+    const m = s.getModel();
+    const rail = m.profiles.find((p) => p.id === 'rail-1');
+    expect(rail?.cutLength).toBe(1000.5); // 0.5 对齐
+    expect(rail?.position).toEqual({ x: 50, y: 0, z: 30 });
+    // 单条撤销记录：一次 undo 回到原始状态
+    s.undo();
+    const restored = s.getModel().profiles.find((p) => p.id === 'rail-1');
+    expect(restored?.cutLength).toBe(800);
+    expect(restored?.position).toEqual({ x: 0, y: 0, z: 30 });
+  });
+
+  it('越界长度被拒且模型不变', () => {
+    const s = new EditorState(base(), catalog);
+    const before = s.getModel();
+    const r = s.setProfileExtent('rail-1', 5000, { x: 0, y: 0, z: 30 });
+    expect(r.ok).toBe(false);
+    expect(r.reason).toContain('允许范围');
+    expect(s.getModel()).toEqual(before);
+  });
+
+  it('未知部件被拒', () => {
+    const s = new EditorState(base(), catalog);
+    expect(s.setProfileExtent('nope', 500, { x: 0, y: 0, z: 0 }).ok).toBe(false);
+  });
+});
+
+describe('颜色（finishId）', () => {
+  const catalog = buildSeedCatalog();
+
+  it('setProfileFinish 校验存在性并可撤销', () => {
+    const s = new EditorState(base(), catalogWithFinishes());
+    expect(s.setProfileFinish('rail-1', 'finish-black').ok).toBe(true);
+    expect(s.getModel().profiles.find((p) => p.id === 'rail-1')?.finishId).toBe('finish-black');
+    // 停用颜色被拒
+    expect(s.setProfileFinish('rail-1', 'finish-disabled').ok).toBe(false);
+    expect(s.getModel().profiles.find((p) => p.id === 'rail-1')?.finishId).toBe('finish-black');
+    s.undo();
+    expect(s.getModel().profiles.find((p) => p.id === 'rail-1')?.finishId).toBeUndefined();
+  });
+
+  it('addProfile 缺省取本色，未知颜色被拒', () => {
+    const s = new EditorState(base(), catalogWithFinishes());
+    s.addProfile({ specCode: '3030', cutLength: 500, position: { x: 0, y: 0, z: 0 }, orientation: 'x' });
+    expect(s.getModel().profiles.at(-1)?.finishId).toBe('finish-natural'); // 本色优先
+    const bad = s.addProfile({
+      specCode: '3030',
+      cutLength: 500,
+      position: { x: 0, y: 0, z: 0 },
+      orientation: 'x',
+      finishId: 'finish-nope',
+    });
+    expect(bad.ok).toBe(false);
+    expect(bad.reason).toContain('颜色');
+  });
+
+  it('无颜色条目的目录下引用会被拒绝（存在性按快照判定）', () => {
+    const s = new EditorState(base(), catalog);
+    expect(s.setProfileFinish('rail-1', 'finish-black').ok).toBe(false);
+    // schema 接受可选 finishId（旧设计兼容）
+    const m = s.getModel();
+    m.profiles[0]!.finishId = 'finish-black';
+    expect(() => new EditorState(m, catalog)).not.toThrow();
+  });
+});
+
+/** seed 目录 + 颜色条目（本色/黑色启用、一个停用条目）。 */
+function catalogWithFinishes() {
+  const c = buildSeedCatalog();
+  return {
+    ...c,
+    finishes: [
+      { id: 'finish-natural', code: 'natural', name: '本色（喷砂氧化）', colorHex: '#b9c1c9', enabled: true, updatedAt: '2026-01-01T00:00:00.000Z' },
+      { id: 'finish-black', code: 'black', name: '黑色（喷砂氧化）', colorHex: '#2b2e33', enabled: true, updatedAt: '2026-01-01T00:00:00.000Z' },
+      { id: 'finish-disabled', code: 'disabled', name: '停用色', colorHex: '#000000', enabled: false, updatedAt: '2026-01-01T00:00:00.000Z' },
+    ],
+  };
+}

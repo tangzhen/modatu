@@ -1,4 +1,5 @@
 import type { CatalogSnapshot } from '@modatu/catalog';
+import { findFinish } from '@modatu/catalog';
 import {
   diffModels,
   parseDesign,
@@ -34,6 +35,8 @@ export interface ProfileInput {
   cutLength: number;
   position: Vec3;
   orientation: Axis;
+  /** 颜色（知识库 ProfileFinish.id）；缺省用知识库中的本色/首个启用颜色 */
+  finishId?: string;
 }
 
 export interface PanelInput {
@@ -180,18 +183,41 @@ export class EditorState {
         reason: `切割长度 ${cutLength}mm 超出 ${spec.code} 允许范围 [${spec.minCutLength}, ${spec.maxCutLength}]`,
       };
     }
+    const finishId = input.finishId ?? this.defaultFinishId();
+    if (finishId !== undefined && !findFinish(this.catalog, finishId)) {
+      return { ok: false, reason: `颜色 ${finishId} 不存在或已停用` };
+    }
     const part: ProfilePart = {
       id: newPartId('pr'),
       specCode: spec.code,
       cutLength,
       position: this.sanitizePosition(input.position),
       orientation: input.orientation,
+      ...(finishId !== undefined ? { finishId } : {}),
       connections: [],
     };
     this.pushUndo();
     this.model.profiles.push(part);
     this.commit(`添加型材 ${spec.code} @ ${cutLength}mm`);
     return { ok: true };
+  }
+
+  /** 更换型材颜色：颜色条目必须存在且启用。 */
+  setProfileFinish(id: string, finishId: string): OpResult {
+    const part = this.model.profiles.find((p) => p.id === id);
+    if (!part) return { ok: false, reason: '部件不存在' };
+    const finish = findFinish(this.catalog, finishId);
+    if (!finish) return { ok: false, reason: `颜色 ${finishId} 不存在或已停用` };
+    this.pushUndo();
+    part.finishId = finish.id;
+    this.commit(`颜色改为「${finish.name}」`);
+    return { ok: true };
+  }
+
+  /** 默认颜色：优先本色代号，其次知识库首个启用颜色。 */
+  private defaultFinishId(): string | undefined {
+    const finishes = this.catalog.finishes ?? [];
+    return finishes.find((f) => f.code === 'natural')?.id ?? finishes[0]?.id;
   }
 
   removeProfile(id: string): OpResult {
@@ -232,6 +258,27 @@ export class EditorState {
     this.pushUndo();
     part.cutLength = length;
     this.commit(`调整切割长度为 ${length}mm`);
+    return { ok: true };
+  }
+
+  /** 3D 调长手柄/快捷键：一次手势同时更新切割长度与位置（保持另一端锚定），单条撤销记录。 */
+  setProfileExtent(id: string, cutLength: number, position: Vec3): OpResult {
+    const part = this.model.profiles.find((p) => p.id === id);
+    if (!part) return { ok: false, reason: '部件不存在' };
+    const spec = this.catalog.profiles.find((p) => p.code === part.specCode && p.enabled);
+    if (!spec) return { ok: false, reason: `规格 ${part.specCode} 不存在或已停用` };
+    const length = snapToHalfMm(cutLength);
+    if (length <= 0) return { ok: false, reason: '切割长度必须为正数' };
+    if (length < spec.minCutLength || length > spec.maxCutLength) {
+      return {
+        ok: false,
+        reason: `切割长度 ${length}mm 超出 ${spec.code} 允许范围 [${spec.minCutLength}, ${spec.maxCutLength}]`,
+      };
+    }
+    this.pushUndo();
+    part.cutLength = length;
+    part.position = this.sanitizePosition(position);
+    this.commit(`调整型材 ${id} 为 ${length}mm`);
     return { ok: true };
   }
 

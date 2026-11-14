@@ -8,6 +8,29 @@ import { CatalogService } from './catalog.service';
 
 const loadRatingSchema = z.object({ span: z.number().positive(), load: z.number().nonnegative() });
 
+/** 归一化截面环（渲染器无关；mm、中心原点） */
+const crossSectionLoopSchema = z.object({
+  role: z.enum(['outer', 'hole']),
+  points: z.array(z.tuple([z.number(), z.number()])).min(3).max(20000),
+});
+const crossSectionSchema = z
+  .object({
+    version: z.literal(1),
+    unit: z.literal('mm'),
+    origin: z.literal('center'),
+    loops: z.array(crossSectionLoopSchema).min(1).max(64),
+  })
+  .superRefine((v, ctx) => {
+    const outers = v.loops.filter((l) => l.role === 'outer').length;
+    if (outers !== 1) {
+      ctx.addIssue({ code: z.ZodIssueCode.custom, message: '截面必须有且仅有 1 条 outer 轮廓' });
+    }
+  });
+const crossSectionSourceSchema = z.object({
+  format: z.enum(['dxf', 'svg']),
+  content: z.string().max(2_000_000),
+});
+
 const profileUpsertSchema = z.object({
   id: z.string().optional(),
   code: z.string().regex(/^[0-9]{3,5}$/, '规格代号须为数字（如 3030）'),
@@ -20,6 +43,8 @@ const profileUpsertSchema = z.object({
   minCutLength: z.number().positive(),
   maxCutLength: z.number().positive(),
   loadRatings: z.array(loadRatingSchema).default([]),
+  crossSection: crossSectionSchema.nullable().optional(),
+  crossSectionSource: crossSectionSourceSchema.nullable().optional(),
   enabled: z.boolean().default(true),
 });
 

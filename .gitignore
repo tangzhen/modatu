@@ -1,3 +1,9 @@
 node_modules/
 dist/
 *.tsbuildinfo
+.zcode
+
+# 嘉立创采集/验收临时产物（原始数据已归档到 src/app/materials，见其 README）
+.jlc-scratch/
+gui-test-screenshots/
+*.log

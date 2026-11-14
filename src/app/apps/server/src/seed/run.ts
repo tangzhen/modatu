@@ -13,6 +13,7 @@ import {
   SafetyRuleEntity,
 } from '../db/entities/catalog.entity';
 import { UserEntity } from '../db/entities/user.entity';
+import { seedMaterials } from './materials';
 
 /**
  * 初始化种子：首个管理员 + 初始知识库（spec-01 初始录入清单）。
@@ -30,6 +31,7 @@ async function run(): Promise<void> {
   try {
     await seedAdmin(dataSource);
     await seedCatalog(dataSource);
+    await seedMaterials(dataSource);
     console.log('Seed 完成。');
   } finally {
     await dataSource.destroy();
@@ -63,7 +65,15 @@ async function seedCatalog(dataSource: DataSource): Promise<void> {
 
   const profileRepo = dataSource.getRepository(ProfileSpecEntity);
   for (const p of seed.profiles) {
-    if (await profileRepo.findOne({ where: { code: p.code } })) continue;
+    const existing = await profileRepo.findOne({ where: { code: p.code } });
+    if (existing) {
+      // 回填：旧库已存在的规格若无截面数据，补上种子截面（不动其他字段）
+      if (!existing.crossSection && p.crossSection) {
+        existing.crossSection = p.crossSection;
+        await profileRepo.save(existing);
+      }
+      continue;
+    }
     await profileRepo.save(profileRepo.create({ ...p, id: p.id || randomUUID() }));
   }
 

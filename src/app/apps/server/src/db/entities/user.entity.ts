@@ -1,4 +1,5 @@
 import { Column, CreateDateColumn, Entity, Index, PrimaryColumn, UpdateDateColumn } from 'typeorm';
+import { PORTABLE_TIMESTAMP } from './portable-types';
 
 @Entity('users')
 export class UserEntity {
@@ -54,7 +55,7 @@ export class SessionEntity {
   @Index()
   userId!: string;
 
-  @Column('datetime')
+  @Column(PORTABLE_TIMESTAMP)
   expiresAt!: Date;
 
   @CreateDateColumn()

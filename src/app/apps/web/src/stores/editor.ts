@@ -6,7 +6,7 @@ import {
   type PanelInput,
   type ProfileInput,
 } from '@modatu/editor-state';
-import { emptyDesign, type DesignModel } from '@modatu/design-model';
+import { emptyDesign, type Axis, type DesignModel } from '@modatu/design-model';
 import type { CatalogSnapshot } from '@modatu/catalog';
 import { EMPTY_CATALOG } from '@modatu/catalog';
 import { api, type DesignDto, ApiError } from '../api';
@@ -24,6 +24,12 @@ export type SaveStatus =
   | { state: 'conflict'; currentVersion: number; message: string }
   | { state: 'error'; message: string };
 
+/** CAD 式放置模式：选中规格后 3D 视口内鼠标跟随 ghost，拖拽放置创建。 */
+export interface PlacementState {
+  specCode: string;
+  orientation: Axis;
+}
+
 interface EditorStore {
   /** 云端设计 id（游客模式为 null） */
   designId: string | null;
@@ -34,16 +40,25 @@ interface EditorStore {
   lastOpMessage: string | null;
   saveStatus: SaveStatus;
   dirty: boolean;
+  /** ghost 放置模式（null = 关闭） */
+  placement: PlacementState | null;
 
   /** 初始化（打开云端设计或游客空模型） */
   open: (designId: string | null) => Promise<void>;
   setCatalog: (catalog: CatalogSnapshot) => void;
   select: (id: string | null) => void;
 
+  startPlacement: (specCode: string, orientation?: Axis) => void;
+  setPlacementOrientation: (orientation: Axis) => void;
+  cancelPlacement: () => void;
+
   addProfile: (input: ProfileInput) => OpResult;
   removeProfile: (id: string) => OpResult;
   moveProfile: (id: string, position: { x: number; y: number; z: number }) => OpResult;
   resizeProfile: (id: string, cutLength: number) => OpResult;
+  /** 3D 手柄/快捷键：调长 + 锚定另一端（一次手势一条撤销） */
+  setProfileExtent: (id: string, cutLength: number, position: { x: number; y: number; z: number }) => OpResult;
+  setProfileFinish: (id: string, finishId: string) => OpResult;
   changeSpec: (id: string, specCode: string) => OpResult;
   addConnection: (profileId: string, connectorId: string, targetPartId: string) => OpResult;
   removeConnection: (profileId: string, connectorId: string, targetPartId: string) => OpResult;
@@ -68,6 +83,13 @@ interface EditorStore {
 const SAVE_DEBOUNCE_MS = 1200;
 
 let saveTimer: ReturnType<typeof setTimeout> | null = null;
+
+/**
+ * 最近一次已知的服务端版本号（乐观锁 baseVersion 的真实来源）。
+ * 修复：scheduleSave 会把 saveStatus 覆写成 idle，若从 saveStatus 读版本，
+ * 第二次自动保存将永远以 baseVersion=1 提交而必然冲突。
+ */
+let lastServerVersion = 1;
 
 export const useEditor = create<EditorStore>((set, get) => {
   function applyOp(op: () => OpResult): OpResult {
@@ -99,9 +121,10 @@ export const useEditor = create<EditorStore>((set, get) => {
     lastOpMessage: null,
     saveStatus: { state: 'guest' },
     dirty: false,
+    placement: null,
 
     open: async (designId) => {
-      const catalog = await api<CatalogSnapshot>('/catalog/all').catch(() => EMPTY_CATALOG);
+      const catalog = await api<CatalogSnapshot>('/catalog').catch(() => EMPTY_CATALOG);
       let model = emptyDesign();
       let version: number | undefined;
       if (designId) {
@@ -109,6 +132,7 @@ export const useEditor = create<EditorStore>((set, get) => {
         model = design.model;
         version = design.version;
       }
+      lastServerVersion = version ?? 1;
       const editor = new EditorState(model, catalog);
       set({
         designId,
@@ -128,10 +152,20 @@ export const useEditor = create<EditorStore>((set, get) => {
 
     select: (id) => set({ selectedId: id }),
 
+    startPlacement: (specCode, orientation = 'y') => set({ placement: { specCode, orientation } }),
+    setPlacementOrientation: (orientation) => {
+      const p = get().placement;
+      if (p) set({ placement: { ...p, orientation } });
+    },
+    cancelPlacement: () => set({ placement: null }),
+
     addProfile: (input) => applyOp(() => get().editor!.addProfile(input)),
     removeProfile: (id) => applyOp(() => get().editor!.removeProfile(id)),
     moveProfile: (id, position) => applyOp(() => get().editor!.moveProfile(id, position)),
     resizeProfile: (id, cutLength) => applyOp(() => get().editor!.resizeProfile(id, cutLength)),
+    setProfileExtent: (id, cutLength, position) =>
+      applyOp(() => get().editor!.setProfileExtent(id, cutLength, position)),
+    setProfileFinish: (id, finishId) => applyOp(() => get().editor!.setProfileFinish(id, finishId)),
     changeSpec: (id, specCode) => applyOp(() => get().editor!.changeSpec(id, specCode)),
     addConnection: (profileId, connectorId, targetPartId) =>
       applyOp(() => get().editor!.addConnection(profileId, connectorId, targetPartId)),
@@ -159,9 +193,9 @@ export const useEditor = create<EditorStore>((set, get) => {
       applyOp(() => get().editor!.replaceModel(model, description)),
 
     save: async () => {
-      const { designId, editor, model, saveStatus } = get();
+      const { designId, editor, model } = get();
       if (!designId || !editor) return;
-      const baseVersion = saveStatus.state === 'saved' ? saveStatus.version : 1;
+      const baseVersion = lastServerVersion;
       set({ saveStatus: { state: 'saving' } });
       try {
         const summary = editor.describeLastChange() || '手动编辑';
@@ -169,13 +203,16 @@ export const useEditor = create<EditorStore>((set, get) => {
           `/designs/${designId}/model`,
           { method: 'PUT', body: { model, baseVersion, summary } },
         );
+        lastServerVersion = result.version;
         set({ saveStatus: { state: 'saved', version: result.version }, dirty: false });
       } catch (err) {
         if (err instanceof ApiError && err.code === 'VERSION_CONFLICT') {
+          const currentVersion = (err.body?.['currentVersion'] as number) ?? lastServerVersion;
+          lastServerVersion = currentVersion;
           set({
             saveStatus: {
               state: 'conflict',
-              currentVersion: (err.body?.['currentVersion'] as number) ?? 0,
+              currentVersion,
               message: err.message,
             },
           });
@@ -195,6 +232,7 @@ export const useEditor = create<EditorStore>((set, get) => {
       const { designId } = get();
       if (!designId) return;
       const design = await api<DesignDto>(`/designs/${designId}`);
+      lastServerVersion = design.version;
       const editor = new EditorState(design.model, get().catalog);
       set({
         editor,

@@ -24,12 +24,17 @@ export function EditorPage() {
     selectedId,
     moveProfile,
     movePanel,
+    setProfileExtent,
     undo,
     redo,
     editor,
     saveStatus,
     lastOpMessage,
     reloadServerModel,
+    placement,
+    startPlacement,
+    cancelPlacement,
+    addProfile,
   } = useEditor();
 
   const [modal, setModal] = useState<'bom' | 'versions' | 'ai' | null>(null);
@@ -99,10 +104,11 @@ export function EditorPage() {
           </strong>
         )}
         <span className="spacer" />
-        <button onClick={() => editor?.undo()} disabled={!editor?.canUndo()} title="撤销">
+        {saveState()}
+        <button onClick={() => undo()} disabled={!editor?.canUndo()} title="撤销">
           ↩ 撤销
         </button>
-        <button onClick={() => editor?.redo()} disabled={!editor?.canRedo()} title="重做">
+        <button onClick={() => redo()} disabled={!editor?.canRedo()} title="重做">
           ↪ 重做
         </button>
         <button onClick={() => setModal('versions')} data-testid="open-versions">
@@ -150,14 +156,23 @@ export function EditorPage() {
               catalog={catalog}
               selectedId={selectedId}
               onSelect={(pid) => select(pid)}
-              onDrag={(pid, x, z) => {
+              onMove={(pid, position) => {
                 const profile = model.profiles.find((p) => p.id === pid);
-                const panel = model.panels.find((p) => p.id === pid);
-                if (profile) moveProfile(pid, { x, y: profile.position.y, z });
-                else if (panel) movePanel(pid, { x, y: panel.position.y, z });
+                if (profile) moveProfile(pid, position);
+                else movePanel(pid, position);
               }}
+              onResize={(pid, cutLength, position) => setProfileExtent(pid, cutLength, position)}
+              placement={placement}
+              onPlaceProfile={({ specCode, orientation, cutLength, position }) => {
+                addProfile({ specCode, cutLength, position, orientation });
+              }}
+              onCancelPlacement={() => cancelPlacement()}
             />
-            <p className="hint viewer-hint">拖动旋转视角 · 滚轮缩放 · 点击选择部件 · 按住拖动沿地面移动（10mm 吸附）</p>
+            <p className="hint viewer-hint">
+              左侧选规格进入放置：鼠标跟随 ghost，按住拖拽定长松手创建（10mm 步进，Shift 丝滑 1mm，Esc 退出） ·
+              点击选中部件 · 拖动沿地面移动（Shift+拖动调高度） ·
+              选中型材拖端部箭头或 [ ] 调长 · 方向键移动 · PageUp/Down 调高度
+            </p>
           </div>
           <PropertiesPanel />
         </div>

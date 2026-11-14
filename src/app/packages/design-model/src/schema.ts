@@ -38,6 +38,8 @@ export interface ProfilePart {
   position: Vec3;
   /** 型材延伸轴 */
   orientation: Axis;
+  /** 颜色（知识库 ProfileFinish.id），可空 = 默认本色；旧设计兼容字段 */
+  finishId?: string;
   connections: Connection[];
 }
 
@@ -123,6 +125,7 @@ const profileSchema = z.object({
   cutLength: positiveHalfMm,
   position: vec3Schema,
   orientation: z.enum(AXES),
+  finishId: z.string().min(1).max(64).optional(),
   connections: z.array(connectionSchema).max(32).default([]),
 });
 

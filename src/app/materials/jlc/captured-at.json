@@ -1,0 +1,21 @@
+{
+ "source": "JLC FA Profile Designer (https://xc.jlcfa.com/free-design)",
+ "capturedAt": "2026-11-14T11:41:32",
+ "note": "原始厂家文件与 API 事实归档，仅供参考与 seed 导入。签名 OSS URL 已剥除（未存档）。贴图 PNG（受版权保护的渲染资产）未复制。",
+ "endpoints": [
+  "POST /api/fa-platform/profile/free-designer/product/section-list {catalogBizKeys,pageNum,pageSize,searchWord,sortColumn:3} -> data.list/total（产品+materials 颜色/米重/米价）",
+  "GET /api/fa-platform/profile/free-designer/tree?catalogType=2 -> 型材目录树（系列/槽宽/规格）",
+  "POST /api/fa-platform/profile/cad/section {bizKeys,profileProductModels} -> 截面记录（w/h/dxfFile/jsonFile/materials）",
+  "POST /api/fa-platform/profile/cad/texture {bizKeys} -> 颜色资产（ productName 如 本色(喷砂氧化)）"
+ ],
+ "auth": "匿名会话 + XSRF-TOKEN 头（cookie XSRF-TOKEN 回传）",
+ "counts": {
+  "products": 151,
+  "sections": 151
+ },
+ "layout": {
+  "api/": "原始 API 响应归档（签名已剥除）",
+  "profiles/<MODEL>/<MODEL>.dxf": "型材截面 DXF（AC1014, mm）",
+  "profiles/<MODEL>/section-config.json": "厂家语义截面配置（面/槽/孔特征描述）"
+ }
+}

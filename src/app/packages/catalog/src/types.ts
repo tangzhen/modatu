@@ -5,6 +5,7 @@
  * 持久化（PostgreSQL）与后台 CRUD 属于 apps/server；前端/AI/BOM
  * 一律通过本包的类型 + 服务端 `GET /catalog/*` 交互。
  */
+import type { CrossSectionSource, ProfileCrossSection } from './cross-section';
 
 /** 承重参考表：跨度（mm）→ 该跨度下推荐的均匀分布承重（kg）。 */
 export interface LoadRating {
@@ -37,6 +38,27 @@ export interface ProfileSpec {
   maxCutLength: number;
   /** 承重参考表（跨度→推荐承重） */
   loadRatings: LoadRating[];
+  /** 基准米价（元/米，未税；对应本色），采集自厂家公开数据，可空 = 未采集 */
+  pricePerMeter?: number | null;
+  /** 各颜色米价（元/米，未税），key = ProfileFinish.id，可空 = 未采集 */
+  finishPrices?: Record<string, number> | null;
+  enabled: boolean;
+  updatedAt: string;
+  /** 精确截面（归一化多边形环，渲染器无关）。缺省时渲染层用参数化近似截面。 */
+  crossSection?: ProfileCrossSection;
+  /** 截面来源存档（后台导入的原文件，审计/重推导用；公共只读接口不下发） */
+  crossSectionSource?: CrossSectionSource;
+}
+
+/** 型材颜色（表面处理）知识库条目：id 供设计模型 finishId 引用，colorHex 为 Modatu 自选的代表性渲染色。 */
+export interface ProfileFinish {
+  id: string;
+  /** 稳定代号（ASCII），如 `natural` / `black` / `white` / `wood` */
+  code: string;
+  /** 显示名，如 `本色（喷砂氧化）` */
+  name: string;
+  /** 代表性渲染色（hex），非厂家贴图 */
+  colorHex: string;
   enabled: boolean;
   updatedAt: string;
 }
@@ -107,6 +129,8 @@ export interface CatalogSnapshot {
   compatibilities: Compatibility[];
   panelMaterials: PanelMaterial[];
   safetyRules: SafetyRule[];
+  /** 型材颜色条目（服务端总是下发；测试夹具可省略，此时 finishId 引用不做存在性校验） */
+  finishes?: ProfileFinish[];
 }
 
 export const EMPTY_CATALOG: CatalogSnapshot = {
@@ -135,6 +159,20 @@ export function findPanelMaterial(catalog: CatalogSnapshot, id: string): PanelMa
 /** 查连接件（仅启用）。 */
 export function findConnector(catalog: CatalogSnapshot, id: string): Connector | undefined {
   return catalog.connectors.find((c) => c.id === id && c.enabled);
+}
+
+/** 查型材颜色（仅启用）。 */
+export function findFinish(catalog: CatalogSnapshot, id: string): ProfileFinish | undefined {
+  return catalog.finishes?.find((f) => f.id === id && f.enabled);
+}
+
+/** 型材米价：按颜色的价 → 基准价 → 未采集。 */
+export function profilePricePerMeter(spec: ProfileSpec | undefined, finishId?: string): number | null {
+  if (!spec) return null;
+  if (finishId && spec.finishPrices && spec.finishPrices[finishId] !== undefined) {
+    return spec.finishPrices[finishId] ?? null;
+  }
+  return spec.pricePerMeter ?? null;
 }
 
 /**

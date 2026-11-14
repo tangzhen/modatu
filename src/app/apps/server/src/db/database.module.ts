@@ -5,6 +5,7 @@ import {
   CompatibilityEntity,
   ConnectorEntity,
   PanelMaterialEntity,
+  ProfileFinishEntity,
   ProfileSpecEntity,
   SafetyRuleEntity,
 } from './entities/catalog.entity';
@@ -20,6 +21,7 @@ export const ENTITIES = [
   CompatibilityEntity,
   PanelMaterialEntity,
   SafetyRuleEntity,
+  ProfileFinishEntity,
   DesignEntity,
   DesignVersionEntity,
 ];

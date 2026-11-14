@@ -1,11 +1,23 @@
 import { useMemo } from 'react';
 import { useEditor } from '../stores/editor';
 import { evaluateSafetyRules } from '@modatu/safety-rules';
+import { findFinish, profilePricePerMeter } from '@modatu/catalog';
 
-/** 右侧属性面板：选中部件的受约束表单编辑 + 规则化安全提示（spec-04）。 */
+/** 右侧属性面板：选中部件的受约束表单编辑 + 颜色属性 + 规则化安全提示（spec-04）。 */
 export function PropertiesPanel() {
-  const { model, catalog, selectedId, resizeProfile, changeSpec, resizePanel, setPanelMaterial, removeProfile, removePanel, removeConnection } =
-    useEditor();
+  const {
+    model,
+    catalog,
+    selectedId,
+    resizeProfile,
+    changeSpec,
+    setProfileFinish,
+    resizePanel,
+    setPanelMaterial,
+    removeProfile,
+    removePanel,
+    removeConnection,
+  } = useEditor();
 
   const selectedProfile = model.profiles.find((p) => p.id === selectedId) ?? null;
   const selectedPanel = model.panels.find((p) => p.id === selectedId) ?? null;
@@ -57,6 +69,39 @@ export function PropertiesPanel() {
               允许范围 [{spec.minCutLength}, {spec.maxCutLength}] mm
             </p>
           )}
+          {catalog.finishes && catalog.finishes.length > 0 && (
+            <div className="finish-row" data-testid="finish-row">
+              <span className="hint">颜色</span>
+              <div className="finish-swatches">
+                {catalog.finishes.map((f) => {
+                  const active = (selectedProfile.finishId ?? 'finish-natural') === f.id;
+                  const price = profilePricePerMeter(spec, f.id);
+                  return (
+                    <button
+                      key={f.id}
+                      data-testid={`finish-${f.code}`}
+                      className={`finish-swatch${active ? ' active' : ''}`}
+                      title={`${f.name}${price !== null ? ` · ¥${price}/米` : ''}`}
+                      onClick={() => setProfileFinish(selectedProfile.id, f.id)}
+                    >
+                      <span className="finish-chip" style={{ background: f.colorHex }} />
+                      {f.name}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+          {(() => {
+            const finish = selectedProfile.finishId ? findFinish(catalog, selectedProfile.finishId) : undefined;
+            const price = profilePricePerMeter(spec, selectedProfile.finishId);
+            return (
+              <p className="hint" data-testid="price-hint">
+                {finish ? `颜色：${finish.name}` : ''}
+                {price !== null ? `${finish ? ' · ' : ''}¥${price}/米（未税参考价）` : ''}
+              </p>
+            );
+          })()}
 
           <h4>连接（{selectedProfile.connections.length}）</h4>
           {selectedProfile.connections.length === 0 && <p className="muted">无连接</p>}

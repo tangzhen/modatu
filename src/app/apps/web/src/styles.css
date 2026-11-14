@@ -348,3 +348,104 @@ a {
   text-align: center;
   color: #8a949e;
 }
+
+/* ---------------------- 规格网格视图（CAD 式放置选择） ---------------------- */
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin: 6px 0 10px;
+}
+.spec-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 4px;
+  border: 1px solid #dde3ea;
+  border-radius: 8px;
+  background: #fafbfc;
+  cursor: pointer;
+  text-align: center;
+  color: #2b3540;
+}
+.spec-card:hover {
+  border-color: #2f6fed;
+  background: #f0f5fd;
+}
+.spec-card.active {
+  border-color: #2f6fed;
+  background: #e8f0fe;
+  box-shadow: 0 0 0 1px #2f6fed inset;
+}
+.spec-card .spec-thumb {
+  width: 100%;
+  height: 44px;
+  color: #55606b;
+}
+.spec-card.active .spec-thumb {
+  color: #1a66c2;
+}
+.spec-card strong {
+  font-size: 13px;
+}
+.spec-card .hint {
+  font-size: 11px;
+  color: #8a949e;
+}
+
+.placement-bar {
+  border: 1px solid #bcd2f5;
+  background: #f0f5fd;
+  border-radius: 8px;
+  padding: 8px;
+}
+.placement-bar .row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.placement-bar button.primary {
+  background: #1a66c2;
+  color: #fff;
+  border-color: #1a66c2;
+}
+
+/* ---------------------- 颜色属性（右侧栏） ---------------------- */
+.finish-row {
+  margin: 6px 0;
+}
+.finish-swatches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: 4px;
+}
+.finish-swatch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  font-size: 12px;
+  border: 1px solid #dde3ea;
+  border-radius: 6px;
+  background: #fafbfc;
+  cursor: pointer;
+  color: #2b3540;
+  text-align: left;
+}
+.finish-swatch:hover {
+  border-color: #2f6fed;
+}
+.finish-swatch.active {
+  border-color: #2f6fed;
+  background: #e8f0fe;
+  box-shadow: 0 0 0 1px #2f6fed inset;
+}
+.finish-chip {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  flex: none;
+}

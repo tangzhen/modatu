@@ -1,6 +1,7 @@
 import {
   findCompatibilities,
   findConnector,
+  findFinish,
   findPanelMaterial,
   findProfile,
   type CatalogSnapshot,
@@ -58,6 +59,13 @@ export function validateAgainstCatalog(
           message: `规格 ${p.specCode} 与 ${target.specCode} 之间没有可用的兼容连接件`,
         });
       }
+    }
+    // 颜色引用：知识库含颜色条目时校验存在且启用（旧快照无 finishes 字段则跳过）
+    if (p.finishId !== undefined && catalog.finishes && !findFinish(catalog, p.finishId)) {
+      issues.push({
+        path: `profiles.${p.id}.finishId`,
+        message: `颜色 ${p.finishId} 不存在或已停用`,
+      });
     }
   }
 

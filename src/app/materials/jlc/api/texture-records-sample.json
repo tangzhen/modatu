@@ -1,0 +1,144 @@
+{
+ "success": true,
+ "code": 200,
+ "message": null,
+ "errorCode": null,
+ "data": [
+  {
+   "bizKey": "1375666316970598",
+   "snapshotBizKey": "1416243887811314",
+   "jsonFile": null,
+   "catalog": "铝合金",
+   "classification": "金属",
+   "classificationEnCode": "metal",
+   "tags": null,
+   "productName": "本色(喷砂氧化)",
+   "profileProductModel": "CZ-LHJ-BS",
+   "productDescription": null,
+   "profileStatus": null,
+   "previewImages": [
+    {
+     "fileName": "CZ-LHJ-BS.png",
+     "publicReadFilePath": "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149503161389056-CZ-LHJ-BS.png",
+     "fileAccessId": "8747149503169777664"
+    }
+   ],
+   "textureFile": [
+    {
+     "fileName": "CZ-LHJ-BS.png",
+     "publicReadFilePath": "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8748598536698683392-CZ-LHJ-BS.png",
+     "fileAccessId": "8748598536702877696"
+    }
+   ],
+   "materials": null,
+   "color": "",
+   "colorHex": null,
+   "transparent": false,
+   "opacity": null,
+   "metalness": null,
+   "roughness": null
+  },
+  {
+   "bizKey": "1236793474354756",
+   "snapshotBizKey": "1383412997332235",
+   "jsonFile": null,
+   "catalog": "铝合金",
+   "classification": "金属",
+   "classificationEnCode": "metal",
+   "tags": null,
+   "productName": "黑色(喷砂氧化)",
+   "profileProductModel": "CZ-LHJ-HS",
+   "productDescription": null,
+   "profileStatus": null,
+   "previewImages": [
+    {
+     "fileName": "CZ-LHJ-HS.png",
+     "publicReadFilePath": "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149504240680960-CZ-LHJ-HS.png",
+     "fileAccessId": "8747149504270041088"
+    }
+   ],
+   "textureFile": [
+    {
+     "fileName": "CZ-LHJ-HS.png",
+     "publicReadFilePath": "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8748598538343661568-CZ-LHJ-HS.png",
+     "fileAccessId": "8748598538373021696"
+    }
+   ],
+   "materials": null,
+   "color": "",
+   "colorHex": null,
+   "transparent": false,
+   "opacity": null,
+   "metalness": null,
+   "roughness": null
+  },
+  {
+   "bizKey": "1428676321059605",
+   "snapshotBizKey": "1588526156279488",
+   "jsonFile": null,
+   "catalog": "铝合金",
+   "classification": "金属",
+   "classificationEnCode": "metal",
+   "tags": null,
+   "productName": "原木色(烤漆+转印)",
+   "profileProductModel": "CZ-LHJ-YMS",
+   "productDescription": null,
+   "profileStatus": null,
+   "previewImages": [
+    {
+     "fileName": "CZ-LHJ-YMS.png",
+     "publicReadFilePath": "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149501913247745-CZ-LHJ-YMS.png",
+     "fileAccessId": "8747149501917442048"
+    }
+   ],
+   "textureFile": [
+    {
+     "fileName": "CZ-LHJ-YMS.png",
+     "publicReadFilePath": "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8748598535322275840-CZ-LHJ-YMS.png",
+     "fileAccessId": "8748598535326470144"
+    }
+   ],
+   "materials": null,
+   "color": "",
+   "colorHex": null,
+   "transparent": false,
+   "opacity": null,
+   "metalness": null,
+   "roughness": null
+  },
+  {
+   "bizKey": "1227277954592747",
+   "snapshotBizKey": "1301685593865596",
+   "jsonFile": null,
+   "catalog": "铝合金",
+   "classification": "金属",
+   "classificationEnCode": "metal",
+   "tags": null,
+   "productName": "白色(烤漆)",
+   "profileProductModel": "CZ-LHJ-BAS",
+   "productDescription": null,
+   "profileStatus": null,
+   "previewImages": [
+    {
+     "fileName": "CZ-LHJ-BAS.png",
+     "publicReadFilePath": "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8747149505611808768-CZ-LHJ-BAS.png",
+     "fileAccessId": "8747149505645363200"
+    }
+   ],
+   "textureFile": [
+    {
+     "fileName": "CZ-LHJ-BAS.png",
+     "publicReadFilePath": "https://jlc-prod-fa-mall.oss-cn-shenzhen.aliyuncs.com/fa/profile/8748598539667574784-CZ-LHJ-BAS.png",
+     "fileAccessId": "8748598539675963392"
+    }
+   ],
+   "materials": null,
+   "color": "",
+   "colorHex": "#FFFFFF",
+   "transparent": false,
+   "opacity": null,
+   "metalness": null,
+   "roughness": null
+  }
+ ]
+}

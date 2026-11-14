@@ -2,7 +2,18 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../api';
 import { useAuth } from '../stores/auth';
-import type { ProfileSpec, Connector, Compatibility, PanelMaterial, SafetyRule } from '@modatu/catalog';
+import {
+  buildParametricCrossSection,
+  isValidCrossSection,
+  loopsToSvgPath,
+  type CrossSectionSource,
+  type ProfileCrossSection,
+  type ProfileSpec,
+  type Connector,
+  type Compatibility,
+  type PanelMaterial,
+  type SafetyRule,
+} from '@modatu/catalog';
 
 /**
  * 后台知识库维护（spec-01）：五类实体的增改 + 停用/启用。
@@ -65,9 +76,46 @@ function useAdminApi() {
 
 /* --------------------------------- 型材规格 --------------------------------- */
 
+/** 截面 SVG 预览：优先精确环数据，否则参数化近似 */
+function SectionPreview({
+  spec,
+  size,
+}: {
+  spec: { width?: number; height?: number; slotWidth?: number; crossSection?: ProfileCrossSection | null };
+  size: number;
+}) {
+  const w = Number(spec.width) || 20;
+  const h = Number(spec.height) || 20;
+  const slot = Number(spec.slotWidth) || 6;
+  const section =
+    spec.crossSection && isValidCrossSection(spec.crossSection)
+      ? spec.crossSection
+      : buildParametricCrossSection({ width: w, height: h, slotWidth: slot });
+  const d = loopsToSvgPath(section.loops, true);
+  const pad = Math.max(w, h) * 0.06;
+  const stroke = Math.max(w, h) / 200;
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox={`${-w / 2 - pad} ${-h / 2 - pad} ${w + 2 * pad} ${h + 2 * pad}`}
+      style={{ maxWidth: '100%', verticalAlign: 'middle' }}
+      data-testid="section-preview"
+    >
+      <path d={d} fill="#9aa5b1" fillRule="evenodd" stroke="#5b6770" strokeWidth={stroke} />
+    </svg>
+  );
+}
+
 function ProfilesTab({ onError }: { onError: (m: string) => void }) {
   const { rows, keyword, setKeyword, reload } = useAdminApi();
-  const [draft, setDraft] = useState<Partial<ProfileSpec> & { loadRatingsText?: string }>({
+  const [draft, setDraft] = useState<
+    Omit<Partial<ProfileSpec>, 'crossSection' | 'crossSectionSource'> & {
+      loadRatingsText?: string;
+      crossSection?: ProfileCrossSection | null;
+      crossSectionSource?: CrossSectionSource | null;
+    }
+  >({
     code: '',
     series: '',
     width: 20,
@@ -80,6 +128,8 @@ function ProfilesTab({ onError }: { onError: (m: string) => void }) {
     loadRatingsText: '1000:5, 500:15',
     enabled: true,
   });
+  const [importing, setImporting] = useState(false);
+  const [importNote, setImportNote] = useState<string | null>(null);
 
   useEffect(() => {
     void reload('profiles').catch(onError);
@@ -126,6 +176,7 @@ function ProfilesTab({ onError }: { onError: (m: string) => void }) {
             <th>代号</th>
             <th>系列</th>
             <th>截面</th>
+            <th>截面预览</th>
             <th>槽宽/深</th>
             <th>kg/m</th>
             <th>切割范围</th>
@@ -141,6 +192,9 @@ function ProfilesTab({ onError }: { onError: (m: string) => void }) {
               <td>{r.series}</td>
               <td>
                 {r.width}×{r.height}
+              </td>
+              <td>
+                <SectionPreview spec={r} size={44} />
               </td>
               <td>
                 {r.slotWidth}/{r.slotDepth}
@@ -194,10 +248,76 @@ function ProfilesTab({ onError }: { onError: (m: string) => void }) {
             onChange={(e) => setDraft({ ...draft, loadRatingsText: e.target.value })}
           />
         </label>
+        <div className="row" style={{ alignItems: 'flex-start' }}>
+          <div>
+            <div style={{ marginBottom: 4 }}>截面预览（精确环数据 / 参数化近似）</div>
+            <SectionPreview spec={draft} size={140} />
+            <div className="muted" style={{ fontSize: 12, marginTop: 4 }}>
+              {draft.crossSection ? '已设置精确截面' : '未设置精确截面（渲染用参数化近似）'}
+            </div>
+            <div style={{ marginTop: 6 }}>
+              <label
+                style={{
+                  cursor: importing ? 'wait' : 'pointer',
+                  display: 'inline-block',
+                  padding: '4px 10px',
+                  border: '1px solid #64748b',
+                  borderRadius: 4,
+                  background: '#f1f5f9',
+                }}
+              >
+                {importing ? '解析中…' : '导入截面 DXF/SVG'}
+                <input
+                  type="file"
+                  accept=".dxf,.svg"
+                  style={{ display: 'none' }}
+                  disabled={importing}
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    e.target.value = '';
+                    if (!file) return;
+                    void (async () => {
+                      setImporting(true);
+                      setImportNote(null);
+                      try {
+                        const { importSectionFile } = await import('../lib/import-cross-section');
+                        const result = await importSectionFile(file, {
+                          width: Number(draft.width) || 20,
+                          height: Number(draft.height) || 20,
+                        });
+                        setDraft({ ...draft, crossSection: result.crossSection, crossSectionSource: result.source });
+                        setImportNote(
+                          result.aspectMismatch
+                            ? `已导入，但纵横比与规格 ${draft.width}×${draft.height} 不符——请确认是否导错图纸`
+                            : `已导入 ${result.rawLoopCount} 个环（1 外轮廓 + ${result.rawLoopCount - 1} 孔）`,
+                        );
+                      } catch (err) {
+                        setImportNote(`导入失败：${err instanceof Error ? err.message : String(err)}`);
+                      } finally {
+                        setImporting(false);
+                      }
+                    })();
+                  }}
+                />
+              </label>
+              {draft.crossSection !== undefined && (
+                <button
+                  onClick={() => {
+                    setDraft({ ...draft, crossSection: null, crossSectionSource: null });
+                    setImportNote('将在保存后清除精确截面（回落到参数化近似）');
+                  }}
+                >
+                  清除截面
+                </button>
+              )}
+            </div>
+            {importNote && <p className="hint">{importNote}</p>}
+          </div>
+        </div>
         <div className="row">
           <button onClick={save}>保存</button>
           <button
-            onClick={() =>
+            onClick={() => {
               setDraft({
                 code: '',
                 series: '',
@@ -209,9 +329,12 @@ function ProfilesTab({ onError }: { onError: (m: string) => void }) {
                 minCutLength: 20,
                 maxCutLength: 3000,
                 loadRatingsText: '',
+                crossSection: undefined,
+                crossSectionSource: undefined,
                 enabled: true,
-              })
-            }
+              });
+              setImportNote(null);
+            }}
           >
             清空（新增模式）
           </button>

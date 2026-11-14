@@ -11,3 +11,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     </BrowserRouter>
   </React.StrictMode>,
 );
+
+// PWA：Service Worker 缓存（仅生产构建注册，开发期不干扰 vite 热更新）
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
+  window.addEventListener('load', () => {
+    void navigator.serviceWorker.register('/sw.js').catch(() => {
+      // 注册失败不影响功能（仅无离线缓存）
+    });
+  });
+}

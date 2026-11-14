@@ -1,35 +1,108 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useEditor } from '../stores/editor';
+import { buildParametricCrossSection, loopsToSvgPath, profilePricePerMeter, type ProfileSpec } from '@modatu/catalog';
 
-/** 左侧部件列表 + 添加受约束部件（立柱/横梁/封板）与连接。 */
+/** 截面 SVG 预览（精确 DXF 环，无截面数据时参数化近似），grid view 卡片用。 */
+function SectionThumb({ spec }: { spec: ProfileSpec }) {
+  const d = useMemo(() => {
+    const loops =
+      spec.crossSection && spec.crossSection.loops.length > 0
+        ? spec.crossSection.loops
+        : buildParametricCrossSection({ width: spec.width, height: spec.height, slotWidth: spec.slotWidth }).loops;
+    return loopsToSvgPath(loops, true);
+  }, [spec]);
+  const pad = Math.max(spec.width, spec.height) * 0.08;
+  return (
+    <svg
+      className="spec-thumb"
+      viewBox={`${-spec.width / 2 - pad} ${-spec.height / 2 - pad} ${spec.width + pad * 2} ${spec.height + pad * 2}`}
+      preserveAspectRatio="xMidYMid meet"
+      role="img"
+      aria-label={`${spec.code} 截面`}
+    >
+      <path d={d} fillRule="evenodd" fill="currentColor" stroke="currentColor" strokeWidth={0.4} vectorEffect="non-scaling-stroke" />
+    </svg>
+  );
+}
+
+const ORIENTATIONS = [
+  { value: 'y' as const, label: '立柱 Y' },
+  { value: 'x' as const, label: '沿 X' },
+  { value: 'z' as const, label: '沿 Z' },
+];
+
+/** 左侧部件列表：规格 Grid View 选择 + 3D ghost 放置创建 + 封板/连接。 */
 export function PartsPanel() {
-  const { model, catalog, selectedId, select, addProfile, addPanel, addConnection } = useEditor();
-  const [specCode, setSpecCode] = useState(catalog.profiles[0]?.code ?? '');
+  const {
+    model,
+    catalog,
+    selectedId,
+    select,
+    addPanel,
+    addConnection,
+    placement,
+    startPlacement,
+    setPlacementOrientation,
+    cancelPlacement,
+  } = useEditor();
   const [shelfPos, setShelfPos] = useState(600);
   const [showConnect, setShowConnect] = useState(false);
 
   const selectedProfile = model.profiles.find((p) => p.id === selectedId) ?? null;
 
+  const togglePlacement = (code: string) => {
+    if (placement?.specCode === code) cancelPlacement();
+    else startPlacement(code, placement?.orientation ?? 'y');
+  };
+
   return (
     <aside className="parts" data-testid="parts-panel">
-      <h3>添加部件</h3>
-      <div className="form">
-        <label>
-          规格
-          <select value={specCode} onChange={(e) => setSpecCode(e.target.value)}>
-            {catalog.profiles.map((s) => (
-              <option key={s.code} value={s.code}>
-                {s.code}（{s.width}×{s.height}）
-              </option>
+      <h3>选择规格（点击进入放置）</h3>
+      <div className="spec-grid" data-testid="spec-grid">
+        {catalog.profiles.map((s) => {
+          const price = profilePricePerMeter(s, 'finish-natural');
+          return (
+            <button
+              key={s.code}
+              data-testid={`spec-card-${s.code}`}
+              className={`spec-card${placement?.specCode === s.code ? ' active' : ''}`}
+              onClick={() => togglePlacement(s.code)}
+              title={`${s.series} · 槽宽 ${s.slotWidth}mm${price !== null ? ` · ¥${price}/米` : ''}`}
+            >
+              <SectionThumb spec={s} />
+              <strong>{s.code}</strong>
+              <span className="hint">
+                {s.width}×{s.height} · {s.massPerMeter}kg/m
+                {price !== null ? ` · ¥${price}/米` : ''}
+              </span>
+            </button>
+          );
+        })}
+      </div>
+
+      {placement && (
+        <div className="form placement-bar" data-testid="placement-bar">
+          <p className="hint">
+            放置 <strong>{placement.specCode}</strong>：3D 视图内鼠标跟随 ghost，按住拖拽定长松手创建。
+            默认 10mm 步进，按住 Shift 丝滑 1mm。Esc 退出。
+          </p>
+          <div className="row">
+            {ORIENTATIONS.map((o) => (
+              <button
+                key={o.value}
+                className={placement.orientation === o.value ? 'primary' : ''}
+                onClick={() => setPlacementOrientation(o.value)}
+              >
+                {o.label}
+              </button>
             ))}
-          </select>
-        </label>
-        <button data-testid="add-column" onClick={() => addProfile({ specCode, cutLength: 1500, position: { x: 0, y: 0, z: 0 }, orientation: 'y' })}>
-          + 立柱（竖向型材）
-        </button>
-        <button onClick={() => addProfile({ specCode, cutLength: 800, position: { x: 0, y: 500, z: 0 }, orientation: 'x' })}>
-          + 横梁（水平型材）
-        </button>
+            <button onClick={cancelPlacement}>退出放置</button>
+          </div>
+        </div>
+      )}
+
+      <h3>封板</h3>
+      <div className="form">
         <label>
           封板离地高度 (mm)
           <input type="number" step={10} value={shelfPos} onChange={(e) => setShelfPos(Number(e.target.value))} />

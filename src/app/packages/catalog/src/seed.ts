@@ -6,11 +6,16 @@ import type {
   ProfileSpec,
   SafetyRule,
 } from './types';
+import { buildParametricCrossSection } from './cross-section';
+import { buildSeed3030CrossSection } from './section-3030.generated';
 
 /**
  * 初始知识库种子数据（spec-01 Further Notes：2020/2040/3030 主流欧标系列及常用连接件）。
  * 实施期人工录入的合理起点；上线前由管理员在后台核对/扩充。
  * 数值参考行业通用口径，仅作为规则化提示与清单依据，非精确力学数据。
+ *
+ * 截面：3030 为嘉立创公开 DXF 图纸逆向的精确几何；其余规格为同结构参数化近似，
+ * 精确几何可在后台上传厂家 DXF 覆盖。
  */
 
 const UPDATED_AT = '2026-01-01T00:00:00.000Z';
@@ -31,6 +36,7 @@ const profiles: ProfileSpec[] = [
       { span: 500, load: 15 },
       { span: 1000, load: 5 },
     ],
+    crossSection: buildParametricCrossSection({ width: 20, height: 20, slotWidth: 6 }),
     enabled: true,
     updatedAt: UPDATED_AT,
   },
@@ -50,6 +56,7 @@ const profiles: ProfileSpec[] = [
       { span: 1000, load: 14 },
       { span: 1500, load: 7 },
     ],
+    crossSection: buildParametricCrossSection({ width: 20, height: 40, slotWidth: 6 }),
     enabled: true,
     updatedAt: UPDATED_AT,
   },
@@ -70,6 +77,7 @@ const profiles: ProfileSpec[] = [
       { span: 1500, load: 13 },
       { span: 2000, load: 8 },
     ],
+    crossSection: buildSeed3030CrossSection(),
     enabled: true,
     updatedAt: UPDATED_AT,
   },
@@ -89,6 +97,7 @@ const profiles: ProfileSpec[] = [
       { span: 1500, load: 30 },
       { span: 2000, load: 18 },
     ],
+    crossSection: buildParametricCrossSection({ width: 30, height: 60, slotWidth: 8 }),
     enabled: true,
     updatedAt: UPDATED_AT,
   },
@@ -108,6 +117,7 @@ const profiles: ProfileSpec[] = [
       { span: 1000, load: 80 },
       { span: 2000, load: 30 },
     ],
+    crossSection: buildParametricCrossSection({ width: 40, height: 40, slotWidth: 10 }),
     enabled: false,
     updatedAt: UPDATED_AT,
   },

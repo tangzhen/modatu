@@ -1,0 +1,48 @@
+{
+ "success": true,
+ "count": 6,
+ "data": [
+  {
+   "bizKey": "1375666316970598",
+   "productName": "本色(喷砂氧化)",
+   "profileProductModel": "CZ-LHJ-BS",
+   "catalog": "铝合金",
+   "classification": "金属"
+  },
+  {
+   "bizKey": "1236793474354756",
+   "productName": "黑色(喷砂氧化)",
+   "profileProductModel": "CZ-LHJ-HS",
+   "catalog": "铝合金",
+   "classification": "金属"
+  },
+  {
+   "bizKey": "1644056622518102",
+   "productName": "银白氧化",
+   "profileProductModel": "CZ-LHJ-YB",
+   "catalog": "铝合金",
+   "classification": "金属"
+  },
+  {
+   "bizKey": "1189965764404821",
+   "productName": "喷砂电泳",
+   "profileProductModel": "CZ-LHJ-DY",
+   "catalog": "铝合金",
+   "classification": "金属"
+  },
+  {
+   "bizKey": "1428676321059605",
+   "productName": "原木色(烤漆+转印)",
+   "profileProductModel": "CZ-LHJ-YMS",
+   "catalog": "铝合金",
+   "classification": "金属"
+  },
+  {
+   "bizKey": "1227277954592747",
+   "productName": "白色(烤漆)",
+   "profileProductModel": "CZ-LHJ-BAS",
+   "catalog": "铝合金",
+   "classification": "金属"
+  }
+ ]
+}
