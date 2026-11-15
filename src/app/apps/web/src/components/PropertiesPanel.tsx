@@ -9,7 +9,7 @@ export function PropertiesPanel() {
   const {
     model,
     catalog,
-    selectedId,
+    selectedIds,
     resizeProfile,
     changeSpec,
     setProfileFinish,
@@ -18,10 +18,13 @@ export function PropertiesPanel() {
     removeProfile,
     removePanel,
     removeConnection,
+    deleteSelectedParts,
   } = useEditor();
 
-  const selectedProfile = model.profiles.find((p) => p.id === selectedId) ?? null;
-  const selectedPanel = model.panels.find((p) => p.id === selectedId) ?? null;
+  const primaryId = selectedIds.length === 1 ? selectedIds[0] : null;
+  const multiCount = selectedIds.length;
+  const selectedProfile = model.profiles.find((p) => p.id === primaryId) ?? null;
+  const selectedPanel = model.panels.find((p) => p.id === primaryId) ?? null;
   const spec = selectedProfile
     ? catalog.profiles.find((s) => s.code === selectedProfile.specCode)
     : undefined;
@@ -32,19 +35,37 @@ export function PropertiesPanel() {
     <aside className="properties" data-testid="properties-panel">
       <div className="prop-scroll">
         <div className="prop-head">
-          <strong>{selectedProfile ? '型材' : selectedPanel ? '封板' : '属性'}</strong>
-          {selectedProfile && (
+          <strong>{multiCount > 1 ? `已选 ${multiCount} 个部件` : selectedProfile ? '型材' : selectedPanel ? '封板' : '属性'}</strong>
+          {multiCount > 1 && (
+            <span className="prop-sub">
+              多选不支持属性编辑 · 右键画布打开对齐菜单 · Del 删除全部选中
+            </span>
+          )}
+          {multiCount <= 1 && selectedProfile && (
             <span className="prop-sub">
               {selectedProfile.id} · {selectedProfile.specCode} · {selectedProfile.cutLength}mm
             </span>
           )}
-          {selectedPanel && (
+          {multiCount <= 1 && selectedPanel && (
             <span className="prop-sub">
               {selectedPanel.id} · {selectedPanel.materialId}
             </span>
           )}
-          {!selectedProfile && !selectedPanel && <span className="prop-sub">点击 3D 视图或部件列表选择部件</span>}
+          {multiCount === 0 && !selectedProfile && !selectedPanel && (
+            <span className="prop-sub">点击 3D 视图或部件列表选择部件（Shift+点击多选）</span>
+          )}
         </div>
+
+        {multiCount > 1 && (
+          <>
+            <div className="prop-sec">批量操作</div>
+            <p className="hint">右键画布打开对齐菜单：按 X / Y / Z 的最小边、中心或最大边对齐。</p>
+            <button type="button" className="danger-ghost" onClick={() => deleteSelectedParts()}>
+              <IconTrash size={14} />
+              删除选中（{multiCount}）
+            </button>
+          </>
+        )}
 
         {selectedProfile && (
           <>

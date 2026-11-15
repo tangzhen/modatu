@@ -54,7 +54,7 @@ export function PartsPanel() {
   const {
     model,
     catalog,
-    selectedId,
+    selectedIds,
     select,
     addPanel,
     placement,
@@ -292,9 +292,10 @@ function SpecLibrary() {
 
 /** 部件分区：型材/封板层级列表 + 选中型材的连接表单。 */
 function PartsList() {
-  const { model, catalog, selectedId, select, addConnection } = useEditor();
+  const { model, catalog, selectedIds, select, addConnection } = useEditor();
+  const primaryId = selectedIds.length === 1 ? selectedIds[0] : null;
   const [showConnect, setShowConnect] = useState(false);
-  const selectedProfile = model.profiles.find((p) => p.id === selectedId) ?? null;
+  const selectedProfile = model.profiles.find((p) => p.id === primaryId) ?? null;
 
   return (
     <>
@@ -303,7 +304,7 @@ function PartsList() {
         {model.profiles.map((p) => (
           <li
             key={p.id}
-            className={p.id === selectedId ? 'selected' : ''}
+            className={selectedIds.includes(p.id) ? 'selected' : ''}
             onClick={() => select(p.id)}
             role="button"
             tabIndex={0}
@@ -323,7 +324,7 @@ function PartsList() {
         {model.panels.map((p) => (
           <li
             key={p.id}
-            className={p.id === selectedId ? 'selected' : ''}
+            className={selectedIds.includes(p.id) ? 'selected' : ''}
             onClick={() => select(p.id)}
             role="button"
             tabIndex={0}
@@ -347,11 +348,11 @@ function PartsList() {
           <button type="button" onClick={() => setShowConnect((v) => !v)}>
             {showConnect ? '− 收起' : '+ 添加连接'}
           </button>
-          {showConnect && selectedId && (
+          {showConnect && primaryId && (
             <ConnectForm
-              sourceId={selectedId}
+              sourceId={primaryId}
               sourceSpec={selectedProfile.specCode}
-              onAdd={(targetId, connectorId) => addConnection(selectedId, connectorId, targetId)}
+              onAdd={(targetId, connectorId) => addConnection(primaryId, connectorId, targetId)}
             />
           )}
         </div>

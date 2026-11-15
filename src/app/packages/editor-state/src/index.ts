@@ -242,6 +242,44 @@ export class EditorState {
     return { ok: true };
   }
 
+  /** 多部件移动（多选拖拽 / 对齐）：一次操作一条撤销记录。 */
+  moveParts(updates: Array<{ id: string; position: Vec3 }>): OpResult {
+    if (updates.length === 0) return { ok: false, reason: '没有可移动的部件' };
+    const profiles = new Map(this.model.profiles.map((p) => [p.id, p] as const));
+    const panels = new Map(this.model.panels.map((p) => [p.id, p] as const));
+    for (const u of updates) {
+      if (!profiles.has(u.id) && !panels.has(u.id)) {
+        return { ok: false, reason: `部件 ${u.id} 不存在` };
+      }
+    }
+    this.pushUndo();
+    for (const u of updates) {
+      const pos = this.sanitizePosition(u.position);
+      const profile = profiles.get(u.id);
+      if (profile) profile.position = pos;
+      const panel = panels.get(u.id);
+      if (panel) panel.position = pos;
+    }
+    this.commit(`移动 ${updates.length} 个部件`);
+    return { ok: true };
+  }
+
+  /** 多部件删除（多选 + Delete）：一次操作一条撤销记录，并清理指向被删部件的连接。 */
+  removeParts(ids: string[]): OpResult {
+    const idSet = new Set(ids);
+    const exists =
+      this.model.profiles.some((p) => idSet.has(p.id)) || this.model.panels.some((p) => idSet.has(p.id));
+    if (!exists) return { ok: false, reason: '部件不存在' };
+    this.pushUndo();
+    this.model.profiles = this.model.profiles.filter((p) => !idSet.has(p.id));
+    for (const p of this.model.profiles) {
+      p.connections = p.connections.filter((c) => !idSet.has(c.targetPartId));
+    }
+    this.model.panels = this.model.panels.filter((p) => !idSet.has(p.id));
+    this.commit(`删除 ${ids.length} 个部件`);
+    return { ok: true };
+  }
+
   resizeProfile(id: string, cutLength: number): OpResult {
     const part = this.model.profiles.find((p) => p.id === id);
     if (!part) return { ok: false, reason: '部件不存在' };

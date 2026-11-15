@@ -5,6 +5,7 @@ import { useEditor, ORIENTATIONS } from '../stores/editor';
 import { Viewer3D, type Viewer3DHandle } from '../components/Viewer3D';
 import { PartsPanel } from '../components/PartsPanel';
 import { PropertiesPanel } from '../components/PropertiesPanel';
+import { ContextMenu } from '../components/ContextMenu';
 import { BomModal } from '../components/BomModal';
 import { VersionsDrawer } from '../components/VersionsDrawer';
 import { AiPanel } from '../components/AiPanel';
@@ -24,7 +25,10 @@ export function EditorPage() {
     catalog,
     open,
     select,
-    selectedId,
+    selectedIds,
+    moveParts,
+    alignSelected,
+    deleteSelectedParts,
     moveProfile,
     movePanel,
     setProfileExtent,
@@ -49,6 +53,7 @@ export function EditorPage() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [leaveWarning, setLeaveWarning] = useState(false);
+  const [ctxMenu, setCtxMenu] = useState<{ x: number; y: number } | null>(null);
   const viewerRef = useRef<Viewer3DHandle>(null);
   /** 离开守卫：用户确认放弃后放行下一次后退 */
   const leaveGuardArmedRef = useRef(true);
@@ -121,14 +126,9 @@ export function EditorPage() {
         if (s.placement) s.cancelPlacement();
         return;
       }
-      if ((e.key === 'Delete' || e.key === 'Backspace') && s.selectedId) {
+      if ((e.key === 'Delete' || e.key === 'Backspace') && s.selectedIds.length > 0) {
         e.preventDefault();
-        const profile = s.model.profiles.find((p) => p.id === s.selectedId);
-        if (profile) s.removeProfile(profile.id);
-        else {
-          const panel = s.model.panels.find((p) => p.id === s.selectedId);
-          if (panel) s.removePanel(panel.id);
-        }
+        s.deleteSelectedParts();
       }
     };
     window.addEventListener('keydown', onKeyDown);
@@ -331,13 +331,15 @@ export function EditorPage() {
               ref={viewerRef}
               model={model}
               catalog={catalog}
-              selectedId={selectedId}
-              onSelect={(pid) => select(pid)}
+              selectedIds={selectedIds}
+              onSelect={(pid, additive) => select(pid, additive)}
               onMove={(pid, position) => {
                 const profile = model.profiles.find((p) => p.id === pid);
                 if (profile) moveProfile(pid, position);
                 else movePanel(pid, position);
               }}
+              onMoveMany={(updates) => moveParts(updates)}
+              onContextMenu={(pos) => setCtxMenu(pos)}
               onResize={(pid, cutLength, position) => setProfileExtent(pid, cutLength, position)}
               placement={placement}
               onPlaceProfile={({ specCode, orientation, cutLength, position }) => {
@@ -389,6 +391,28 @@ export function EditorPage() {
       {modal === 'versions' && <VersionsDrawer onClose={() => setModal(null)} />}
       {modal === 'ai' && <AiPanel onClose={() => setModal(null)} onOpenDiff={() => setModal(null)} />}
       {helpOpen && <HelpModal onClose={() => setHelpOpen(false)} />}
+      {ctxMenu && (
+        <ContextMenu
+          x={ctxMenu.x}
+          y={ctxMenu.y}
+          onClose={() => setCtxMenu(null)}
+          items={[
+            { section: '对齐 X（多选）' },
+            { label: '最小边对齐', onClick: () => alignSelected('x', 'min') },
+            { label: '中心对齐', onClick: () => alignSelected('x', 'center') },
+            { label: '最大边对齐', onClick: () => alignSelected('x', 'max') },
+            { section: '对齐 Y（多选）' },
+            { label: '底部对齐（落地）', onClick: () => alignSelected('y', 'min') },
+            { label: '中心对齐', onClick: () => alignSelected('y', 'center') },
+            { label: '顶部对齐', onClick: () => alignSelected('y', 'max') },
+            { section: '对齐 Z（多选）' },
+            { label: '最小边对齐', onClick: () => alignSelected('z', 'min') },
+            { label: '中心对齐', onClick: () => alignSelected('z', 'center') },
+            { label: '最大边对齐', onClick: () => alignSelected('z', 'max') },
+            { label: '删除选中部件', key: 'Del', danger: true, onClick: () => deleteSelectedParts() },
+          ]}
+        />
+      )}
 
       {designId === null && user === null && !id && (
         <div className="banner guest" data-testid="guest-banner">

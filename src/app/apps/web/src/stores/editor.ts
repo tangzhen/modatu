@@ -48,6 +48,8 @@ interface EditorStore {
   model: DesignModel;
   editor: EditorState | null;
   selectedId: string | null;
+  /** 多选集合（Shift+点击追加）；selectedId 是最后点击的部件 */
+  selectedIds: string[];
   lastOpMessage: string | null;
   saveStatus: SaveStatus;
   dirty: boolean;
@@ -65,7 +67,14 @@ interface EditorStore {
   /** 初始化（打开云端设计或游客空模型） */
   open: (designId: string | null) => Promise<void>;
   setCatalog: (catalog: CatalogSnapshot) => void;
-  select: (id: string | null) => void;
+  /** 选中部件；additive = Shift 多选（切换选中态） */
+  select: (id: string | null, additive?: boolean) => void;
+  /** 多部件移动（多选拖拽；单条撤销） */
+  moveParts: (updates: Array<{ id: string; position: { x: number; y: number; z: number } }>) => OpResult;
+  /** 多选对齐：axis 上把选中部件的 min/center/max 对齐（右键 context 菜单入口） */
+  alignSelected: (axis: 'x' | 'y' | 'z', mode: 'min' | 'center' | 'max') => OpResult;
+  /** 删除全部选中部件（Del；单条撤销） */
+  deleteSelectedParts: () => OpResult;
 
   startPlacement: (specCode: string, orientation?: Axis) => void;
   setPlacementOrientation: (orientation: Axis) => void;
@@ -101,6 +110,67 @@ interface EditorStore {
 
 const SAVE_DEBOUNCE_MS = 1200;
 
+/** 部件沿某轴的包围盒（min-corner + 尺寸），多选对齐计算用。 */
+function partExtent(
+  model: DesignModel,
+  catalog: CatalogSnapshot,
+  id: string,
+  axis: 'x' | 'y' | 'z',
+): { min: number; size: number } | undefined {
+  const idx = axis === 'x' ? 0 : axis === 'y' ? 1 : 2;
+  const key = (['x', 'y', 'z'] as const)[idx];
+  const profile = model.profiles.find((p) => p.id === id);
+  if (profile) {
+    const spec = catalog.profiles.find((sp) => sp.code === profile.specCode);
+    const w = spec?.width ?? 30;
+    const h = spec?.height ?? 30;
+    const dims =
+      profile.orientation === 'x'
+        ? [profile.cutLength, h, w]
+        : profile.orientation === 'y'
+          ? [w, profile.cutLength, h]
+          : [w, h, profile.cutLength];
+    return { min: profile.position[key], size: dims[idx] };
+  }
+  const panel = model.panels.find((p) => p.id === id);
+  if (panel) {
+    const dims =
+      panel.plane === 'xy'
+        ? [panel.width, panel.height, panel.thickness]
+        : panel.plane === 'xz'
+          ? [panel.width, panel.thickness, panel.height]
+          : [panel.thickness, panel.width, panel.height];
+    return { min: panel.position[key], size: dims[idx] };
+  }
+  return undefined;
+}
+
+/** 计算多选对齐后的位置更新（min：全局最小边对齐；max：全局最大边；center：中心均值）。 */
+function alignedUpdates(
+  model: DesignModel,
+  catalog: CatalogSnapshot,
+  ids: string[],
+  axis: 'x' | 'y' | 'z',
+  mode: 'min' | 'center' | 'max',
+): Array<{ id: string; position: { x: number; y: number; z: number } }> {
+  const boxes = ids
+    .map((id) => ({ id, box: partExtent(model, catalog, id, axis) }))
+    .filter((b): b is { id: string; box: { min: number; size: number } } => Boolean(b.box));
+  if (boxes.length === 0) return [];
+  const target =
+    mode === 'min'
+      ? Math.min(...boxes.map((b) => b.box.min))
+      : mode === 'max'
+        ? Math.max(...boxes.map((b) => b.box.min + b.box.size))
+        : boxes.reduce((acc, b) => acc + b.box.min + b.box.size / 2, 0) / boxes.length;
+  return boxes.map(({ id, box }) => {
+    const part = model.profiles.find((p) => p.id === id) ?? model.panels.find((p) => p.id === id);
+    const position = { ...part!.position };
+    position[axis] = target - (mode === 'min' ? 0 : mode === 'max' ? box.size : box.size / 2);
+    return { id, position };
+  });
+}
+
 let saveTimer: ReturnType<typeof setTimeout> | null = null;
 
 /**
@@ -132,12 +202,13 @@ export const useEditor = create<EditorStore>((set, get) => {
   }
 
   return {
-    designId: null,
-    catalog: EMPTY_CATALOG,
-    model: emptyDesign(),
-    editor: null,
-    selectedId: null,
-    lastOpMessage: null,
+  designId: null,
+  catalog: EMPTY_CATALOG,
+  model: emptyDesign(),
+  editor: null,
+  selectedId: null,
+  selectedIds: [],
+  lastOpMessage: null,
     saveStatus: { state: 'guest' },
     dirty: false,
     placement: null,
@@ -162,6 +233,7 @@ export const useEditor = create<EditorStore>((set, get) => {
         editor,
         model: editor.getModel(),
         selectedId: null,
+        selectedIds: [],
         lastOpMessage: null,
         dirty: false,
         saveStatus: designId
@@ -172,7 +244,18 @@ export const useEditor = create<EditorStore>((set, get) => {
 
     setCatalog: (catalog) => set({ catalog }),
 
-    select: (id) => set({ selectedId: id }),
+    select: (id, additive) =>
+      set((s) => {
+        if (id === null) return { selectedId: null, selectedIds: [] };
+        if (additive) {
+          const has = s.selectedIds.includes(id);
+          return {
+            selectedId: id,
+            selectedIds: has ? s.selectedIds.filter((x) => x !== id) : [...s.selectedIds, id],
+          };
+        }
+        return { selectedId: id, selectedIds: [id] };
+      }),
 
     startPlacement: (specCode, orientation = 'y') => set({ placement: { specCode, orientation } }),
     setPlacementOrientation: (orientation) => {
@@ -187,6 +270,21 @@ export const useEditor = create<EditorStore>((set, get) => {
 
     addProfile: (input) => applyOp(() => get().editor!.addProfile(input)),
     removeProfile: (id) => applyOp(() => get().editor!.removeProfile(id)),
+    moveParts: (updates) => applyOp(() => get().editor!.moveParts(updates)),
+    alignSelected: (axis, mode) => {
+      const s = get();
+      if (s.selectedIds.length < 2) return { ok: false, reason: '请先按住 Shift 多选至少两个部件' };
+      const updates = alignedUpdates(s.model, s.catalog, s.selectedIds, axis, mode);
+      if (updates.length === 0) return { ok: false, reason: '部件不存在' };
+      return applyOp(() => s.editor!.moveParts(updates));
+    },
+    deleteSelectedParts: () => {
+      const ids = get().selectedIds;
+      if (ids.length === 0) return { ok: false, reason: '没有选中的部件' };
+      const r = applyOp(() => get().editor!.removeParts(ids));
+      if (r.ok) set({ selectedId: null, selectedIds: [] });
+      return r;
+    },
     moveProfile: (id, position) => applyOp(() => get().editor!.moveProfile(id, position)),
     resizeProfile: (id, cutLength) => applyOp(() => get().editor!.resizeProfile(id, cutLength)),
     setProfileExtent: (id, cutLength, position) =>
@@ -264,6 +362,7 @@ export const useEditor = create<EditorStore>((set, get) => {
         editor,
         model: editor.getModel(),
         selectedId: null,
+        selectedIds: [],
         dirty: false,
         saveStatus: { state: 'saved', version: design.version },
       });

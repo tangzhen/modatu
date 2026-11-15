@@ -249,6 +249,50 @@ describe('颜色（finishId）', () => {
     m.profiles[0]!.finishId = 'finish-black';
     expect(() => new EditorState(m, catalog)).not.toThrow();
   });
+
+  it('moveParts：多部件一次移动，单条撤销记录，0.5 对齐保持', () => {
+    const s = new EditorState(base(), catalog);
+    const r = s.moveParts([
+      { id: 'col-1', position: { x: 100.3, y: 0, z: 0 } },
+      { id: 'shelf-1', position: { x: 40, y: 620, z: 30 } },
+    ]);
+    expect(r.ok).toBe(true);
+    const m = s.getModel();
+    expect(m.profiles[0]!.position.x).toBe(100.5);
+    expect(m.panels[0]!.position.y).toBe(620);
+    // 一次手势一条撤销：undo 一次全部还原
+    s.undo();
+    const after = s.getModel();
+    expect(after.profiles[0]!.position.x).toBe(0);
+    expect(after.panels[0]!.position.y).toBe(600);
+  });
+
+  it('moveParts：不存在的部件拒绝且不改变模型', () => {
+    const s = new EditorState(base(), catalog);
+    const before = s.getModel();
+    const r = s.moveParts([{ id: 'nope', position: { x: 10, y: 0, z: 0 } }]);
+    expect(r.ok).toBe(false);
+    expect(s.getModel()).toEqual(before);
+  });
+
+  it('removeParts：型材/封板混合删除，连接清理，单条撤销', () => {
+    const s = new EditorState(base(), catalog);
+    expect(s.addConnection('col-1', 'cn-corner-8', 'rail-1').ok).toBe(true);
+    const r = s.removeParts(['rail-1', 'shelf-1']);
+    expect(r.ok).toBe(true);
+    const m = s.getModel();
+    expect(m.profiles).toHaveLength(1);
+    expect(m.panels).toHaveLength(0);
+    expect(m.profiles[0]!.connections).toHaveLength(0);
+    s.undo();
+    expect(s.getModel().profiles).toHaveLength(2);
+    expect(s.getModel().profiles[0]!.connections).toHaveLength(1);
+  });
+
+  it('removeParts：全部不存在时拒绝', () => {
+    const s = new EditorState(base(), catalog);
+    expect(s.removeParts(['nope']).ok).toBe(false);
+  });
 });
 
 /** seed 目录 + 颜色条目（本色/黑色启用、一个停用条目）。 */

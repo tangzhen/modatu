@@ -55,6 +55,9 @@
 | 幽灵预览 | Ghost Preview（Ghost） | 放置模式下跟随鼠标的半透明型材预览。 | 现有 |
 | 适配视图 | Fit View / Reset View | 工具栏「适配视图」：相机与视角回到默认机位。 | v2 UI |
 | 吸附 / 步进 | Snapping | 拖拽默认 10mm 步进；按住 Shift 为 1mm 丝滑步进。 | 现有 |
+| 部件吸附 | Part Snapping | 移动部件时吸附到其他部件包围盒的边/中心（8mm 容差），并显示蓝色对齐辅助线。 | v2 UI |
+| 多选 | Multi-select | Shift+点击切换选中态；多选后可整组拖动、右键对齐、Del 批量删除。 | v2 UI |
+| 对齐菜单 | Align Context Menu | 多选 ≥2 时右键画布弹出：按 X / Y / Z 的最小边、中心或最大边对齐（单条撤销）。 | v2 UI |
 | 撤销 / 重做 | Undo / Redo | 编辑会话内的命令栈（上限 100 条）；调长手势目标语义为「一次手势一条撤销记录」。 | 现有 |
 | 自动保存 | Auto Save | 编辑后 1200ms 防抖自动保存到云端。 | 现有 |
 | 乐观锁 / 版本冲突 | Optimistic Lock / Version Conflict | 保存携带 `baseVersion`，与其他标签页并发修改时进入冲突状态（横幅提示，可载入最新或保留本地）。 | 现有 |

@@ -29,10 +29,14 @@ import {
 export interface Viewer3DProps {
   model: DesignModel;
   catalog: CatalogSnapshot;
-  selectedId: string | null;
-  onSelect: (id: string | null) => void;
+  /** 多选集合（Shift+点击追加） */
+  selectedIds: string[];
+  /** 点击选择；additive = Shift 多选切换 */
+  onSelect: (id: string | null, additive?: boolean) => void;
   /** 统一移动（含 Y）：x/y/z 为新的 min-corner */
   onMove: (id: string, position: { x: number; y: number; z: number }) => void;
+  /** 多部件统一移动（多选拖拽 / 对齐后由 store 走 moveParts，单条撤销） */
+  onMoveMany: (updates: Array<{ id: string; position: { x: number; y: number; z: number } }>) => void;
   /** 调长并锚定另一端：cutLength + 新 min-corner（一次手势一条撤销记录） */
   onResize: (id: string, cutLength: number, position: { x: number; y: number; z: number }) => void;
   /** ghost 放置模式（来自 store；null = 关闭） */
@@ -41,6 +45,8 @@ export interface Viewer3DProps {
   onPlaceProfile?: (input: { specCode: string; orientation: Axis; cutLength: number; position: Vec3 }) => void;
   /** Esc / 右键退出放置模式 */
   onCancelPlacement?: () => void;
+  /** 右键 context 菜单（多选 ≥2 且非拖拽时触发；坐标为 client 像素） */
+  onContextMenu?: (pos: { x: number; y: number }) => void;
 }
 
 const SNAP_MM = 10;
@@ -134,7 +140,7 @@ export interface Viewer3DHandle {
 }
 
 export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewer3D(
-  { model, catalog, selectedId, onSelect, onMove, onResize, placement, onPlaceProfile, onCancelPlacement },
+  { model, catalog, selectedIds, onSelect, onMove, onMoveMany, onResize, placement, onPlaceProfile, onCancelPlacement, onContextMenu },
   ref,
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -153,8 +159,8 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     /** 按需渲染：场景内容变化时置脏，下一帧渲染一次 */
     invalidate: () => void;
   } | null>(null);
-  const propsRef = useRef({ model, catalog, selectedId, onSelect, onMove, onResize, placement, onPlaceProfile, onCancelPlacement });
-  propsRef.current = { model, catalog, selectedId, onSelect, onMove, onResize, placement, onPlaceProfile, onCancelPlacement };
+  const propsRef = useRef({ model, catalog, selectedIds, onSelect, onMove, onMoveMany, onResize, placement, onPlaceProfile, onCancelPlacement, onContextMenu });
+  propsRef.current = { model, catalog, selectedIds, onSelect, onMove, onMoveMany, onResize, placement, onPlaceProfile, onCancelPlacement, onContextMenu };
 
   /* --------------------------- 场景初始化（一次性） --------------------------- */
   useEffect(() => {
@@ -262,7 +268,18 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
 
     /* ------------------------- 拾取与拖拽（移动/调长/放置） ------------------------- */
     type DragState =
-      | { kind: 'move'; id: string; grabDX: number; grabDZ: number }
+      | {
+          kind: 'move';
+          id: string;
+          grabDX: number;
+          grabDZ: number;
+          /** 多选组内各部件拖拽前的 min-corner（组移动用） */
+          originals: Map<string, { x: number; y: number; z: number }>;
+          /** 吸附参照：未选中部件的世界包围盒 */
+          others: Array<{ min: THREE.Vector3; max: THREE.Vector3 }>;
+          /** 被抓取部件的世界包围盒（吸附边计算） */
+          grabbedBox: THREE.Box3;
+        }
       | {
           kind: 'resize';
           id: string;
@@ -298,6 +315,50 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
       return new THREE.Vector3(Math.round(p.x / s) * s, 0, Math.round(p.z / s) * s);
     };
 
+    /** 部件间吸附容差（mm）与对齐辅助线 */
+    const PART_SNAP_TOL = 8;
+    const guideMaterial = new THREE.LineBasicMaterial({ color: 0x0d99ff, transparent: true, opacity: 0.9 });
+    const mkGuide = () => {
+      const g = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]);
+      const l = new THREE.Line(g, guideMaterial);
+      l.visible = false;
+      scene.add(l);
+      return l;
+    };
+    const guideX = mkGuide(); // X 对齐：x=coord 的竖直辅助线（沿 Z）
+    const guideZ = mkGuide(); // Z 对齐：z=coord 的竖直辅助线（沿 X）
+    const guideY = mkGuide(); // Y 对齐：高度处的水平辅助线
+    const showGuide = (line: THREE.Line, a: THREE.Vector3, b: THREE.Vector3) => {
+      line.geometry.setFromPoints([a, b]);
+      line.visible = true;
+      invalidate();
+    };
+    const hideGuides = () => {
+      guideX.visible = false;
+      guideZ.visible = false;
+      guideY.visible = false;
+    };
+    /** 把移动边吸附到候选边（其他部件的边/中心）：返回新的 origin，无命中返回 null */
+    const snapOrigin = (proposed: number, movingEdges: number[], targets: number[]): number | null => {
+      let origin: number | null = null;
+      let bestD = PART_SNAP_TOL;
+      for (const e of movingEdges) {
+        for (const t of targets) {
+          const d = Math.abs(t - e);
+          if (d <= bestD) {
+            bestD = d;
+            origin = proposed + (t - e);
+          }
+        }
+      }
+      return origin;
+    };
+    const edgeTargets = (o: { min: THREE.Vector3; max: THREE.Vector3 }, axis: 'x' | 'y' | 'z'): number[] => {
+      const a = o.min[axis];
+      const b = o.max[axis];
+      return [a, b, (a + b) / 2];
+    };
+
     /** 指针射线在轴线（lineOrigin + axis·t）上的最近点参数 */
     const axisProjection = (event: PointerEvent, lineOrigin: THREE.Vector3, axis: THREE.Vector3): number | null => {
       raycaster.setFromCamera(ndc(event), camera);
@@ -329,9 +390,11 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
       return mesh?.userData['record'] as PartRecord | undefined;
     };
 
+    let rightDown: { x: number; y: number } | null = null;
     const onPointerDown = (event: PointerEvent) => {
       const ctx = sceneRef.current;
       if (!ctx) return;
+      if (event.button === 2) rightDown = { x: event.clientX, y: event.clientY };
       // 0) ghost 放置模式：右键退出；左键开始放置拖拽（不选择部件）
       const placementNow = propsRef.current.placement;
       if (placementNow) {
@@ -399,18 +462,49 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
           return;
         }
       }
-      // 2) 部件
+      // 2) 部件：Shift = 多选切换；点击已选部件（多选时）保持整组拖动；普通点击单选
       const hits = raycaster.intersectObjects(ctx.partGroup.children, false);
       const hit = hits[0];
       const id = hit ? ((hit.object.userData['partId'] as string) ?? null) : null;
-      propsRef.current.onSelect(id);
+      if (id && event.shiftKey) {
+        propsRef.current.onSelect(id, true);
+        return;
+      }
+      const selection = propsRef.current.selectedIds;
+      const groupMove = id !== null && selection.includes(id) && selection.length > 1;
+      if (id && !groupMove) propsRef.current.onSelect(id);
+      const moveIds = groupMove ? selection : id ? [id] : [];
       if (id) {
         const record = currentPart(id);
         const g = groundPoint(event);
         if (record && g) {
-          const pos = record.mesh.userData['minCorner'] as { x: number; y: number; z: number };
-          drag = { kind: 'move', id, grabDX: g.x - pos.x, grabDZ: g.z - pos.z };
-          controls.enabled = false;
+          const originals = new Map<string, { x: number; y: number; z: number }>();
+          for (const pid of moveIds) {
+            const rec = currentPart(pid);
+            if (rec) {
+              originals.set(pid, { ...(rec.mesh.userData['minCorner'] as { x: number; y: number; z: number }) });
+            }
+          }
+          const grabbed = originals.get(id);
+          if (grabbed) {
+            const selSet = new Set(moveIds);
+            const others: Array<{ min: THREE.Vector3; max: THREE.Vector3 }> = [];
+            for (const child of ctx.partGroup.children) {
+              const pid = child.userData['partId'] as string;
+              if (!pid || selSet.has(pid)) continue;
+              others.push(new THREE.Box3().setFromObject(child));
+            }
+            drag = {
+              kind: 'move',
+              id,
+              grabDX: g.x - grabbed.x,
+              grabDZ: g.z - grabbed.z,
+              originals,
+              others,
+              grabbedBox: new THREE.Box3().setFromObject(record.mesh),
+            };
+            controls.enabled = false;
+          }
         }
       }
     };
@@ -438,11 +532,13 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
         return;
       }
       if (drag.kind === 'move') {
-        const record = currentPart(drag.id);
-        if (!record) return;
-        const pos = record.mesh.userData['minCorner'] as { x: number; y: number; z: number };
+        const grabbed = drag.originals.get(drag.id);
+        if (!grabbed) return;
+        let dx = 0;
+        let dz = 0;
+        let dy = 0;
         if (event.shiftKey) {
-          // Shift+拖动：在过部件、面向相机的竖直平面上求交，只改高度
+          // Shift+拖动：在过被抓取部件、面向相机的竖直平面上求交，只改高度（带部件 Y 吸附）
           const camDir = new THREE.Vector3();
           camera.getWorldDirection(camDir);
           camDir.y = 0;
@@ -450,20 +546,55 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
           camDir.normalize();
           const plane = new THREE.Plane().setFromNormalAndCoplanarPoint(
             camDir.negate(),
-            new THREE.Vector3(pos.x, pos.y, pos.z),
+            new THREE.Vector3(grabbed.x, grabbed.y, grabbed.z),
           );
           raycaster.setFromCamera(ndc(event), camera);
           const p = new THREE.Vector3();
           if (!raycaster.ray.intersectPlane(plane, p)) return;
-          const y = Math.round(p.y / SNAP_MM) * SNAP_MM;
-          propsRef.current.onMove(drag.id, { x: pos.x, y, z: pos.z });
+          let ny = Math.round(p.y / SNAP_MM) * SNAP_MM;
+          const h = drag.grabbedBox.max.y - drag.grabbedBox.min.y;
+          const snappedY = snapOrigin(ny, [ny, ny + h, ny + h / 2], drag.others.flatMap((o) => edgeTargets(o, 'y')));
+          if (snappedY !== null) {
+            ny = snappedY;
+            showGuide(
+              guideY,
+              new THREE.Vector3(drag.grabbedBox.min.x - 20, ny, drag.grabbedBox.min.z - 20),
+              new THREE.Vector3(drag.grabbedBox.max.x + 20, ny, drag.grabbedBox.max.z + 20),
+            );
+          } else {
+            guideY.visible = false;
+          }
+          dy = ny - grabbed.y;
         } else {
+          // 地面移动：10mm 栅格吸附 + 其他部件边/中心吸附（8mm 容差）
           const g = groundPoint(event);
           if (!g) return;
-          const x = Math.round((g.x - drag.grabDX) / SNAP_MM) * SNAP_MM;
-          const z = Math.round((g.z - drag.grabDZ) / SNAP_MM) * SNAP_MM;
-          propsRef.current.onMove(drag.id, { x, y: pos.y, z });
+          let nx = Math.round((g.x - drag.grabDX) / SNAP_MM) * SNAP_MM;
+          let nz = Math.round((g.z - drag.grabDZ) / SNAP_MM) * SNAP_MM;
+          const w = drag.grabbedBox.max.x - drag.grabbedBox.min.x;
+          const d = drag.grabbedBox.max.z - drag.grabbedBox.min.z;
+          const snappedX = snapOrigin(nx, [nx, nx + w, nx + w / 2], drag.others.flatMap((o) => edgeTargets(o, 'x')));
+          if (snappedX !== null) {
+            nx = snappedX;
+            showGuide(guideX, new THREE.Vector3(nx, 1, -2000), new THREE.Vector3(nx, 1, 2000));
+          } else {
+            guideX.visible = false;
+          }
+          const snappedZ = snapOrigin(nz, [nz, nz + d, nz + d / 2], drag.others.flatMap((o) => edgeTargets(o, 'z')));
+          if (snappedZ !== null) {
+            nz = snappedZ;
+            showGuide(guideZ, new THREE.Vector3(-2000, 1, nz), new THREE.Vector3(2000, 1, nz));
+          } else {
+            guideZ.visible = false;
+          }
+          dx = nx - grabbed.x;
+          dz = nz - grabbed.z;
         }
+        const updates = [...drag.originals.entries()].map(([pid, pos]) => ({
+          id: pid,
+          position: { x: pos.x + dx, y: pos.y + dy, z: pos.z + dz },
+        }));
+        propsRef.current.onMoveMany(updates);
         return;
       }
       // resize：把指针射线投影到挤出轴（相对抓取点计算增量）
@@ -493,6 +624,8 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     };
 
     const onPointerUp = () => {
+      rightDown = null;
+      hideGuides();
       // 放置完成：以 ghost 当前长度/位置创建部件（保持放置模式可连续放置）
       if (drag?.kind === 'place') {
         const ctx = sceneRef.current;
@@ -521,6 +654,17 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     renderer.domElement.addEventListener('pointerdown', onPointerDown);
     renderer.domElement.addEventListener('pointermove', onPointerMove);
     window.addEventListener('pointerup', onPointerUp);
+    // 右键 context 菜单：多选 ≥2 且非拖拽时触发（拖拽留给 OrbitControls 平移）
+    const onContextMenuOpen = (e: MouseEvent) => {
+      e.preventDefault();
+      if (propsRef.current.placement) return;
+      const moved = rightDown !== null && Math.hypot(e.clientX - rightDown.x, e.clientY - rightDown.y) > 6;
+      rightDown = null;
+      if (moved) return;
+      if (propsRef.current.selectedIds.length < 2) return;
+      propsRef.current.onContextMenu?.({ x: e.clientX, y: e.clientY });
+    };
+    renderer.domElement.addEventListener('contextmenu', onContextMenuOpen);
 
     /* ------------------------------- 快捷键 ------------------------------- */
     const onKeyDown = (event: KeyboardEvent) => {
@@ -534,7 +678,8 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
         propsRef.current.onCancelPlacement?.();
         return;
       }
-      const { model: m, selectedId: sel, onResize: doResize, onMove: doMove } = propsRef.current;
+      const { model: m, selectedIds: sels, onResize: doResize, onMove: doMove } = propsRef.current;
+      const sel = sels[sels.length - 1] ?? null; // 键盘操作作用于最后点击的部件
       if (!sel) return;
       const profile = m.profiles.find((p) => p.id === sel);
       const panel = m.panels.find((p) => p.id === sel);
@@ -574,6 +719,7 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
       renderer.domElement.removeEventListener('pointerdown', onPointerDown);
       renderer.domElement.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('pointerup', onPointerUp);
+      renderer.domElement.removeEventListener('contextmenu', onContextMenuOpen);
       window.removeEventListener('keydown', onKeyDown);
       controls.dispose();
       renderer.dispose();
@@ -618,13 +764,14 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     const ctx = sceneRef.current;
     if (!ctx) return;
     const { partGroup, invalidate } = ctx;
+    const selSet = new Set(selectedIds);
     partGroup.clear();
     const disposables: Array<THREE.BufferGeometry> = [];
 
     for (const p of model.profiles) {
       const spec = findSpec(catalog, p.specCode);
       const entry = getProfileGeometry(spec ?? ({ width: 30, height: 30, slotWidth: 8 } as ProfileSpec));
-      const selected = p.id === selectedId;
+      const selected = selSet.has(p.id);
       const finishColor = p.finishId ? findFinish(catalog, p.finishId)?.colorHex : undefined;
       const mesh = new THREE.Mesh(
         entry.geometry,
@@ -670,7 +817,7 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
             : ([p.thickness, p.width, p.height] as [number, number, number]);
       const geometry = new THREE.BoxGeometry(dims[0], dims[1], dims[2]);
       disposables.push(geometry);
-      const selected = p.id === selectedId;
+      const selected = selSet.has(p.id);
       const mesh = new THREE.Mesh(geometry, selected ? panelSelectedMaterial : panelMaterial);
       mesh.position.set(
         p.position.x + dims[0] / 2,
@@ -700,7 +847,7 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     return () => {
       for (const g of disposables) g.dispose();
     };
-  }, [model, catalog, selectedId]);
+  }, [model, catalog, selectedIds]);
 
   useImperativeHandle(ref, () => ({ resetView: () => resetViewRef.current() }), []);
 
@@ -711,8 +858,8 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     const { handleGroup, invalidate } = ctx;
     handleGroup.clear();
     invalidate(); // 手柄出现/消失都改变画面
-    if (!selectedId) return;
-    const profile = model.profiles.find((p) => p.id === selectedId);
+    if (selectedIds.length !== 1) return; // 仅单选显示调长手柄
+    const profile = model.profiles.find((p) => p.id === selectedIds[0]);
     if (!profile) return; // 面板不做 3D 调长
     const spec = findSpec(catalog, profile.specCode);
     const dims = profileWorldDims(spec, profile.cutLength, profile.orientation);
@@ -737,7 +884,7 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     };
     makeHandle('min');
     makeHandle('max');
-  }, [model, catalog, selectedId]);
+  }, [model, catalog, selectedIds]);
 
   return <div ref={containerRef} className="viewer3d" data-testid="viewer3d" />;
 });

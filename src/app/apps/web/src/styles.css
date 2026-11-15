@@ -1213,3 +1213,55 @@ a {
   text-align: center;
   color: var(--text-3);
 }
+
+/* ------------------------------ 右键 context 菜单 ------------------------------ */
+.ctx-menu {
+  position: fixed;
+  z-index: 60;
+  min-width: 200px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-lg);
+  padding: 5px;
+  user-select: none;
+}
+.ctx-sec {
+  font-size: 11px;
+  color: var(--text-3);
+  padding: 6px 8px 3px;
+}
+.ctx-sec:not(:first-child) {
+  border-top: 1px solid var(--border);
+  margin-top: 3px;
+  padding-top: 7px;
+}
+.ctx-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 12px;
+  color: var(--text);
+  text-align: left;
+}
+.ctx-item:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: transparent;
+}
+.ctx-item.danger {
+  color: var(--danger);
+}
+.ctx-item.danger:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+.ctx-item .kbd {
+  font-size: 10px;
+}
