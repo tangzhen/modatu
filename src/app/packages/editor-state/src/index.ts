@@ -73,6 +73,9 @@ export class EditorState {
   private redoStack: DesignModel[] = [];
   private listeners = new Set<() => void>();
   private lastChangeDescription = '';
+  /** 手势合并（拖拽/调长）：开始时的模型快照；期间的操作不再逐条入栈，结束时合并为一条。 */
+  private gestureStartModel: DesignModel | null = null;
+  private gestureChanged = false;
 
   constructor(initial: DesignModel, catalog: CatalogSnapshot) {
     const check = validateSchema(initial);
@@ -125,9 +128,32 @@ export class EditorState {
   }
 
   private pushUndo(): DesignModel {
+    // 手势期间不逐条入栈：起始快照由 beginGesture 持有，endGesture 合并为一条
+    if (this.gestureStartModel) {
+      this.gestureChanged = true;
+      return this.model;
+    }
     this.undoStack.push(JSON.parse(JSON.stringify(this.model)));
     if (this.undoStack.length > MAX_HISTORY) this.undoStack.shift();
     return this.model;
+  }
+
+  /** 手势开始（拖拽移动/调长）：记录起始快照，期间所有操作合并为一条撤销记录。 */
+  beginGesture(): void {
+    if (this.gestureStartModel) return;
+    this.gestureStartModel = JSON.parse(JSON.stringify(this.model)) as DesignModel;
+    this.gestureChanged = false;
+  }
+
+  /** 手势结束：模型有变化时压入起始快照（撤销即回到起始位置）；无变化（纯点击）则丢弃。 */
+  endGesture(): void {
+    const start = this.gestureStartModel;
+    this.gestureStartModel = null;
+    if (!start) return;
+    if (!this.gestureChanged) return;
+    this.undoStack.push(start);
+    if (this.undoStack.length > MAX_HISTORY) this.undoStack.shift();
+    this.commit(this.lastChangeDescription);
   }
 
   undo(): OpResult {

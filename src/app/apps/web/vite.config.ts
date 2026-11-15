@@ -28,6 +28,16 @@ export default defineConfig({
       },
     },
   },
+  // 构建产物预览（vite preview）同样代理 API，便于无 HMR 的确定性验收
+  preview: {
+    port: 4173,
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:3001',
+        changeOrigin: true,
+      },
+    },
+  },
   test: {
     environment: 'jsdom',
     include: ['src/**/*.test.tsx', 'src/**/*.test.ts'],

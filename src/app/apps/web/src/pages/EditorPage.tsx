@@ -29,6 +29,8 @@ export function EditorPage() {
     moveParts,
     alignSelected,
     deleteSelectedParts,
+    beginGesture,
+    endGesture,
     moveProfile,
     movePanel,
     setProfileExtent,
@@ -340,6 +342,8 @@ export function EditorPage() {
               }}
               onMoveMany={(updates) => moveParts(updates)}
               onContextMenu={(pos) => setCtxMenu(pos)}
+              onGestureStart={() => beginGesture()}
+              onGestureEnd={() => endGesture()}
               onResize={(pid, cutLength, position) => setProfileExtent(pid, cutLength, position)}
               placement={placement}
               onPlaceProfile={({ specCode, orientation, cutLength, position }) => {

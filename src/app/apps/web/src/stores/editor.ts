@@ -75,6 +75,9 @@ interface EditorStore {
   alignSelected: (axis: 'x' | 'y' | 'z', mode: 'min' | 'center' | 'max') => OpResult;
   /** 删除全部选中部件（Del；单条撤销） */
   deleteSelectedParts: () => OpResult;
+  /** 手势开始/结束（拖拽、调长）：期间操作合并为一条撤销记录（撤销回到起始位置） */
+  beginGesture: () => void;
+  endGesture: () => void;
 
   startPlacement: (specCode: string, orientation?: Axis) => void;
   setPlacementOrientation: (orientation: Axis) => void;
@@ -285,6 +288,8 @@ export const useEditor = create<EditorStore>((set, get) => {
       if (r.ok) set({ selectedId: null, selectedIds: [] });
       return r;
     },
+    beginGesture: () => get().editor?.beginGesture(),
+    endGesture: () => get().editor?.endGesture(),
     moveProfile: (id, position) => applyOp(() => get().editor!.moveProfile(id, position)),
     resizeProfile: (id, cutLength) => applyOp(() => get().editor!.resizeProfile(id, cutLength)),
     setProfileExtent: (id, cutLength, position) =>

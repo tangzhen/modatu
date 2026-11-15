@@ -32,6 +32,7 @@
 
 - 动代码前确认工作区干净、已读相关上下文；UI/交互改动先出设计稿确认再实现。
 - 改动后必须验证：`apps/web` 下 `npx tsc --noEmit && npm test`；UI 改动在浏览器实测（dev:web 5173 + dev:server 3001）。
+- **自动化验收优先用调试桥**：dev 构建下 `window.__modatu` 提供 `state() / place() / select() / align() / moveParts() / removeSelected() / undo() / gesture() / reloadCatalog() / reset()` 等确定性命令（直接操作 store，勿再模拟坐标点击）；真实指针事件仅用于验证指针交互本身（拖拽、hover、右键）。
 - 修 bug 顺手补回归测试；修 UX 问题在 commit body 写明验收路径。
 
 ## 已知坑

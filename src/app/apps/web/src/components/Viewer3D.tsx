@@ -47,6 +47,9 @@ export interface Viewer3DProps {
   onCancelPlacement?: () => void;
   /** 右键 context 菜单（多选 ≥2 且非拖拽时触发；坐标为 client 像素） */
   onContextMenu?: (pos: { x: number; y: number }) => void;
+  /** 手势开始/结束（拖拽移动、调长）：期间操作合并为一条撤销记录 */
+  onGestureStart?: () => void;
+  onGestureEnd?: () => void;
 }
 
 const SNAP_MM = 10;
@@ -140,7 +143,7 @@ export interface Viewer3DHandle {
 }
 
 export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewer3D(
-  { model, catalog, selectedIds, onSelect, onMove, onMoveMany, onResize, placement, onPlaceProfile, onCancelPlacement, onContextMenu },
+  { model, catalog, selectedIds, onSelect, onMove, onMoveMany, onResize, placement, onPlaceProfile, onCancelPlacement, onContextMenu, onGestureStart, onGestureEnd },
   ref,
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -159,8 +162,8 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     /** 按需渲染：场景内容变化时置脏，下一帧渲染一次 */
     invalidate: () => void;
   } | null>(null);
-  const propsRef = useRef({ model, catalog, selectedIds, onSelect, onMove, onMoveMany, onResize, placement, onPlaceProfile, onCancelPlacement, onContextMenu });
-  propsRef.current = { model, catalog, selectedIds, onSelect, onMove, onMoveMany, onResize, placement, onPlaceProfile, onCancelPlacement, onContextMenu };
+  const propsRef = useRef({ model, catalog, selectedIds, onSelect, onMove, onMoveMany, onResize, placement, onPlaceProfile, onCancelPlacement, onContextMenu, onGestureStart, onGestureEnd });
+  propsRef.current = { model, catalog, selectedIds, onSelect, onMove, onMoveMany, onResize, placement, onPlaceProfile, onCancelPlacement, onContextMenu, onGestureStart, onGestureEnd };
 
   /* --------------------------- 场景初始化（一次性） --------------------------- */
   useEffect(() => {
@@ -279,10 +282,16 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
           others: Array<{ min: THREE.Vector3; max: THREE.Vector3 }>;
           /** 被抓取部件的世界包围盒（吸附边计算） */
           grabbedBox: THREE.Box3;
+          /** 本次拖拽是否为多选组移动（松手未移动则回到单选） */
+          groupMove: boolean;
+          /** 是否发生过实际位移（区分点击与拖拽） */
+          moved: boolean;
         }
       | {
           kind: 'resize';
           id: string;
+          /** 是否发生过实际变化（区分点击与拖拽） */
+          moved: boolean;
           /** 'min' = 拖最小端手柄（锚定最大端）；'max' = 拖最大端（锚定最小端） */
           which: 'min' | 'max';
           axis: THREE.Vector3;
@@ -457,21 +466,27 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
             minCut: spec?.minCutLength ?? 20,
             maxCut: spec?.maxCutLength ?? 3000,
             t0,
+            moved: false,
           };
           controls.enabled = false;
+          propsRef.current.onGestureStart?.(); // 调长手势：期间操作合并为一条撤销
           return;
         }
       }
-      // 2) 部件：Shift = 多选切换；点击已选部件（多选时）保持整组拖动；普通点击单选
+      // 2) 部件：空白点击 = 清空选择；Shift = 多选切换；点击已选部件（多选时）保持整组拖动
       const hits = raycaster.intersectObjects(ctx.partGroup.children, false);
       const hit = hits[0];
       const id = hit ? ((hit.object.userData['partId'] as string) ?? null) : null;
-      if (id && event.shiftKey) {
+      if (id === null) {
+        propsRef.current.onSelect(null); // 点击空白：取消所有选择
+        return;
+      }
+      if (event.shiftKey) {
         propsRef.current.onSelect(id, true);
         return;
       }
       const selection = propsRef.current.selectedIds;
-      const groupMove = id !== null && selection.includes(id) && selection.length > 1;
+      const groupMove = selection.includes(id) && selection.length > 1;
       if (id && !groupMove) propsRef.current.onSelect(id);
       const moveIds = groupMove ? selection : id ? [id] : [];
       if (id) {
@@ -502,8 +517,11 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
               originals,
               others,
               grabbedBox: new THREE.Box3().setFromObject(record.mesh),
+              groupMove,
+              moved: false,
             };
             controls.enabled = false;
+            propsRef.current.onGestureStart?.(); // 移动手势：期间操作合并为一条撤销
           }
         }
       }
@@ -590,6 +608,7 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
           dx = nx - grabbed.x;
           dz = nz - grabbed.z;
         }
+        if (dx !== 0 || dy !== 0 || dz !== 0) drag.moved = true;
         const updates = [...drag.originals.entries()].map(([pid, pos]) => ({
           id: pid,
           position: { x: pos.x + dx, y: pos.y + dy, z: pos.z + dz },
@@ -612,6 +631,7 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
       }
       newLen = Math.round(newLen / SNAP_MM) * SNAP_MM;
       newLen = Math.max(minCut, Math.min(maxCut, newLen));
+      if (newLen !== origLength) drag.moved = true;
       const axisIdx = (axis.x !== 0 ? 'x' : axis.y !== 0 ? 'y' : 'z') as 'x' | 'y' | 'z';
       const nextPosition = { ...origPosition };
       if (which === 'max') {
@@ -626,6 +646,14 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     const onPointerUp = () => {
       rightDown = null;
       hideGuides();
+      // 手势结束：有变化的拖拽合并为一条撤销记录（撤销回到起始位置）
+      if (drag && (drag.kind === 'move' || drag.kind === 'resize')) {
+        propsRef.current.onGestureEnd?.();
+        // 多选组内点击未移动 → 回到单选模式
+        if (drag.kind === 'move' && drag.groupMove && !drag.moved) {
+          propsRef.current.onSelect(drag.id);
+        }
+      }
       // 放置完成：以 ghost 当前长度/位置创建部件（保持放置模式可连续放置）
       if (drag?.kind === 'place') {
         const ctx = sceneRef.current;

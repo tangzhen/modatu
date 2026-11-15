@@ -20,3 +20,8 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
     });
   });
 }
+
+// 开发期调试桥（window.__modatu）：给自动化验收与控制台一条确定性命令通道
+if (import.meta.env.DEV) {
+  void import('./lib/debug-bridge').then((m) => m.installDebugBridge());
+}

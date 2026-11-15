@@ -293,6 +293,47 @@ describe('颜色（finishId）', () => {
     const s = new EditorState(base(), catalog);
     expect(s.removeParts(['nope']).ok).toBe(false);
   });
+
+  it('手势合并：begin/end 之间多次移动只产生一条撤销，撤销回到起始位置', () => {
+    const s = new EditorState(base(), catalog);
+    s.beginGesture();
+    s.moveParts([{ id: 'col-1', position: { x: 10, y: 0, z: 0 } }]);
+    s.moveParts([{ id: 'col-1', position: { x: 20, y: 0, z: 0 } }]);
+    s.moveParts([{ id: 'col-1', position: { x: 30, y: 0, z: 0 } }]);
+    expect(s.getModel().profiles[0]!.position.x).toBe(30);
+    s.endGesture();
+    // 撤销一次即回到起始位置
+    expect(s.undo().ok).toBe(true);
+    expect(s.getModel().profiles[0]!.position.x).toBe(0);
+    // 且只有这一条手势记录（再次撤销回到更早的空栈）
+    expect(s.canUndo()).toBe(false);
+  });
+
+  it('手势无变化（纯点击）结束时不产生撤销记录', () => {
+    const s = new EditorState(base(), catalog);
+    s.beginGesture();
+    s.endGesture();
+    expect(s.canUndo()).toBe(false);
+    // 手势内的纯点击后 redo 栈不应被清掉
+    s.moveParts([{ id: 'col-1', position: { x: 10, y: 0, z: 0 } }]);
+    s.undo();
+    s.redo();
+    s.beginGesture();
+    s.endGesture();
+    expect(s.canUndo()).toBe(true); // redo 之后的移动仍在
+    expect(s.getModel().profiles[0]!.position.x).toBe(10);
+  });
+
+  it('手势期间 redo 栈被清空（新操作使重做失效）', () => {
+    const s = new EditorState(base(), catalog);
+    s.moveParts([{ id: 'col-1', position: { x: 10, y: 0, z: 0 } }]);
+    s.undo();
+    expect(s.canRedo()).toBe(true);
+    s.beginGesture();
+    s.moveParts([{ id: 'col-1', position: { x: 20, y: 0, z: 0 } }]);
+    s.endGesture();
+    expect(s.canRedo()).toBe(false);
+  });
 });
 
 /** seed 目录 + 颜色条目（本色/黑色启用、一个停用条目）。 */
