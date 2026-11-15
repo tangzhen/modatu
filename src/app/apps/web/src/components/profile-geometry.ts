@@ -43,6 +43,16 @@ function buildEntry(spec: ProfileSpec): ProfileGeometryEntry {
   }
   const geometry = new THREE.ExtrudeGeometry(shape, { depth: 1, bevelEnabled: false });
   geometry.computeVertexNormals();
+  // 居中修正：渲染层按 min-corner + 中心放置 mesh（scale.z = 切割长度），
+  // 而 ExtrudeGeometry 从 z=0 挤到 z=depth、截面 XY 可能带 DXF 原始偏移。
+  // 这里把包围盒中心移到原点，保证几何体严格以原点为中心（min-corner 语义成立）。
+  geometry.computeBoundingBox();
+  const bb = geometry.boundingBox!;
+  geometry.translate(
+    -(bb.min.x + bb.max.x) / 2,
+    -(bb.min.y + bb.max.y) / 2,
+    -(bb.min.z + bb.max.z) / 2,
+  );
   const edges = new THREE.EdgesGeometry(geometry, 24);
   return { geometry, edges };
 }

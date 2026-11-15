@@ -22,6 +22,18 @@ describe('profile-geometry', () => {
     expect(entry.edges.attributes.position.count).toBeGreaterThan(0);
   });
 
+  it('几何体以原点为中心（min-corner 定位语义的前提：中心 = minCorner + dims/2）', () => {
+    const entry = getProfileGeometry(spec3030);
+    entry.geometry.computeBoundingBox();
+    const bb = entry.geometry.boundingBox!;
+    // XY：截面包围盒中心在原点（DXF 原始偏移被归零）
+    expect((bb.min.x + bb.max.x) / 2).toBeCloseTo(0, 4);
+    expect((bb.min.y + bb.max.y) / 2).toBeCloseTo(0, 4);
+    // Z：挤出深度 1 → 居中后跨 [-0.5, 0.5]，scale.z = cutLength 后恰好绕 mesh 中心对称
+    expect((bb.min.z + bb.max.z) / 2).toBeCloseTo(0, 4);
+    expect(bb.max.z - bb.min.z).toBeCloseTo(1, 4);
+  });
+
   it('同规格复用缓存（同 updatedAt 同实例）', () => {
     const a = getProfileGeometry(spec3030);
     const b = getProfileGeometry(spec3030);

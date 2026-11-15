@@ -228,7 +228,9 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     const resize = () => {
       const w = container.clientWidth || 800;
       const h = container.clientHeight || 600;
-      renderer.setSize(w, h, false);
+      // 更新 CSS 尺寸（默认 updateStyle=true）：canvas 显示尺寸严格等于容器尺寸，
+      // 否则高分屏下 canvas 按 drawingbuffer 尺寸显示（dpr 倍），取景与指针映射错位。
+      renderer.setSize(w, h);
       // 高分屏（4K + 200% 缩放等）限制 pixelRatio，避免 MSAA 全分辨率渲染的 GPU/CPU 开销失控
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       camera.aspect = w / h;
