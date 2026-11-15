@@ -491,6 +491,16 @@ a {
   font-size: 12px;
 }
 
+/* 编辑器 chrome 禁用文本选择/插入光标：点击界面组件不应出现闪烁光标（输入框除外） */
+.editor-page {
+  user-select: none;
+}
+.editor-page input,
+.editor-page textarea,
+.editor-page select {
+  user-select: text;
+}
+
 /* 主体：左为工具轨浮动区（不占栅格），右为属性面板 */
 .editor-body {
   height: 100%;
@@ -509,16 +519,134 @@ a {
 .viewer3d canvas {
   display: block;
 }
-.canvas-hint {
-  position: absolute;
-  left: 64px;
-  bottom: 14px;
+
+/* ------------------------------ 快捷键徽章与速查表 ------------------------------ */
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: var(--hover);
+  border: 1px solid var(--border-strong);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 11px;
+  color: var(--text);
+  white-space: nowrap;
+}
+.shortcuts-pop {
+  position: fixed;
+  bottom: 68px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 45;
+  width: min(600px, calc(100vw - 32px));
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+  padding: 12px 16px 14px;
+}
+.shortcuts-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.shortcuts-head strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.shortcuts-head .hint {
   margin: 0;
-  max-width: 420px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.shortcuts-head .icon-btn {
+  margin-left: auto;
+}
+.sc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 26px;
+}
+@media (max-width: 640px) {
+  .sc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.sc-group {
+  min-width: 0;
+}
+.sc-title {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-3);
+  margin: 8px 0 2px;
+}
+.sc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 3px 0;
+  font-size: 12px;
+  color: var(--text-2);
+}
+.sc-keys {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex: none;
+}
+.sc-mouse {
   font-size: 11px;
   color: var(--text-3);
-  pointer-events: none;
+}
+
+/* ------------------------------ 使用说明弹窗 ------------------------------ */
+.help-modal {
+  width: min(620px, 94vw);
+}
+.help-body {
+  margin-top: 8px;
+}
+.help-body h4 {
+  margin: 16px 0 6px;
+  font-size: 13px;
+}
+.help-body h4:first-child {
+  margin-top: 4px;
+}
+.help-steps {
+  margin: 4px 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-2);
   line-height: 1.6;
+}
+.help-steps b {
+  color: var(--text);
+}
+.help-body .hint {
+  line-height: 1.6;
+}
+.help-body code {
+  background: var(--hover);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 11px;
+}
+.help-body .kbd {
+  vertical-align: middle;
 }
 
 /* ------------------------------ 工具轨 + 浮动面板 ------------------------------ */

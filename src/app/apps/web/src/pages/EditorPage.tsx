@@ -9,7 +9,9 @@ import { BomModal } from '../components/BomModal';
 import { VersionsDrawer } from '../components/VersionsDrawer';
 import { AiPanel } from '../components/AiPanel';
 import { EditorToolbar } from '../components/EditorToolbar';
-import { IconFolder, IconHistory, IconLogOut, IconRedo, IconShield, IconUndo } from '../components/icons';
+import { HelpModal } from '../components/HelpModal';
+import { ShortcutsOverlay } from '../components/ShortcutsOverlay';
+import { IconFolder, IconHelp, IconHistory, IconLogOut, IconRedo, IconShield, IconUndo } from '../components/icons';
 
 /** 编辑器主界面（spec-04 + v2 UI）：浮动 chrome + 工具轨/浮动面板 + 画布 + 属性面板。 */
 export function EditorPage() {
@@ -41,6 +43,8 @@ export function EditorPage() {
   } = useEditor();
 
   const [modal, setModal] = useState<'bom' | 'versions' | 'ai' | null>(null);
+  const [helpOpen, setHelpOpen] = useState(false);
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const [nameEditing, setNameEditing] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -49,6 +53,11 @@ export function EditorPage() {
   const viewerRef = useRef<Viewer3DHandle>(null);
   /** 离开守卫：用户确认放弃后放行下一次后退 */
   const leaveGuardArmedRef = useRef(true);
+  /** 速查表开关镜像（keydown 闭包内读取） */
+  const shortcutsOpenRef = useRef(false);
+  useEffect(() => {
+    shortcutsOpenRef.current = shortcutsOpen;
+  }, [shortcutsOpen]);
 
   useEffect(() => {
     // 游客访问云端设计 URL → 引导登录
@@ -99,6 +108,42 @@ export function EditorPage() {
     leaveGuardArmedRef.current = false;
     window.history.back();
   };
+
+  // 页面级快捷键（参考 Figma 惯例）：V 选择工具、F2/? 速查表、Delete/Backspace 删除选中部件。
+  // 输入框聚焦时全部让位给文本编辑。
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.isContentEditable)) {
+        return;
+      }
+      const s = useEditor.getState();
+      if (e.key === 'Escape' && shortcutsOpenRef.current) {
+        setShortcutsOpen(false);
+        return;
+      }
+      if (e.key === 'F2' || (e.key === '?' && !e.ctrlKey && !e.metaKey && !e.altKey)) {
+        e.preventDefault();
+        setShortcutsOpen((v) => !v);
+        return;
+      }
+      if ((e.key === 'v' || e.key === 'V') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        if (s.placement) s.cancelPlacement();
+        return;
+      }
+      if ((e.key === 'Delete' || e.key === 'Backspace') && s.selectedId) {
+        e.preventDefault();
+        const profile = s.model.profiles.find((p) => p.id === s.selectedId);
+        if (profile) s.removeProfile(profile.id);
+        else {
+          const panel = s.model.panels.find((p) => p.id === s.selectedId);
+          if (panel) s.removePanel(panel.id);
+        }
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
 
   const saveState = () => {
     switch (saveStatus.state) {
@@ -181,6 +226,16 @@ export function EditorPage() {
           data-testid="open-versions"
         >
           <IconHistory size={15} />
+        </button>
+        <button
+          type="button"
+          className="icon-btn"
+          onClick={() => setHelpOpen(true)}
+          title="使用说明（含 Edge 鼠标手势 Q&A）"
+          aria-label="使用说明"
+          data-testid="open-help"
+        >
+          <IconHelp size={15} />
         </button>
         {user ? (
           <div className="user-menu-wrap">
@@ -333,11 +388,6 @@ export function EditorPage() {
               onOpenBom={() => setModal('bom')}
               onOpenAi={() => setModal('ai')}
             />
-
-            <p className="canvas-hint">
-              左键旋转视角 · 中键拖拽平移 · 滚轮缩放 · 左侧工具轨选择规格放置 · 点击选中部件 · 拖动沿地面移动（Shift+拖动调高度） ·
-              选中型材拖端部箭头或 [ ] 调长 · 方向键移动 · PageUp/Down 调高度 · Esc 退出放置
-            </p>
           </div>
           <PropertiesPanel />
         </div>
@@ -346,6 +396,8 @@ export function EditorPage() {
       {modal === 'bom' && <BomModal onClose={() => setModal(null)} />}
       {modal === 'versions' && <VersionsDrawer onClose={() => setModal(null)} />}
       {modal === 'ai' && <AiPanel onClose={() => setModal(null)} onOpenDiff={() => setModal(null)} />}
+      {helpOpen && <HelpModal onClose={() => setHelpOpen(false)} />}
+      {shortcutsOpen && <ShortcutsOverlay onClose={() => setShortcutsOpen(false)} />}
 
       {designId === null && user === null && !id && (
         <div className="banner guest" data-testid="guest-banner">
