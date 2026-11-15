@@ -5,9 +5,12 @@ import {
   IconBox,
   IconChevronsLeft,
   IconLayers,
+  IconMaximize,
   IconMousePointer,
   IconPlus,
   IconSearch,
+  IconSparkles,
+  IconTable,
 } from './icons';
 
 /** 截面 SVG 预览（精确 DXF 环，无截面数据时参数化近似），grid view 卡片用。 */
@@ -44,13 +47,23 @@ const SECTION_TITLES: Record<PanelSection, string> = {
   insert: '插入',
 };
 
+export interface PartsPanelProps {
+  /** 适配视图（相机回默认机位） */
+  onFitView: () => void;
+  /** 打开清单 BOM 弹窗 */
+  onOpenBom: () => void;
+  /** 打开 AI 面板 */
+  onOpenAi: () => void;
+}
+
 /**
  * 左侧工具轨 + 浮动面板（Figma UI3 式，spec 见 docs/terminology.md）：
  * - 工具轨默认折叠（仅 icon + padding 宽度），画布占满剩余宽度；
  * - 顶部「选择」工具：退出放置模式，恢复画布点选/拖拽调整；
- * - 型材库/部件/插入三个图标展开浮动面板（悬浮于画布之上，不挤压画布）。
+ * - 型材库/部件/插入三个图标展开浮动面板（悬浮于画布之上，不挤压画布）；
+ * - 底部：适配视图 / 清单 BOM / AI。
  */
-export function PartsPanel() {
+export function PartsPanel({ onFitView, onOpenBom, onOpenAi }: PartsPanelProps) {
   const {
     model,
     catalog,
@@ -118,6 +131,16 @@ export function PartsPanel() {
           onClick={() => toggleSection('insert')}
         >
           <IconPlus size={17} />
+        </button>
+        <span className="rail-div" />
+        <button type="button" className="rail-btn" title="适配视图" aria-label="适配视图" onClick={onFitView}>
+          <IconMaximize size={17} />
+        </button>
+        <button type="button" className="rail-btn" title="清单（BOM）" aria-label="清单 BOM" data-testid="open-bom" onClick={onOpenBom}>
+          <IconTable size={17} />
+        </button>
+        <button type="button" className="rail-btn" title="AI 生成/修改" aria-label="AI 生成或修改" data-testid="open-ai" onClick={onOpenAi}>
+          <IconSparkles size={17} />
         </button>
       </nav>
 

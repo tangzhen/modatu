@@ -5,12 +5,11 @@ import { useEditor, ORIENTATIONS } from '../stores/editor';
 import { Viewer3D, type Viewer3DHandle } from '../components/Viewer3D';
 import { PartsPanel } from '../components/PartsPanel';
 import { PropertiesPanel } from '../components/PropertiesPanel';
-import { ContextMenu } from '../components/ContextMenu';
 import { BomModal } from '../components/BomModal';
 import { VersionsDrawer } from '../components/VersionsDrawer';
 import { AiPanel } from '../components/AiPanel';
-import { EditorToolbar } from '../components/EditorToolbar';
 import { HelpModal } from '../components/HelpModal';
+import { ContextMenu } from '../components/ContextMenu';
 import { IconFolder, IconHelp, IconHistory, IconLogOut, IconRedo, IconShield, IconUndo } from '../components/icons';
 
 /** 编辑器主界面（spec-04 + v2 UI）：浮动 chrome + 工具轨/浮动面板 + 画布 + 属性面板。 */
@@ -327,7 +326,11 @@ export function EditorPage() {
 
       {loaded && (
         <div className="editor-body">
-          <PartsPanel />
+          <PartsPanel
+            onFitView={() => viewerRef.current?.resetView()}
+            onOpenBom={() => setModal('bom')}
+            onOpenAi={() => setModal('ai')}
+          />
           <div className="viewer-wrap">
             <Viewer3D
               ref={viewerRef}
@@ -376,16 +379,6 @@ export function EditorPage() {
                 </button>
               </div>
             )}
-
-            <EditorToolbar
-              placing={Boolean(placement)}
-              showShortcuts={showShortcuts}
-              onExitPlacement={exitPlacement}
-              onOpenLibrary={() => openPanel('spec')}
-              onFitView={() => viewerRef.current?.resetView()}
-              onOpenBom={() => setModal('bom')}
-              onOpenAi={() => setModal('ai')}
-            />
           </div>
           <PropertiesPanel />
         </div>

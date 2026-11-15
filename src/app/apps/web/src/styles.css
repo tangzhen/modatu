@@ -539,7 +539,6 @@ a {
 }
 /* 按键徽章（F2 模式）：蓝色 outline 样式，挂在带快捷键的图标右上角 */
 .rail-btn,
-.tool-btn,
 .pill-exit {
   position: relative;
 }
@@ -561,8 +560,7 @@ a {
   pointer-events: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
-/* 深色底（工具栏/胶囊）上的徽章：底色跟随所在表面，保持 outline 风格 */
-.tool-btn .key-badge,
+/* 深色底（放置胶囊）上的徽章：底色跟随所在表面，保持 outline 风格 */
 .pill-exit .key-badge {
   background: var(--toolbar-bg);
 }
@@ -1024,47 +1022,6 @@ a {
 }
 
 /* ------------------------------ 工具栏 + 放置胶囊 ------------------------------ */
-.editor-toolbar {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 25;
-  display: flex;
-  align-items: center;
-  gap: 2px;
-  background: var(--toolbar-bg);
-  border-radius: var(--r-lg);
-  padding: 4px;
-  box-shadow: var(--shadow-toolbar);
-}
-.tool-btn {
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  border: none;
-  border-radius: 8px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.72);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.tool-btn:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  border-color: transparent;
-}
-.tool-btn.active {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-}
-.tool-div {
-  width: 1px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.16);
-  margin: 0 4px;
-}
 .placement-pill {
   position: absolute;
   bottom: 64px;
