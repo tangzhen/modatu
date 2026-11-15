@@ -72,6 +72,7 @@ export function PartsPanel() {
     panelSection,
     openPanel,
     closePanel,
+    showShortcuts,
   } = useEditor();
   const [shelfPos, setShelfPos] = useState(600);
 
@@ -86,12 +87,13 @@ export function PartsPanel() {
         <button
           type="button"
           className={`rail-btn${!placement ? ' active' : ''}`}
-          title="选择（退出放置）"
-          aria-label="选择工具"
+          title="选择（V）"
+          aria-label="选择工具（V）"
           aria-pressed={!placement}
           onClick={() => cancelPlacement()}
         >
           <IconMousePointer size={17} />
+          {showShortcuts && <span className="key-badge">V</span>}
         </button>
         <span className="rail-div" />
         <button

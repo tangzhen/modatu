@@ -8,6 +8,8 @@ import { IconMaximize, IconMousePointer, IconPlus, IconSparkles, IconTable } fro
 export interface EditorToolbarProps {
   /** 是否处于放置模式（ghost 跟随中） */
   placing: boolean;
+  /** F2 徽章模式：在带快捷键的图标上显示按键 */
+  showShortcuts: boolean;
   onExitPlacement: () => void;
   onOpenLibrary: () => void;
   onFitView: () => void;
@@ -17,6 +19,7 @@ export interface EditorToolbarProps {
 
 export function EditorToolbar({
   placing,
+  showShortcuts,
   onExitPlacement,
   onOpenLibrary,
   onFitView,
@@ -28,12 +31,13 @@ export function EditorToolbar({
       <button
         type="button"
         className={`tool-btn${!placing ? ' active' : ''}`}
-        title="选择（退出放置）"
-        aria-label="选择工具"
+        title="选择（V）"
+        aria-label="选择工具（V）"
         aria-pressed={!placing}
         onClick={onExitPlacement}
       >
         <IconMousePointer size={17} />
+        {showShortcuts && <span className="key-badge">V</span>}
       </button>
       <button
         type="button"

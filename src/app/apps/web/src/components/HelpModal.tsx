@@ -42,10 +42,50 @@ export function HelpModal({ onClose }: { onClose: () => void }) {
             左键拖拽旋转视角 · <b>中键拖拽平移</b> · 滚轮缩放。双击设计名可重命名，编辑后自动保存到云端。
           </p>
 
-          <h4>快捷键</h4>
+          <h4>快捷键一览</h4>
           <p className="hint">
-            按 <kbd className="kbd">F2</kbd> 显示/隐藏快捷键速查表（带按键徽章）。
+            按 <kbd className="kbd">F2</kbd> 或 <kbd className="kbd">?</kbd> 可在界面图标上直接显示按键徽章，一眼可见对应按键。
           </p>
+          <div className="sc-grid">
+            <div className="sc-group">
+              <div className="sc-title">工具</div>
+              <div className="sc-row">
+                <span>选择工具（退出放置）</span>
+                <span className="sc-keys"><kbd className="kbd">V</kbd></span>
+              </div>
+              <div className="sc-row">
+                <span>退出放置 / 取消</span>
+                <span className="sc-keys"><kbd className="kbd">Esc</kbd></span>
+              </div>
+              <div className="sc-row">
+                <span>删除选中部件</span>
+                <span className="sc-keys"><kbd className="kbd">Del</kbd></span>
+              </div>
+              <div className="sc-row">
+                <span>显示 / 隐藏按键徽章</span>
+                <span className="sc-keys"><kbd className="kbd">F2</kbd><kbd className="kbd">?</kbd></span>
+              </div>
+            </div>
+            <div className="sc-group">
+              <div className="sc-title">部件编辑</div>
+              <div className="sc-row">
+                <span>调长 −10 / +10 mm</span>
+                <span className="sc-keys"><kbd className="kbd">[</kbd><kbd className="kbd">]</kbd></span>
+              </div>
+              <div className="sc-row">
+                <span>移动 X / Z</span>
+                <span className="sc-keys"><kbd className="kbd">↑</kbd><kbd className="kbd">↓</kbd><kbd className="kbd">←</kbd><kbd className="kbd">→</kbd></span>
+              </div>
+              <div className="sc-row">
+                <span>调高度 ±10 mm</span>
+                <span className="sc-keys"><kbd className="kbd">PgUp</kbd><kbd className="kbd">PgDn</kbd></span>
+              </div>
+              <div className="sc-row">
+                <span>拖拽时 1mm 步进（按住）</span>
+                <span className="sc-keys"><kbd className="kbd">Shift</kbd></span>
+              </div>
+            </div>
+          </div>
 
           <h4>Q&amp;A：Edge 浏览器的鼠标手势抢占了右键拖拽 / 误触返回？</h4>
           <p className="hint">

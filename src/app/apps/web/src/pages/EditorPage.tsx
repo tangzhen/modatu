@@ -10,7 +10,6 @@ import { VersionsDrawer } from '../components/VersionsDrawer';
 import { AiPanel } from '../components/AiPanel';
 import { EditorToolbar } from '../components/EditorToolbar';
 import { HelpModal } from '../components/HelpModal';
-import { ShortcutsOverlay } from '../components/ShortcutsOverlay';
 import { IconFolder, IconHelp, IconHistory, IconLogOut, IconRedo, IconShield, IconUndo } from '../components/icons';
 
 /** 编辑器主界面（spec-04 + v2 UI）：浮动 chrome + 工具轨/浮动面板 + 画布 + 属性面板。 */
@@ -40,11 +39,11 @@ export function EditorPage() {
     cancelPlacement,
     openPanel,
     addProfile,
+    showShortcuts,
   } = useEditor();
 
   const [modal, setModal] = useState<'bom' | 'versions' | 'ai' | null>(null);
   const [helpOpen, setHelpOpen] = useState(false);
-  const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const [nameEditing, setNameEditing] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
@@ -53,11 +52,6 @@ export function EditorPage() {
   const viewerRef = useRef<Viewer3DHandle>(null);
   /** 离开守卫：用户确认放弃后放行下一次后退 */
   const leaveGuardArmedRef = useRef(true);
-  /** 速查表开关镜像（keydown 闭包内读取） */
-  const shortcutsOpenRef = useRef(false);
-  useEffect(() => {
-    shortcutsOpenRef.current = shortcutsOpen;
-  }, [shortcutsOpen]);
 
   useEffect(() => {
     // 游客访问云端设计 URL → 引导登录
@@ -109,7 +103,7 @@ export function EditorPage() {
     window.history.back();
   };
 
-  // 页面级快捷键（参考 Figma 惯例）：V 选择工具、F2/? 速查表、Delete/Backspace 删除选中部件。
+  // 页面级快捷键（参考 Figma 惯例）：V 选择工具、F2/? 图标按键徽章、Delete/Backspace 删除选中部件。
   // 输入框聚焦时全部让位给文本编辑。
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -118,13 +112,9 @@ export function EditorPage() {
         return;
       }
       const s = useEditor.getState();
-      if (e.key === 'Escape' && shortcutsOpenRef.current) {
-        setShortcutsOpen(false);
-        return;
-      }
       if (e.key === 'F2' || (e.key === '?' && !e.ctrlKey && !e.metaKey && !e.altKey)) {
         e.preventDefault();
-        setShortcutsOpen((v) => !v);
+        s.toggleShortcuts();
         return;
       }
       if ((e.key === 'v' || e.key === 'V') && !e.ctrlKey && !e.metaKey && !e.altKey) {
@@ -374,14 +364,16 @@ export function EditorPage() {
                     </button>
                   ))}
                 </div>
-                <button type="button" className="pill-exit" onClick={exitPlacement}>
+                <button type="button" className="pill-exit" title="退出放置（Esc）" onClick={exitPlacement}>
                   退出
+                  {showShortcuts && <span className="key-badge inline">Esc</span>}
                 </button>
               </div>
             )}
 
             <EditorToolbar
               placing={Boolean(placement)}
+              showShortcuts={showShortcuts}
               onExitPlacement={exitPlacement}
               onOpenLibrary={() => openPanel('spec')}
               onFitView={() => viewerRef.current?.resetView()}
@@ -397,7 +389,6 @@ export function EditorPage() {
       {modal === 'versions' && <VersionsDrawer onClose={() => setModal(null)} />}
       {modal === 'ai' && <AiPanel onClose={() => setModal(null)} onOpenDiff={() => setModal(null)} />}
       {helpOpen && <HelpModal onClose={() => setHelpOpen(false)} />}
-      {shortcutsOpen && <ShortcutsOverlay onClose={() => setShortcutsOpen(false)} />}
 
       {designId === null && user === null && !id && (
         <div className="banner guest" data-testid="guest-banner">

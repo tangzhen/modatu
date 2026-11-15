@@ -537,37 +537,40 @@ a {
   color: var(--text);
   white-space: nowrap;
 }
-.shortcuts-pop {
-  position: fixed;
-  bottom: 68px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 45;
-  width: min(600px, calc(100vw - 32px));
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  box-shadow: var(--shadow-lg);
-  padding: 12px 16px 14px;
+/* 按键徽章（F2 模式）：挂在带快捷键的图标右上角 */
+.rail-btn,
+.tool-btn,
+.pill-exit {
+  position: relative;
 }
-.shortcuts-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+.key-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 15px;
+  text-align: center;
+  pointer-events: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
-.shortcuts-head strong {
-  font-size: 13px;
-  font-weight: 600;
-}
-.shortcuts-head .hint {
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.shortcuts-head .icon-btn {
-  margin-left: auto;
+.pill-exit .key-badge.inline {
+  position: static;
+  margin-left: 5px;
+  line-height: 13px;
+  height: 13px;
+  min-width: 13px;
+  padding: 0 3px;
+  font-size: 8.5px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--toolbar-bg);
+  box-shadow: none;
 }
 .sc-grid {
   display: grid;
@@ -602,10 +605,6 @@ a {
   align-items: center;
   gap: 4px;
   flex: none;
-}
-.sc-mouse {
-  font-size: 11px;
-  color: var(--text-3);
 }
 
 /* ------------------------------ 使用说明弹窗 ------------------------------ */

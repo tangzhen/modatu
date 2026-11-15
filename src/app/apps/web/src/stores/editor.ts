@@ -50,6 +50,9 @@ interface EditorStore {
   panelSection: PanelSection;
   openPanel: (section: PanelSection) => void;
   closePanel: () => void;
+  /** F2：在带快捷键的图标上显示按键徽章（一眼可见对应按键） */
+  showShortcuts: boolean;
+  toggleShortcuts: () => void;
 
   /** 初始化（打开云端设计或游客空模型） */
   open: (designId: string | null) => Promise<void>;
@@ -132,6 +135,7 @@ export const useEditor = create<EditorStore>((set, get) => {
     placement: null,
     panelOpen: false,
     panelSection: 'spec',
+    showShortcuts: false,
 
     open: async (designId) => {
       const catalog = await api<CatalogSnapshot>('/catalog').catch(() => EMPTY_CATALOG);
@@ -171,6 +175,7 @@ export const useEditor = create<EditorStore>((set, get) => {
 
     openPanel: (section) => set({ panelOpen: true, panelSection: section }),
     closePanel: () => set({ panelOpen: false }),
+    toggleShortcuts: () => set((s) => ({ showShortcuts: !s.showShortcuts })),
 
     addProfile: (input) => applyOp(() => get().editor!.addProfile(input)),
     removeProfile: (id) => applyOp(() => get().editor!.removeProfile(id)),
