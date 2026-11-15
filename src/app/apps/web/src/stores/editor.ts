@@ -30,6 +30,9 @@ export interface PlacementState {
   orientation: Axis;
 }
 
+/** 工具轨浮动面板的分区（spec：型材库 / parts：部件 / insert：插入封板） */
+export type PanelSection = 'spec' | 'parts' | 'insert';
+
 interface EditorStore {
   /** 云端设计 id（游客模式为 null） */
   designId: string | null;
@@ -42,6 +45,11 @@ interface EditorStore {
   dirty: boolean;
   /** ghost 放置模式（null = 关闭） */
   placement: PlacementState | null;
+  /** 左侧工具轨浮动面板 UI 状态（不参与模型与保存） */
+  panelOpen: boolean;
+  panelSection: PanelSection;
+  openPanel: (section: PanelSection) => void;
+  closePanel: () => void;
 
   /** 初始化（打开云端设计或游客空模型） */
   open: (designId: string | null) => Promise<void>;
@@ -122,6 +130,8 @@ export const useEditor = create<EditorStore>((set, get) => {
     saveStatus: { state: 'guest' },
     dirty: false,
     placement: null,
+    panelOpen: false,
+    panelSection: 'spec',
 
     open: async (designId) => {
       const catalog = await api<CatalogSnapshot>('/catalog').catch(() => EMPTY_CATALOG);
@@ -158,6 +168,9 @@ export const useEditor = create<EditorStore>((set, get) => {
       if (p) set({ placement: { ...p, orientation } });
     },
     cancelPlacement: () => set({ placement: null }),
+
+    openPanel: (section) => set({ panelOpen: true, panelSection: section }),
+    closePanel: () => set({ panelOpen: false }),
 
     addProfile: (input) => applyOp(() => get().editor!.addProfile(input)),
     removeProfile: (id) => applyOp(() => get().editor!.removeProfile(id)),

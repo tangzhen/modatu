@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
@@ -128,8 +128,17 @@ function findSpec(catalog: CatalogSnapshot, code: string): ProfileSpec | undefin
   return catalog.profiles.find((s) => s.code === code);
 }
 
-export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResize, placement, onPlaceProfile, onCancelPlacement }: Viewer3DProps) {
+export interface Viewer3DHandle {
+  /** 相机与视角回到默认机位（工具栏「适配视图」） */
+  resetView: () => void;
+}
+
+export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewer3D(
+  { model, catalog, selectedId, onSelect, onMove, onResize, placement, onPlaceProfile, onCancelPlacement },
+  ref,
+) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const resetViewRef = useRef<() => void>(() => {});
   const sceneRef = useRef<{
     scene: THREE.Scene;
     camera: THREE.PerspectiveCamera;
@@ -153,9 +162,10 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
     if (!container) return;
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf4f6f8);
+    scene.background = new THREE.Color(0xf5f5f5);
     const camera = new THREE.PerspectiveCamera(45, 1, 1, 100000);
-    camera.position.set(2500, 2000, 2500);
+    const initialCameraPos = new THREE.Vector3(2500, 2000, 2500);
+    camera.position.copy(initialCameraPos);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.0;
@@ -193,6 +203,13 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
 
     // 相机变化（交互/阻尼衰减）→ 下一帧渲染
     controls.addEventListener('change', invalidate);
+
+    resetViewRef.current = () => {
+      camera.position.copy(initialCameraPos);
+      controls.target.set(0, 0, 0);
+      controls.update();
+      invalidate();
+    };
 
     /** ghost 位置/长度更新（min-corner 语义：anchor = 截面在地面上的最小角点） */
     const placeGhost = (orientation: 'x' | 'y' | 'z', anchor: THREE.Vector3, length: number) => {
@@ -676,6 +693,8 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
     };
   }, [model, catalog, selectedId]);
 
+  useImperativeHandle(ref, () => ({ resetView: () => resetViewRef.current() }), []);
+
   /* ---------------- 选中型材 → 两端调长手柄（箭头） ---------------- */
   useEffect(() => {
     const ctx = sceneRef.current;
@@ -712,4 +731,4 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
   }, [model, catalog, selectedId]);
 
   return <div ref={containerRef} className="viewer3d" data-testid="viewer3d" />;
-}
+});

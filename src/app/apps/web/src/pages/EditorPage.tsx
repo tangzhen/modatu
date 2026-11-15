@@ -1,15 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../stores/auth';
 import { useEditor } from '../stores/editor';
-import { Viewer3D } from '../components/Viewer3D';
-import { PartsPanel } from '../components/PartsPanel';
+import { Viewer3D, type Viewer3DHandle } from '../components/Viewer3D';
+import { PartsPanel, ORIENTATIONS } from '../components/PartsPanel';
 import { PropertiesPanel } from '../components/PropertiesPanel';
 import { BomModal } from '../components/BomModal';
 import { VersionsDrawer } from '../components/VersionsDrawer';
 import { AiPanel } from '../components/AiPanel';
+import { EditorToolbar } from '../components/EditorToolbar';
+import { IconFolder, IconHistory, IconLogOut, IconRedo, IconShield, IconUndo } from '../components/icons';
 
-/** 编辑器主界面（spec-04）：3D 预览 + 受约束编辑 + 自动保存 + 版本/BOM/AI。 */
+/** 编辑器主界面（spec-04 + v2 UI）：浮动 chrome + 工具轨/浮动面板 + 画布 + 属性面板。 */
 export function EditorPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -32,8 +34,9 @@ export function EditorPage() {
     lastOpMessage,
     reloadServerModel,
     placement,
-    startPlacement,
+    setPlacementOrientation,
     cancelPlacement,
+    openPanel,
     addProfile,
   } = useEditor();
 
@@ -41,6 +44,8 @@ export function EditorPage() {
   const [nameEditing, setNameEditing] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const viewerRef = useRef<Viewer3DHandle>(null);
 
   useEffect(() => {
     // 游客访问云端设计 URL → 引导登录
@@ -57,39 +62,50 @@ export function EditorPage() {
   const saveState = () => {
     switch (saveStatus.state) {
       case 'guest':
-        return <span className="hint">游客模式 · 编辑仅存于本页，保存需登录</span>;
+        return <span className="save-state hint">游客模式 · 编辑仅存于本页</span>;
       case 'saving':
-        return <span className="hint">保存中…</span>;
+        return (
+          <span className="save-state hint">
+            <span className="save-dot saving" />
+            保存中…
+          </span>
+        );
       case 'saved':
-        return <span className="hint">已保存 · 版本 #{saveStatus.version}</span>;
+        return (
+          <span className="save-state hint">
+            <span className="save-dot" />
+            已保存 · v{saveStatus.version}
+          </span>
+        );
       case 'conflict':
         return (
-          <span className="error">
+          <span className="save-state error">
             冲突：{saveStatus.message}{' '}
-            <button
-              onClick={() =>
-                reloadServerModel()
-              }
-            >
+            <button type="button" className="link" onClick={() => reloadServerModel()}>
               载入最新版本（本地修改将被覆盖）
             </button>
           </span>
         );
       case 'error':
-        return <span className="error">保存失败：{saveStatus.message}</span>;
+        return <span className="save-state error">保存失败：{saveStatus.message}</span>;
       default:
         return null;
     }
   };
 
+  const exitPlacement = () => cancelPlacement();
+
   return (
     <div className="editor-page">
-      <header className="editor-top">
-        <span className="brand">木搭图</span>
+      {/* 浮动文件卡（左上） */}
+      <div className="file-card">
+        <span className="file-logo">木</span>
         {nameEditing ? (
           <input
+            className="design-name-input"
             autoFocus
             value={model.meta.name}
+            aria-label="设计名称"
             onBlur={(e) => {
               setNameEditing(false);
               if (e.target.value.trim()) useEditor.getState().rename(e.target.value.trim());
@@ -103,47 +119,106 @@ export function EditorPage() {
             {model.meta.name}
           </strong>
         )}
-        <span className="spacer" />
         {saveState()}
-        <button onClick={() => undo()} disabled={!editor?.canUndo()} title="撤销">
-          ↩ 撤销
+      </div>
+
+      {/* 浮动操作组（右上） */}
+      <div className="top-actions">
+        <button type="button" className="icon-btn" onClick={() => undo()} disabled={!editor?.canUndo()} title="撤销" aria-label="撤销">
+          <IconUndo size={15} />
         </button>
-        <button onClick={() => redo()} disabled={!editor?.canRedo()} title="重做">
-          ↪ 重做
+        <button type="button" className="icon-btn" onClick={() => redo()} disabled={!editor?.canRedo()} title="重做" aria-label="重做">
+          <IconRedo size={15} />
         </button>
-        <button onClick={() => setModal('versions')} data-testid="open-versions">
-          版本历史
-        </button>
-        <button onClick={() => setModal('bom')} data-testid="open-bom">
-          清单（BOM）
-        </button>
-        <button onClick={() => setModal('ai')} data-testid="open-ai">
-          AI 生成/修改
+        <span className="v-div" />
+        <button
+          type="button"
+          className="icon-btn"
+          onClick={() => setModal('versions')}
+          title="版本历史"
+          aria-label="版本历史"
+          data-testid="open-versions"
+        >
+          <IconHistory size={15} />
         </button>
         {user ? (
-          <>
-            <span className="hint">{user.nickname}</span>
-            {user.role === 'admin' && <button onClick={() => navigate('/admin/catalog')}>后台</button>}
-            <button onClick={() => navigate('/designs')}>我的设计</button>
-            <button onClick={() => void logout()}>登出</button>
-          </>
+          <div className="user-menu-wrap">
+            <button
+              type="button"
+              className="avatar-btn"
+              title={user.nickname}
+              aria-label={`用户菜单：${user.nickname}`}
+              aria-expanded={userMenuOpen}
+              onClick={() => setUserMenuOpen((v) => !v)}
+            >
+              {user.nickname.slice(0, 1)}
+            </button>
+            {userMenuOpen && (
+              <div className="user-menu" role="menu">
+                <div className="user-menu-name">{user.nickname}</div>
+                <button
+                  type="button"
+                  role="menuitem"
+                  onClick={() => {
+                    setUserMenuOpen(false);
+                    navigate('/designs');
+                  }}
+                >
+                  <IconFolder size={14} />
+                  我的设计
+                </button>
+                {user.role === 'admin' && (
+                  <button
+                    type="button"
+                    role="menuitem"
+                    onClick={() => {
+                      setUserMenuOpen(false);
+                      navigate('/admin/catalog');
+                    }}
+                  >
+                    <IconShield size={14} />
+                    管理后台
+                  </button>
+                )}
+                <button
+                  type="button"
+                  role="menuitem"
+                  onClick={() => {
+                    setUserMenuOpen(false);
+                    void logout();
+                  }}
+                >
+                  <IconLogOut size={14} />
+                  登出
+                </button>
+              </div>
+            )}
+          </div>
         ) : (
-          <button onClick={() => navigate(`/login?next=${id ? `/editor/${id}` : '/editor'}`)}>
+          <button type="button" className="btn-login" onClick={() => navigate(`/login?next=${id ? `/editor/${id}` : '/editor'}`)}>
             登录保存
           </button>
         )}
-      </header>
+      </div>
 
-      {saveStatus.state === 'conflict' && (
-        <div className="banner conflict">
-          <span>该设计在其他标签页被更新：{saveStatus.message}</span>
-          <button onClick={() => void reloadServerModel()}>载入最新版本</button>
-          <button onClick={() => useEditor.getState().resetConflict()}>保留我的编辑（之后手动合并）</button>
+      {/* 状态横幅（顶部居中浮动） */}
+      {(saveStatus.state === 'conflict' || lastOpMessage || loadError) && (
+        <div className="banners">
+          {saveStatus.state === 'conflict' && (
+            <div className="banner conflict">
+              <span>该设计在其他标签页被更新：{saveStatus.message}</span>
+              <button type="button" onClick={() => void reloadServerModel()}>
+                载入最新版本
+              </button>
+              <button type="button" onClick={() => useEditor.getState().resetConflict()}>
+                保留我的编辑
+              </button>
+            </div>
+          )}
+          {lastOpMessage && <div className="banner warn">{lastOpMessage}</div>}
+          {loadError && <div className="banner error">{loadError}</div>}
         </div>
       )}
-
-      {lastOpMessage && <div className="banner warn">{lastOpMessage}</div>}
-      {loadError && <div className="banner error">{loadError}</div>}
 
       {!loaded && !loadError && <p className="loading">加载中…</p>}
 
@@ -152,6 +227,7 @@ export function EditorPage() {
           <PartsPanel />
           <div className="viewer-wrap">
             <Viewer3D
+              ref={viewerRef}
               model={model}
               catalog={catalog}
               selectedId={selectedId}
@@ -168,10 +244,43 @@ export function EditorPage() {
               }}
               onCancelPlacement={() => cancelPlacement()}
             />
-            <p className="hint viewer-hint">
-              左侧选规格进入放置：鼠标跟随 ghost，按住拖拽定长松手创建（10mm 步进，Shift 丝滑 1mm，Esc 退出） ·
-              点击选中部件 · 拖动沿地面移动（Shift+拖动调高度） ·
-              选中型材拖端部箭头或 [ ] 调长 · 方向键移动 · PageUp/Down 调高度
+
+            {/* 放置胶囊：面板收起时是唯一的放置控制入口 */}
+            {placement && (
+              <div className="placement-pill" data-testid="placement-bar">
+                <span className="pill-label">
+                  放置 <b>{placement.specCode}</b>
+                </span>
+                <div className="pill-seg" role="group" aria-label="放置朝向">
+                  {ORIENTATIONS.map((o) => (
+                    <button
+                      type="button"
+                      key={o.value}
+                      aria-pressed={placement.orientation === o.value}
+                      onClick={() => setPlacementOrientation(o.value)}
+                    >
+                      {o.label}
+                    </button>
+                  ))}
+                </div>
+                <button type="button" className="pill-exit" onClick={exitPlacement}>
+                  退出
+                </button>
+              </div>
+            )}
+
+            <EditorToolbar
+              placing={Boolean(placement)}
+              onExitPlacement={exitPlacement}
+              onOpenLibrary={() => openPanel('spec')}
+              onFitView={() => viewerRef.current?.resetView()}
+              onOpenBom={() => setModal('bom')}
+              onOpenAi={() => setModal('ai')}
+            />
+
+            <p className="canvas-hint">
+              左侧工具轨选择规格放置 · 点击选中部件 · 拖动沿地面移动（Shift+拖动调高度） · 选中型材拖端部箭头或 [ ] 调长 ·
+              方向键移动 · PageUp/Down 调高度 · Esc 退出放置
             </p>
           </div>
           <PropertiesPanel />
@@ -180,13 +289,14 @@ export function EditorPage() {
 
       {modal === 'bom' && <BomModal onClose={() => setModal(null)} />}
       {modal === 'versions' && <VersionsDrawer onClose={() => setModal(null)} />}
-      {modal === 'ai' && (
-        <AiPanel onClose={() => setModal(null)} onOpenDiff={() => setModal(null)} />
-      )}
+      {modal === 'ai' && <AiPanel onClose={() => setModal(null)} onOpenDiff={() => setModal(null)} />}
+
       {designId === null && user === null && !id && (
         <div className="banner guest" data-testid="guest-banner">
-          游客模式：编辑仅存在于本页内存。{' '}
-          <button onClick={() => navigate('/login?next=/designs')}>登录后可保存与导出</button>
+          <span>游客模式：编辑仅存在于本页内存。</span>
+          <button type="button" onClick={() => navigate('/login?next=/designs')}>
+            登录后可保存与导出
+          </button>
         </div>
       )}
     </div>
