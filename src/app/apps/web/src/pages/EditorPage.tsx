@@ -45,7 +45,10 @@ export function EditorPage() {
   const [loaded, setLoaded] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [leaveWarning, setLeaveWarning] = useState(false);
   const viewerRef = useRef<Viewer3DHandle>(null);
+  /** 离开守卫：用户确认放弃后放行下一次后退 */
+  const leaveGuardArmedRef = useRef(true);
 
   useEffect(() => {
     // 游客访问云端设计 URL → 引导登录
@@ -58,6 +61,44 @@ export function EditorPage() {
       .then(() => setLoaded(true))
       .catch((e) => setLoadError(e instanceof Error ? e.message : String(e)));
   }, [id, user, open, navigate]);
+
+  useEffect(() => {
+    if (!loaded) return;
+    /** 是否存在未保存的编辑：云端 dirty 或游客模式下已有部件 */
+    const hasUnsaved = () => {
+      const s = useEditor.getState();
+      const guestContent = s.designId === null && (s.model.profiles.length > 0 || s.model.panels.length > 0);
+      return Boolean(s.dirty) || guestContent;
+    };
+    // 关闭/刷新（真实 unload）：浏览器原生确认
+    const onBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (hasUnsaved()) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
+    };
+    // SPA 后退（含 Edge 鼠标手势的"返回"手势）：哨兵条目拦截，先询问
+    const sentinel = { modatuLeaveGuard: true };
+    window.history.pushState(sentinel, '');
+    const onPopState = () => {
+      if (!leaveGuardArmedRef.current || !hasUnsaved()) return;
+      window.history.pushState(sentinel, ''); // 留在编辑器
+      setLeaveWarning(true);
+    };
+    window.addEventListener('beforeunload', onBeforeUnload);
+    window.addEventListener('popstate', onPopState);
+    return () => {
+      window.removeEventListener('beforeunload', onBeforeUnload);
+      window.removeEventListener('popstate', onPopState);
+    };
+  }, [loaded]);
+
+  /** 放弃未保存编辑并离开（守卫放行一次后退） */
+  const discardAndLeave = () => {
+    setLeaveWarning(false);
+    leaveGuardArmedRef.current = false;
+    window.history.back();
+  };
 
   const saveState = () => {
     switch (saveStatus.state) {
@@ -201,6 +242,21 @@ export function EditorPage() {
         )}
       </div>
 
+      {/* 防误触离开确认（Edge 鼠标手势返回等触发） */}
+      {leaveWarning && (
+        <div className="banners">
+          <div className="banner conflict">
+            <span>存在未保存的编辑，返回将丢失（可能由浏览器鼠标手势误触发）。</span>
+            <button type="button" onClick={() => setLeaveWarning(false)}>
+              留在此页
+            </button>
+            <button type="button" onClick={discardAndLeave}>
+              放弃并离开
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* 状态横幅（顶部居中浮动） */}
       {(saveStatus.state === 'conflict' || lastOpMessage || loadError) && (
         <div className="banners">
@@ -279,8 +335,8 @@ export function EditorPage() {
             />
 
             <p className="canvas-hint">
-              左侧工具轨选择规格放置 · 点击选中部件 · 拖动沿地面移动（Shift+拖动调高度） · 选中型材拖端部箭头或 [ ] 调长 ·
-              方向键移动 · PageUp/Down 调高度 · Esc 退出放置
+              左键旋转视角 · 中键拖拽平移 · 滚轮缩放 · 左侧工具轨选择规格放置 · 点击选中部件 · 拖动沿地面移动（Shift+拖动调高度） ·
+              选中型材拖端部箭头或 [ ] 调长 · 方向键移动 · PageUp/Down 调高度 · Esc 退出放置
             </p>
           </div>
           <PropertiesPanel />

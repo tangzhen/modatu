@@ -172,6 +172,13 @@ export const Viewer3D = forwardRef<Viewer3DHandle, Viewer3DProps>(function Viewe
     container.appendChild(renderer.domElement);
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
+    // Edge 原生鼠标手势默认占用右键拖拽（浏览器层拦截，页面无法禁用，见 docs/terminology 之交互约定）：
+    // 平移同时映射到中键拖拽（CAD 惯例），右键保留平移以兼容未开手势的浏览器。
+    controls.mouseButtons = {
+      LEFT: THREE.MOUSE.ROTATE,
+      MIDDLE: THREE.MOUSE.PAN,
+      RIGHT: THREE.MOUSE.PAN,
+    };
     const raycaster = new THREE.Raycaster();
     const partGroup = new THREE.Group();
     const handleGroup = new THREE.Group();
