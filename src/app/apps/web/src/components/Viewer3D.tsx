@@ -141,6 +141,8 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
     ghostGroup: THREE.Group;
     /** 当前 ghost 网格（放置模式专用；null = 无） */
     ghostMesh: THREE.Mesh | null;
+    /** 按需渲染：场景内容变化时置脏，下一帧渲染一次 */
+    invalidate: () => void;
   } | null>(null);
   const propsRef = useRef({ model, catalog, selectedId, onSelect, onMove, onResize, placement, onPlaceProfile, onCancelPlacement });
   propsRef.current = { model, catalog, selectedId, onSelect, onMove, onResize, placement, onPlaceProfile, onCancelPlacement };
@@ -168,6 +170,12 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
     scene.add(handleGroup);
     scene.add(ghostGroup);
 
+    // 按需渲染（CAD 式）：只有场景/相机真正变化时才渲染一帧，空闲 CPU 归零。
+    let needsRender = true;
+    const invalidate = () => {
+      needsRender = true;
+    };
+
     // PBR 环境光照（程序化 RoomEnvironment，零贴图文件）
     const pmrem = new THREE.PMREMGenerator(renderer);
     scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
@@ -181,7 +189,10 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
     dir.position.set(2000, 3000, 1500);
     scene.add(dir);
 
-    sceneRef.current = { scene, camera, renderer, controls, raycaster, partGroup, handleGroup, ghostGroup, ghostMesh: null };
+    sceneRef.current = { scene, camera, renderer, controls, raycaster, partGroup, handleGroup, ghostGroup, ghostMesh: null, invalidate };
+
+    // 相机变化（交互/阻尼衰减）→ 下一帧渲染
+    controls.addEventListener('change', invalidate);
 
     /** ghost 位置/长度更新（min-corner 语义：anchor = 截面在地面上的最小角点） */
     const placeGhost = (orientation: 'x' | 'y' | 'z', anchor: THREE.Vector3, length: number) => {
@@ -194,15 +205,18 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
       mesh.quaternion.copy(orientationQuaternion(orientation));
       mesh.position.set(anchor.x + dims[0] / 2, anchor.y + dims[1] / 2, anchor.z + dims[2] / 2);
       mesh.visible = true;
+      invalidate();
     };
 
     const resize = () => {
       const w = container.clientWidth || 800;
       const h = container.clientHeight || 600;
       renderer.setSize(w, h, false);
-      renderer.setPixelRatio(window.devicePixelRatio);
+      // 高分屏（4K + 200% 缩放等）限制 pixelRatio，避免 MSAA 全分辨率渲染的 GPU/CPU 开销失控
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
+      invalidate();
     };
     resize();
     const observer = new ResizeObserver(resize);
@@ -211,8 +225,12 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
     let raf = 0;
     const animate = () => {
       raf = requestAnimationFrame(animate);
-      controls.update();
-      renderer.render(scene, camera);
+      // update() 在阻尼/惯性衰减期间返回 true；收敛后返回 false → 停止渲染
+      const cameraMoving = controls.update();
+      if (cameraMoving || needsRender) {
+        needsRender = false;
+        renderer.render(scene, camera);
+      }
     };
     animate();
 
@@ -542,12 +560,15 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
   useEffect(() => {
     const ctx = sceneRef.current;
     if (!ctx) return;
-    const { ghostGroup } = ctx;
+    const { ghostGroup, invalidate } = ctx;
     if (ctx.ghostMesh) {
       ghostGroup.remove(ctx.ghostMesh);
       ctx.ghostMesh = null;
     }
-    if (!placement) return;
+    if (!placement) {
+      invalidate(); // 移除了可见的 ghost → 需要重绘
+      return;
+    }
     const spec = findSpec(catalog, placement.specCode);
     if (!spec) return;
     const entry = getProfileGeometry(spec);
@@ -556,10 +577,12 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
     mesh.visible = false; // 首次 pointermove 前不显示
     ctx.ghostMesh = mesh;
     ghostGroup.add(mesh);
+    invalidate();
     return () => {
       if (ctx.ghostMesh) {
         ghostGroup.remove(ctx.ghostMesh);
         ctx.ghostMesh = null;
+        invalidate();
       }
     };
   }, [placement, catalog]);
@@ -568,7 +591,7 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
   useEffect(() => {
     const ctx = sceneRef.current;
     if (!ctx) return;
-    const { partGroup } = ctx;
+    const { partGroup, invalidate } = ctx;
     partGroup.clear();
     const disposables: Array<THREE.BufferGeometry> = [];
 
@@ -647,6 +670,7 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
       partGroup.add(mesh);
     }
 
+    invalidate();
     return () => {
       for (const g of disposables) g.dispose();
     };
@@ -656,8 +680,9 @@ export function Viewer3D({ model, catalog, selectedId, onSelect, onMove, onResiz
   useEffect(() => {
     const ctx = sceneRef.current;
     if (!ctx) return;
-    const { handleGroup } = ctx;
+    const { handleGroup, invalidate } = ctx;
     handleGroup.clear();
+    invalidate(); // 手柄出现/消失都改变画面
     if (!selectedId) return;
     const profile = model.profiles.find((p) => p.id === selectedId);
     if (!profile) return; // 面板不做 3D 调长
