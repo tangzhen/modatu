@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { useEditor, type PanelSection } from '../stores/editor';
+import { useEditor, ORIENTATIONS, type PanelSection } from '../stores/editor';
 import { buildParametricCrossSection, loopsToSvgPath, profilePricePerMeter, type ProfileSpec } from '@modatu/catalog';
 import {
   IconBox,
@@ -32,13 +32,6 @@ function SectionThumb({ spec }: { spec: ProfileSpec }) {
     </svg>
   );
 }
-
-/** 放置朝向选项（放置条 / 放置胶囊共用） */
-export const ORIENTATIONS = [
-  { value: 'y' as const, label: '立柱 Y' },
-  { value: 'x' as const, label: '沿 X' },
-  { value: 'z' as const, label: '沿 Z' },
-];
 
 /** 规格系列分组：2020/2040 → 20 系列，3030/3060 → 30 系列，4040 → 40 系列。 */
 function seriesGroupOf(code: string): string {

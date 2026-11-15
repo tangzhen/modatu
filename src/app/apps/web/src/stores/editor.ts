@@ -33,6 +33,14 @@ export interface PlacementState {
 /** 工具轨浮动面板的分区（spec：型材库 / parts：部件 / insert：插入封板） */
 export type PanelSection = 'spec' | 'parts' | 'insert';
 
+/** 放置朝向选项（工具轨放置条 / 放置胶囊共用）。
+ *  放在非组件模块：组件文件只导出组件，否则破坏 Fast Refresh（Vite HMR invalidate）。 */
+export const ORIENTATIONS = [
+  { value: 'y' as const, label: '立柱 Y' },
+  { value: 'x' as const, label: '沿 X' },
+  { value: 'z' as const, label: '沿 Z' },
+];
+
 interface EditorStore {
   /** 云端设计 id（游客模式为 null） */
   designId: string | null;

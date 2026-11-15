@@ -537,7 +537,7 @@ a {
   color: var(--text);
   white-space: nowrap;
 }
-/* 按键徽章（F2 模式）：挂在带快捷键的图标右上角 */
+/* 按键徽章（F2 模式）：蓝色 outline 样式，挂在带快捷键的图标右上角 */
 .rail-btn,
 .tool-btn,
 .pill-exit {
@@ -551,26 +551,29 @@ a {
   height: 15px;
   padding: 0 4px;
   border-radius: 4px;
-  background: var(--accent);
-  color: #fff;
+  background: var(--panel);
+  border: 1px solid var(--accent);
+  color: var(--accent);
   font-size: 9px;
   font-weight: 500;
-  line-height: 15px;
+  line-height: 13px;
   text-align: center;
   pointer-events: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+/* 深色底（工具栏/胶囊）上的徽章：底色跟随所在表面，保持 outline 风格 */
+.tool-btn .key-badge,
+.pill-exit .key-badge {
+  background: var(--toolbar-bg);
 }
 .pill-exit .key-badge.inline {
   position: static;
   margin-left: 5px;
-  line-height: 13px;
   height: 13px;
   min-width: 13px;
   padding: 0 3px;
   font-size: 8.5px;
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--toolbar-bg);
-  box-shadow: none;
+  line-height: 11px;
 }
 .sc-grid {
   display: grid;

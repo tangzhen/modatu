@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../stores/auth';
-import { useEditor } from '../stores/editor';
+import { useEditor, ORIENTATIONS } from '../stores/editor';
 import { Viewer3D, type Viewer3DHandle } from '../components/Viewer3D';
-import { PartsPanel, ORIENTATIONS } from '../components/PartsPanel';
+import { PartsPanel } from '../components/PartsPanel';
 import { PropertiesPanel } from '../components/PropertiesPanel';
 import { BomModal } from '../components/BomModal';
 import { VersionsDrawer } from '../components/VersionsDrawer';
